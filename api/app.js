@@ -23,9 +23,9 @@ app.use(cors());
 app.use(cookieParser());
 app.use(volleyball);
 
-app.use(session({ secret: process.env.SESSION_KEY, resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(session({ secret: process.env.SESSION_KEY, resave: true, saveUninitialized: true }));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 app.use("/api", routes);
 
