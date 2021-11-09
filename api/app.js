@@ -4,11 +4,19 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const volleyball = require("volleyball");
 const passport = require("passport");
+const dotenv = require("dotenv");
 
 const routes = require("./routes");
 const db = require("./config/db");
-const app = express();
 
+const app = express();
+dotenv.config();
+
+//Passport Strategy
+require('./config/auth')
+require('./config/facebook')
+
+// Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // pasar a falso antes de terminar
 app.use(cors());
@@ -25,7 +33,7 @@ app.get("/", (req, res) => {
     res.send("anda");
 });
 
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 db.then(() => {
     app.listen(port, () => {

@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
 
-const ProductsSchema = new mongoose.Schema({
+const ProductSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -43,4 +42,4 @@ const ProductsSchema = new mongoose.Schema({
 
 
 
-module.exports = mongoose.model("Products", ProductsSchema)
+module.exports = mongoose.model("Products", ProductSchema)
