@@ -5,8 +5,8 @@ const products = require("./products");
 const users = require("./users");
 const auth = require("./auth");
 
-// router.use("/auth", auth);
-router.use("/products", products);
-router.use("/users", users);
+router.use("/auth", auth);
+// router.use("/products", products);
+// router.use("/users", users);
 
 module.exports = router;
