@@ -1,40 +1,41 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const findOrCreate = require("mongoose-findorcreate");
 
 const UserSchema = new mongoose.Schema({
-    name:{
+    name: {
         type: String,
-        required: true,  
     },
-    email:{
+    email: {
         type: String,
-        required: true, 
-        unique: true, 
     },
-    password:{
+    password: {
         type: String,
-        required: true, 
     },
-    admin:{
+    admin: {
         type: Boolean,
         default: false,
     },
-    carrito:{
+    carrito: {
         type: Array,
         default: [],
     },
     historial: {
         type: Array,
         default: [],
-    }
-}) 
-
-UserSchema.pre("save", async function (next) {
-    const hash = await bcrypt.hash(this.password, 10)
-    this.password = hash
-    next()
+    },
+    facebookId: {
+        type: String,
+        default: "",
+    },
 });
 
+UserSchema.pre("save", async function (next) {
+    const hash = await bcrypt.hash(this.password, 10);
+    this.password = hash;
+    next();
+});
 
-module.exports = mongoose.model("User", UserSchema)
+UserSchema.plugin(findOrCreate);
+
+module.exports = mongoose.model("User", UserSchema);
