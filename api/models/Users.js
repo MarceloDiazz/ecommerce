@@ -4,13 +4,15 @@ const findOrCreate = require("mongoose-findorcreate");
 
 const UserSchema = new mongoose.Schema({
     name: {
-        type: String,
+        type: String, 
     },
     email: {
         type: String,
+        default: 'asd@asd.com',
     },
     password: {
         type: String,
+        default: "",
     },
     admin: {
         type: Boolean,
@@ -28,11 +30,21 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: "",
     },
+    googleId: {
+        type: String,
+        default: "",
+    },
+    githubId: {
+        type: String,
+        default: "",
+    }
 });
 
 UserSchema.pre("save", async function (next) {
-    const hash = await bcrypt.hash(this.password, 10);
-    this.password = hash;
+    if (this.password) {
+        const hash = await bcrypt.hash(this.password, 10);
+        this.password = hash;
+    }
     next();
 });
 
