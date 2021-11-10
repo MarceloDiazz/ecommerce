@@ -11,7 +11,8 @@ passport.use(
             enableProof: true
         },
         function (accessToken, refreshToken, profile, cb) {
-            User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+            console.log('perfil',profile)
+            User.findOrCreate({ facebookId: profile.id, name: profile.displayName }, function (err, user) {
                 if (err) {
                     return cb(err);
                 }

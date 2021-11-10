@@ -12,6 +12,7 @@ class AuthService {
                     password,
                 })
                 const resp = await user.save();
+                console.log(resp)
                 return { error: false, data: resp };
             }
 
