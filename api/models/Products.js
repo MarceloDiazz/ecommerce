@@ -37,6 +37,7 @@ const ProductSchema = new mongoose.Schema({
   },
   historial: {
     type: Array,
+    default:[]
   },
 });
 

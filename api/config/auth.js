@@ -26,6 +26,9 @@ passport.use(
     })
 );
 
-passport.serializeUser((user, done) => done(null, user[0]?._id || user._id));
+passport.serializeUser((user, done) => {
+    console.log(user)
+    done(null,  user._id || user)
+});
 
 passport.deserializeUser((id, done) => User.find({ _id: id }).then((user) => done(null, user)));
