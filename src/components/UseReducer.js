@@ -1,15 +1,16 @@
 import React from 'react'
-import Register from "./components/Register"
+import Login from "./Login"
 import {useState} from "react"
 import {postUserLoged} from "../state/user"
-import {useDispatch, useSelector} from "react-redux"
+import {useDispatch} from "react-redux"
+import { message } from "antd";
+import { useHistory } from "react-router";
 
-const useReduRegister = () => {
+const UseRegister = () => {
+    const history= useHistory()
 
     const dispatch= useDispatch()
-    const user= useSelector((state)=>
-        state.user
-    )
+
 
     const [email, setEmail]= useState("")
     const [password, setPassword] = useState("")
@@ -31,10 +32,20 @@ const useReduRegister = () => {
         dispatch(
             postUserLoged(userData)
         )
+        .then(({ payload }) =>
+        message
+          .success(
+            `Logueo exitoso, bienvenido: ${payload.email}. Espere a ser redirigido...`
+          ))
+          .then(
+            setTimeout(() => {
+              history.push("/");
+            }, 2000)
+          )
     }
 
     return (
-        < Register 
+        < Login 
         onChangeEmail={onChangeEmail} 
         onChangePass={onChangePass} 
         onSubmit={onSubmit}
@@ -42,4 +53,4 @@ const useReduRegister = () => {
     )
 }
 
-export default useReduRegister
+export default UseRegister
