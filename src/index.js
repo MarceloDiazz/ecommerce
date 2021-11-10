@@ -6,12 +6,13 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 //DEV -BORRAR
 import Cart from "./components/carrito/Cart";
-import Checkout from "./components/carrito/Checkout";
+import Home from "./components/Home/Home"
 
 const app = (
   <Provider store={store}>
     <BrowserRouter>
-    <Checkout/>
+    <Home/>
+   
       {/* <App /> */}
     </BrowserRouter>
   </Provider>
