@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import {postUserLoged} from "./state/user"
 
 function App() {
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,6 +19,7 @@ function App() {
         dispatch(postUserLoged(user));
       });
   }, []);
+
 
 
 

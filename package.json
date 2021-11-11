@@ -6,6 +6,7 @@
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@hapi/joi": "^17.1.1",
+    "@material-ui/icons": "^4.11.2",
     "@mui/icons-material": "^5.1.0",
     "@mui/material": "^5.1.0",
     "@mui/system": "^5.1.0",
