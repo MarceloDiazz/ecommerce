@@ -1,4 +1,4 @@
-import Navbar from "./components/Navbar"
+import Search from "./components/Search"
 import  UseReducer from "./components/UseReducer";
 import UseReduRegister from "./components/UseReduRegister"
 import {useEffect} from "react"
@@ -6,7 +6,8 @@ import axios from "axios"
 import {Route} from "react-router-dom"
 import { useDispatch } from "react-redux";
 import {setUser} from "./state/user"
-
+import Home from "./components/Home/Home"
+import SearchCategory from "./components/Home/SearchCategory"
 function App() {
 
   const dispatch = useDispatch();
@@ -26,7 +27,13 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <Route exact path ="/"> 
+      <Home />
+
+      </Route>
+      <Route path="/category"> 
+        <SearchCategory/>
+      </Route>
       <Route path="/log">
         <UseReducer />
       </Route>
