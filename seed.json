@@ -1,0 +1,619 @@
+[
+    {
+        "title": "Trekking las Cuevas de Los Gigantes",
+        "price": 7200,
+        "description": "Este es uno de los más bonitos lugares de las sierras grandes, Córdoba. Un destino inigualable para los amantes del senderismo, trekking y la aventura. Es una actividad de dificultad media, en un ambiente muy particular, con las mejores vistas, para conocer las entrañas de los gigantes. ",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/e2/e0/58/caption.jpg?w=300&h=300&s=1",
+        "category": ["trekking"],
+        "location": [{ "provincia": "Cordoba", "city": "Villa Carlos Paz" }]
+    },
+    {
+        "title": "Wine Tour Privado - Colonia Caroya",
+        "price": 10000,
+        "description": "Somos líderes en enoturismo en Córdoba, brindando una experiencia completa, con tours con todo incluido, transporte, degustaciones de vinos, visitas a bodegas boutiques, almuerzo completo acompañado de diferentes vinos y más. Le ofrecemos un viaje de un día en el que visitaremos diferentes bodegas y viñedos, aprendiendo de manera informal y descontracturada sobre la historia del vino en Córdoba y las nuevas tendencias que se están desarrollando.Somos líderes en enoturismo en Córdoba, brindando una experiencia completa, con un tour todo incluido con transporte, degustaciones, visitas a boutiques ganadoras, un completo almuerzo maridado con diferentes vinos de la provincia, y más.Organizamos Rutas del Vino en Córdoba. Nuestro plan es vivir un día diferente entre viñedos, viñedos y los espectaculares paisajes de montañas, cerros y lagos, degustando excelentes vinos mientras disfrutas de la deliciosa gastronomía de la región.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/3d/c2/ee/caption.jpg?w=500&h=400&s=1",
+        "category": ["tours", "actividades al aire libre"],
+        "location": [{ "provincia": "Cordoba", "city": "Colonia Caroya" }]
+    },
+    {
+        "title": "Manzana Jesuítica (Jesuit Square)",
+        "price": 0,
+        "description": "El Museo Histórico de la Universidad Nacional de Córdoba se encuentra dentro del sitio Manzana Jesuítica, declarado Patrimonio Mundial por UNESCO en 2000. Este museo promueve el desarrollo de un vínculo entre la Universidad y sus visitantes. En sus salas, ofrece una mirada de la historia de la universidad más antigua de la Argentina (fundada en 1613) y una de las casas de estudio más importantes de Latinoamérica en la actualidad. Se realizan visitas guiadas diariamente, en idioma inglés y español. - Mañana 10h inglés - 11h español - Tarde 15h español - 17h inglés. . Verano (21 de diciembre a 20 de marzo) 17h español - 18h inglés. Ante cualquier consulta, podés consultar nuestro perfil en Facebook: Museo Histórico UNC - Manzana Jesuítica",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/91/46/4e/manzana-jesuitica-jesuit.jpg?w=500&h=400&s=1",
+        "category": ["museo"],
+        "location": [{ "provincia": "Cordoba", "city": "Cordoba" }]
+    },
+    {
+        "title": "Best Private Tour to La Cumbrecita and Villa General Belgrano",
+        "price": 9900,
+        "description": "Begin your day bright and early, boarding a comfortable air-conditioned car from Patio Olmos shopping center at 8:30 AM.Sit back and enjoy this journey of around 9 or 10 hours.You will be guide by a native guide from CórdobaThis journey will pass through some villages as Alta Gracia, then we will take you to a high point of view of Los Molinos lake. After 2 hours of climb through the woods of the Sierras Grandes, we will arrive to La Cumbrecita, a pedestrian Alpine-style village where you will be able to take one of the best pictures in your trip.  In La cumbrecita you will have time to visit the place and take something to eat. (3-4 hours)The next stop will be Villa General Belgrano, a german style town where you can drink some artesanal beers. (2-3 hours)The tour will end in the same place that we started up.If you want to be picked up from your hotel, please contact us. For a small price we can pick you up from any place you want",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/62/7d/6d/caption.jpg?w=500&h=400&s=1",
+        "category": ["tours"],
+        "location": [{ "provincia": "Cordoba", "city": "La Cumbrecita y Villa General Belgrano" }]
+    },
+    {
+        "title": "Los Gigantes",
+        "price": 0,
+        "description": "Los Gigantes pertenecen al extremo norte de las Sierras Grandes. La formación se remonta a 300 y 350 millones de años atrás. El macizo es atractivo por las grandes piedras graníticas, que generan siluetas de incontables formas. Un laberinto que puede desorientar hasta al más aventurero, si no camina con mucha atención.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/cf/ab/4e/photo6jpg.jpg?w=500&h=-1&s=1",
+        "category": ["actividades al aire libre", "tours"],
+        "location": [{ "provincia": "Cordoba", "city": "Tanti" }]
+    },
+    {
+        "title": "Excursión de día completo al La Cumbrecita desde Córdoba",
+        "price": 6500,
+        "description": "Conozca algunos de los pueblitos más famosos de la provincia de Córdoba, como Alta Gracia, La Cumbrecita y Villa General Belgrano. Disfrute de las increíbles vistas del paisaje y del lago y el dique Los Molinos, y dé un paseo por el pueblo de La Cumbrecita, declarado Patrimonio de la Humanidad por la UNESCO, y conocido por ser un pueblo totalmente peatonal.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5b/59/84/caption.jpg?w=500&h=400&s=1",
+        "category": ["actividades al aire libre", "tours"],
+        "location": [{ "provincia": "Cordoba", "city": "Villa Giardino" }]
+    },
+    {
+        "title": "Excursión de día completo al Valle de Traslasierra desde Córdoba",
+        "price": 7000,
+        "description": "Conozca algunos de los pequeños y famosos pueblos de Córdoba como Villa Carlos Paz, Mina Clavero y Nono. Déjese sorprender por el ambiente de montaña y descubra muchas de las atracciones que esta singular provincia tiene que ofrecer: el Camino de las Altas Cumbres, el lugar donde van a beber los elefantes, el observatorio nacional.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5d/0d/b8/caption.jpg?w=500&h=400&s=1",
+        "category": ["actividades al aire libre", "tours"],
+        "location": [{ "provincia": "Cordoba", "city": "Villa Cura Brochero" }]
+    },
+    {
+        "title": "Dique San Roque",
+        "price": 0,
+        "description": "El Dique San Roque es una represa ubicada en el departamento Punilla, provincia de Córdoba, República Argentina. Forma un embalse de nombre homónimo, en cuyas márgenes se han desarrollado importantes centros urbanos.",
+        "img": "https://cordobainteriorinforma.com/wp-content/contenidos/2019/03/foto.jpg",
+        "category": ["kayak", "actividades al aire libre"],
+        "location": [{ "provincia": "Cordoba", "city": "Villa Carlos Paz" }]
+    },
+    {
+        "title": "Escapada de un día de pesca con mosca en Bariloche",
+        "price": 25000,
+        "description": "Los mejores guías de pesca y paseos de expedición en Bariloche. Encontrará aventuras de pesca con mosca únicas en Bariloche entre la «selva» de la Patagonia. Ubicada en San Carlos de Bariloche, el corazón del mayor Parque Nacional, esta zona está considerada una meca de pesca con mosca por pescadores de todo el mundo. Las opciones de pesca con mosca en Bariloche van desde escapadas diarias de pesca con mosca a paquetes completos con alojamiento. Nuestros guías de pesca en Bariloche pueden personalizar su viaje ya que hemos sido guías de pesca con mosca de todos los niveles de experiencia en la Patagonia durante más de una docena de años. Deje que nuestra experiencia le conduzca a la mejor pesca con mosca en Argentina.Tenemos acceso a más de agua que cualquier otro proveedor en la zona. Las excursiones que ofrecemos son únicas, porque están asociadas con algunos de los mejores ranchos ganaderos, que ofrecen acceso a algunas de las mejores aguas de la región.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/7b/b9/bb/caption.jpg?w=500&h=400&s=1",
+        "category": ["pesca", "tours", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Excursión de medio día en kayak por el lago Gutiérrez desde Bariloche",
+        "price": 8000,
+        "description": "Aventúrese en un kayak en esta excursión de medio día en Bariloche, Patagonia. Descubra los paisajes más hermosos en un kayak. Coja su gorra, guantes, protector solar y cámara y salga para disfrutar de una aventura en kayak.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f3/b5/15/caption.jpg?w=500&h=400&s=1",
+        "category": ["kayak", "tours", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+
+    {
+        "title": "Rafting por el río Manso desde bariloche",
+        "price": 14000,
+        "description": "Inscríbase en RAFTING LOWER MANSO RIVER para experimentar el viaje de aventura más codiciado del verano, ideal para principiantes en los ríos de montaña y que puede ser disfrutado por toda la familia. Podrás descansar en playas arenosas, descender por emocionantes rápidos y descubrir todo el esplendor de los bosques andino-patagónicos. No se requiere experiencia previa.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/64/2e/74/caption.jpg?w=500&h=400&s=1",
+        "category": ["rafting", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Aventura de remo de kayak alrededor de Bariloche",
+        "price": 16000,
+        "description": "Remando en Bariloche. Explore la belleza de la Patagonia Norte desde el agua, viajando en silencio a través de bahías prístinas. Disfrute la tranquilidad y la calma de la naturaleza mientras viaja y descubre partes de la increíble Región de los Lagos argentinos. Piragüismo en estas aguas cristalinas ofrecerá una nueva perspectiva de la cordillera andina y le ayudará a observar su enorme historia natural. Nuestros consejos de remo del día se adaptan a sus necesidades y objetivos mientras consideramos las mejores condiciones climatológicas para usted. Diseñamos experiencias con desafíos divertidos y tiempo de sobra para disfrutar de un delicioso almuerzo a la orilla del lago. ¡Le garantizamos que quedará encantado con la aventura!",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/d5/13/8d/caption.jpg?w=500&h=400&s=1",
+        "category": ["kayak", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Rafting en el río Manso hasta la frontera Argentina-Chile",
+        "price": 9500,
+        "description": "La más asombrosa aventura en el norte de la Patagonia. Un día inolvidable al descender un río puro y cristalino de la cordillera de los Andes. Entretenidos ríos de clase III y IV.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f0/69/c4/caption.jpg?w=500&h=400&s=1",
+        "category": ["rafting", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Rafting en el río Manso hasta la frontera desde Bariloche",
+        "price": 15000,
+        "description": "Regístrese en el Rafting Manso River hasta la frontera chilena, en el corazón de los Andes. El mejor viaje para cualquiera que busque emoción y acción. Llegarás a la frontera con Chile, navegando los mejores rápidos a través de estrechos cañones rodeados de exuberante vegetación. Descubrirá la región desde un punto de vista diferente, asombrado por la increíble belleza de los paisajes montañosos.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5c/52/3f/caption.jpg?w=500&h=400&s=1",
+        "category": ["rafting", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Mountain Bike Lago Gutiérrez- La Espina ",
+        "price": 5500,
+        "description": "Nos encontramos en el Lago Gutierrez con el guia, que dará una charla de seguridad y uso de la bicicleta. El recorrido es apto para niños desde los 12 años en adelante, y es un tour de nivel bajo. Recorreremos unos 18km, por senderos en el bosque, cruzando ríos, lagos, cascadas, miradores y caminos vecinales. Regresando por otros senderos hasta el punto de inicio",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/90/46/b4/caption.jpg?w=500&h=400&s=1",
+        "category": ["ciclismo", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Aventura en bicicleta de montaña en Bariloche - Tour de medio día en servicio privado",
+        "price": 32000,
+        "description": "Prepárese para un viaje único en bicicleta de montaña rodeado de fascinantes lagos y montañas, en este tour de medio día desde la ciudad de Bariloche. ¡Un recorrido perfecto para los entusiastas del turismo al aire libre y activo, los amantes de las bicicletas de montaña o simplemente para aquellos que quieran disfrutar de la vida salvaje en la Patagonia Argentina! Disfrute de los lugares más destacados de Bariloche de manera única y diferente: ande en bicicleta por caminos secundarios y caminos de tierra, pase por el asentamiento de Colonia Suiza mientras admira las profundas aguas azules de los lagos y arroyos circundantes y la fascinante belleza de la Cordillera de los Andes. Con equipo de ciclismo, almuerzo para llevar y recogida y regreso al hotel incluidos, ¡todo lo que necesita traer es su sentido de la aventura!",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/0f/cf/ef/caption.jpg?w=500&h=400&s=1",
+        "category": ["tours", "ciclismo", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Amazing Bariloche Bike Tour",
+        "price": 15000,
+        "description": "Una salida pensada para aquellos amantes de las dos ruedas que desean conocer uno de los circuitos clásicos de Bariloche desde una óptica distinta.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f7/f3/a8/caption.jpg?w=500&h=400&s=1",
+        "category": ["tours", "ciclismo", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Photo Discovering Condors & Birdwatching - Tour de día completo en servicio privado",
+        "price": 47000,
+        "description": "Prepárese para un viaje único de observación de aves rodeado de paisajes fascinantes, en este tour de medio día desde la ciudad de Bariloche. ¡Un recorrido perfecto para los amantes del aire libre y la fotografía, los amantes de las aves o simplemente para aquellos que quieran disfrutar de la vida salvaje en la Patagonia Argentina! Este Tour de Descubrimiento de Fotos de Aves fue diseñado con pasión y conocimiento para llegar a ver el magnífico Cóndor Andino, con su elegante vuelo y la fascinante belleza de la Cordillera de los Andes como fondo. Con box lunch y recogida y devolución en el hotel incluidos, ¡todo lo que necesita traer es su sentido de la aventura!",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/0d/ef/b0/caption.jpg?w=500&h=400&s=1",
+        "category": ["fotografia", "actividades al aire libre", "tours"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Descubre la Estepa Patagónica en Bicicleta | CIC11",
+        "price": 36000,
+        "description": "Visitarás San Carlos de Bariloche, Dina Huapi, Villa Llanquin, la estepa patagónica, la Patagonia Profunda, volveremos en horas de la tarde por viejos caminos rurales y haremos una parada en el Mercado de la Estepa, para que conozcas la vida de los artesanos de las comunidades rurales de la Estepa Patagónica #inspiringadventures",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/77/38/c2/caption.jpg?w=500&h=400&s=1",
+        "category": ["tours", "ciclismo", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Trekking al Cerro Bellavista | TRK 9",
+        "price": 17000,
+        "description": "Un trekking desafiante para quienes gustan ganar altura rápidamente en pos de alcanzar vistas panorámicas únicas.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5d/bf/a3/caption.jpg?w=500&h=400&s=1",
+        "category": ["trekking", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Trekking Parque Municipal Llao-Llao",
+        "price": 8000,
+        "description": "Iniciamos el trekking por el sendero que nos conduce al cerro Llao-Llao. Nos introducimos en un bosque autóctono de Coihues y Cipreses. Después de una primera parte plana y tranquila, empezará el ascenso hacia la cumbre del cerro, parando en diferentes miradores, hasta llegar al final con una impactante vista de los lago Moreno, Nahuel Huapí, Cerro López, Capilla y brazos Tristeza y Blest.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/90/5a/04/caption.jpg?w=500&h=400&s=1",
+        "category": ["trekking", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Día de trekking en las montañas cercanas a bariloche.",
+        "price": 13000,
+        "description": "Las montañas del Parque Nacional Nahuel Huapi alrededor de Bariloche son un atractivo para los excursionistas, pero no es aconsejable hacer senderismo solo si no está familiarizado con el territorio. Esta aventura de trekking privada ofrece: con una guía certificada para guiarlo de manera segura, y a su ritmo preferido, a lo largo de senderos, bosques y crestas; y ofrecer una visión de su entorno. Un almuerzo en caja, té, senderismo y equipo de seguridad, y traslados de regreso están incluidos.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/d5/13/95/caption.jpg?w=500&h=400&s=1",
+        "category": ["trekking", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Excursión a caballo en Bariloche con asado tradicional argentino",
+        "price": 8000,
+        "description": "Pase tiempo al aire libre y emprenda una aventura a caballo que comienza en las faldas de los Andes argentinos. No necesita preocuparse si es un principiante a caballo: este recorrido flexible es adecuado tanto para principiantes como para jinetes experimentados. Disfrute cabalgando a través de bosques y lagos del pasado, descubra la vida silvestre local y finalice el recorrido con un delicioso almuerzo de asado (barbacoa) y barra libre.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/a8/99/f1/caption.jpg?w=500&h=400&s=1",
+        "category": ["tours", "actividades al aire libre", "cabagaltas"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Ruta en San Martín de los Andes junto a los 7 lagos",
+        "price": 8000,
+        "description": "Disfrute de este recorrido de 6 horas por bosques, ríos, arroyos, lagos y playas. Este hermoso recorrido le permitirá conocer la belleza de la zona y descubrir por qué Bariloche se conoce como la región de los lagos de la Patagonia.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/64/bf/b3/caption.jpg?w=500&h=400&s=1",
+        "category": ["tours", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Paseo en barco a Puerto Blest, cataratas Los Cántaros y Lago Frías",
+        "price": 9000,
+        "description": "Navegar el algo Nahuel Huapi a través de diferentes tonos del verde de agua del brazo Blest es una experiencia que recordará toda la vida. También incluye la ampliación para visitar el increíble lago Frías y ¡para ver cóndores!",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/58/bb/15/caption.jpg?w=500&h=400&s=1",
+        "category": ["tours", "actividades al aire libre", "barco"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "https://www.tripadvisor.com.ar/AttractionProductReview-g312848-d11466651-Mount_Tronador_and_the_Black_Glacier_Day_Tour-San_Carlos_de_Bariloche_Province_of_.html",
+        "price": 5000,
+        "description": "Visite el espectacular Parque Nacional Nahuel Huapi, donde podrá ver maravillas como por ejemplo Cerro Tronador, la montaña más alta de la región, y el glaciar negro.",
+        "img": "",
+        "category": ["tours", "actividades al aire libre"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Cerro Catedral, Bariloche",
+        "price": 6000,
+        "description": "Es el centro de esquí más grande del hemisferio sur (120 kilómetros de pistas en una superficie de 600 hectáreas) y ofrece una amplia infraestructura de servicios para la práctica de deportes invernales. Está abierto todo el año y cuenta con 40 medios de producción (entre aerosillas y teleféricos), facilitando el ascenso de 35 mil personas por hora.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/87/72/35/caption.jpg?w=500&h=400&s=1",
+        "category": ["actividades al aire libre", "esqui"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Cabalgata con Asado en San Carlos de Bariloche, Argentina",
+        "price": 9000,
+        "description": "En esta actividad realizamos un agradable paseo de aproximadamente dos horas, atravesando un bosque mixto de ñires. Vemos los cerros “Las buitreras” y “Carbón”, el valle del río Ñirihuau y una amplia cordillera de la Cordillera de los Andes. Al mediodía regresamos para disfrutar del Asado Criollo para el almuerzo.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/b1/ef/ff/caption.jpg?w=500&h=400&s=1",
+        "category": ["cabagaltas", "actividades al aire libre", "tours"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Bautismo de nieve (Snow Baptism) en Bariloche",
+        "price": 13000,
+        "description": "Viva la experiencia de la nieve de la Patagonia argentina durante un día completo de nieve. Con o sin experiencia, obtenga un bautismo de nieve (Snow Baptism) con instructores profesionales de enseñanza de esquí o snowboard. Estos dos deportes por excelencia son típicos de Bariloche y podrá disfrutar de ellos en una de las colinas más famosas de la Patagonia, Cerro Catedral, conocida por sus perfectas laderas y vistas para actividades de invierno. Tome su primera clase, acompañado por un profesional, durante un día completo de puro descubrimiento y diversión, y se llevará recuerdos inolvidables.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/0a/e4/87/photo1jpg.jpg?w=500&h=400&s=1",
+        "category": ["actividades al aire libre", "esqui"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Kayak en el Lago Gutierrez y Cabalgata desde Bariloche",
+        "price": 13000,
+        "description": "Al contar con una ubicación privilegiada sobre el lago Gutiérrez, Los Baqueanos es el lugar ideal para realizar actividades en la naturaleza y conocer el verdadero paisaje de Bariloche, disfrutando de la tranquilidad de encontrarse fuera de los circuitos tradicionales. La actividad de Kayak es una experiencia inolvidable en la cual remaremos sobre el lago Gutiérrez. Recorreremos el lago pasando por un cementerio de coihues en el fondo del agua y al cruzar llegaremos a una playa de arena rodeada de importantes montañas y bosques.Por la tarde y luego de un exquisito almuerzo, tomaremos una cabalgata de 2 horas en la cual recorremos el bosque patagónico y visitaremos cascadas, ríos y miradores espectaculares. Todo el tiempo nos encontraremos en compañía de guías profesionales habilitados por Parques ",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/54/18/34/caption.jpg?w=500&h=400&s=1",
+        "category": ["cabagaltas", "actividades al aire libre", "tours", "kayak"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Viaje andino por los lagos desde Bariloche a Puerto Varas",
+        "price": 41000,
+        "description": "Salga de Bariloche, en Argentina, a Puerto Varas, en Chile y navegue en tres cruceros por lagos rodeados de las montañas de los Andes. En esta excursión de 11 horas navegará desde Puerto Pañuelo a través del lago Nahuel Huapi, hacia el corazón de la zona sur de los Andes. Navegue por las verdes aguas del Lago Frías hasta Puerto Frías, y admire el impresionante Cerro Tronador y los cóndores volando alrededor. Cruce la frontera con Chile y atraviese la selva valdiviana hacia Peulla, en Chile. Atraviese en crucero el lago Todos los Santos hasta Petrohue y diríjase en autobús a las cascadas de Petrohué, para llegar a su destino final en Puerto Varas.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/88/2b/0d/caption.jpg?w=500&h=400&s=1",
+        "category": ["tours", "actividades al aire libre", "barco"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Kayak y caminata en Lago Mascardi - Tour de día completo en servicio privado",
+        "price": 47000,
+        "description": "Déjate seducir por el fascinante paisaje del lago Mascardi y la laguna Llum en este tour de un día completo desde la ciudad de Bariloche. ¡Este tour es perfecto para los entusiastas del turismo activo y al aire libre, o simplemente para aquellos que quieren disfrutar de la vida salvaje en la Patagonia Argentina! Navegue en kayak por las profundas aguas azules mientras admira la fascinante belleza de la Cordillera de los Andes. Siempre rodeado del Parque Nacional Nahuel Huapi, con su Bosque Andino Patagónico y sus tranquilas playas. Puede probar el kayak costero incluso si no tiene experiencia en ello; por eso se incluye una introducción básica a las técnicas de kayak. Además, realice una caminata por el bosque hacia la laguna de Llum para luego descansar disfrutando de un agradable almuerzo campestre. Con el servicio de recogida y regreso al hotel incluido, ¡todo lo que necesita traer es su sentido de la aventura!",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/fb/a6/98/caption.jpg?w=500&h=400&s=1",
+        "category": ["tours", "actividades al aire libre", "kayak"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Cabalgata de día completo con Asado en San Carlos de Bariloche, Argentina",
+        "price": 13000,
+        "description": "En esta actividad realizamos un agradable paseo de aproximadamente dos horas, atravesando un bosque mixto de ñires. Vemos los cerros “Las buitreras” y “Carbón”, el valle del río Ñirihuau y una amplia cordillera de la Cordillera de los Andes. Al mediodía regresamos para disfrutar del Asado Criollo para el almuerzo. A las 3 de la tarde damos un paseo a caballo por dos horas más. Al regreso tomaremos café, té o mate tradicional argentino con tortas.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/7d/e8/65/caption.jpg?w=500&h=400&s=1",
+        "category": ["cabagaltas", "actividades al aire libre", "tours"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Esquí de travesía a caballo privado de 9 días en los Andes argentinos",
+        "price": 1000000,
+        "description": "¡Esta es una oferta privada totalmente única y muy especial de Out West Adventure Tours! ¡9 increíbles días de aventura! Mínimo 4 personas, Estancia Río Foyel está ubicada en medio de la Cordillera Andina Patagónica, en un entorno natural y fantástico a dos horas de la ciudad de Bariloche. Estancia RioFoyel es un área totalmente privada de 50,000 acres de Backcountry, Horse Backcountry y un Heli-Skiing Lodge con toda la hospitalidad y el estilo argentinos adecuados. Podremos disfrutar del magnífico albergue privado como campo base para excursiones de un día y viajes opcionales en heli ski, o para viajes de salida y regreso a la auténtica Alta Ruta Patagónica que es un sistema de cabañas donde podemos viajar de cabaña a cabaña disfrutando de los diferentes valles y puntos de vista. Los refugios están completamente equipados para pernoctaciones, con servicio completo que incluye todas las comidas y por supuesto, delicioso vino argentino !! Solicitamos respetuosamente la reserva con 60 días de antelación para poder reservar todos los alojamientos y actividades.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/e5/4a/61/caption.jpg?w=500&h=400&s=1",
+        "category": ["actividades al aire libre", "tours", "esqui", "trekking"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Glamping en la Patagonia",
+        "price": 140000,
+        "description": "Glamping es donde la naturaleza deslumbrante se encuentra con el lujo moderno. El viaje experimental es una forma auténtica de conectarse con la naturaleza. Juntos, la experiencia se trata de salir de los caminos trillados, alejarse de las actividades turísticas superficiales y abrazar un entorno cultural inmersivo. Al salir de sus zonas de confort, los viajeros experimentales experimentan un cambio de perspectiva que mejora la forma en que se conectan con el mundo.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/5b/7a/0b/caption.jpg?w=500&h=400&s=1",
+        "category": ["actividades al aire libre", "glamping"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Kayak en Brazo Tristeza - Tour de día completo en servicio privado",
+        "price": 40000,
+        "description": "Déjate seducir por el fascinante paisaje del “Brazo Tristeza” en el lago Nahuel Huapí en este tour de un día completo desde la ciudad de Bariloche. ¡Este tour es perfecto para los entusiastas del turismo al aire libre y activo, los fanáticos del kayak o simplemente para aquellos que desean disfrutar de la vida silvestre en la Patagonia Argentina! Navegue en kayak por las profundas aguas azules mientras admira la fascinante belleza de las laderas de piedra circundantes, las cascadas, las montañas y el bosque andino-patagónico. Además, tome un buen almuerzo en una playa remota. Si tienes experiencia en kayak, este tour es para ti, ¡un verdadero desafío! Con el servicio de recogida y regreso al hotel incluido, ¡todo lo que necesita traer es su sentido de la aventura!",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/0c/de/94/caption.jpg?w=500&h=400&s=1",
+        "category": ["tours", "actividades al aire libre", "kayak"],
+        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
+    },
+    {
+        "title": "Recorrido de medio día a Villa Carlos Paz desde Córdoba",
+        "price": 4000,
+        "description": "Reúnase en uno de los pueblos más famosos de la provincia de Córdoba, Villa Carlos Paz. Favorita en la zona de montaña por sus teatros, la calle peatonal, los hoteles con piscinas y vistas al lago, esta ciudad tiene un maravilloso clima que le invita a pasar unas increíbles vacaciones.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/61/2e/34/caption.jpg?w=500&h=400&s=1",
+        "category": ["tours", "actividades al aire libre", "trekking"],
+        "location": [{ "provincia": "Cordoba", "city": "Villa Carlos Paz" }]
+    },
+    {
+        "title": "Viaje de un día. Tour privado de Córdoba a Carlos Paz y más",
+        "price": 8000,
+        "description": "¡Ven con nosotros a visitar Villa Carlos paz! Este pueblo turístico se encuentra a solo 30 minutos de la ciudad de Córdoba, una de las más importantes de la provincia y del país. Elegido por su clima especial de montaña, es posible disfrutar de sus paisajes durante todo el año. Lo más destacado, especialmente en verano, son sus balnearios naturales a orillas del río San Antonio y el arroyo Los Chorrillos, y la presa de San Roque, una de sus principales atracciones.Este tour es imprescindible si estás planeando tus vacaciones soñadas en Córdoba, ¡ven a disfrutar de este increíble lugar con nosotros!",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/6c/af/53/caption.jpg?w=500&h=400&s=1",
+        "category": ["tours", "actividades al aire libre", "trekking"],
+        "location": [{ "provincia": "Cordoba", "city": "Villa Carlos Paz" }]
+    },
+    {
+        "title": "Los Bosques de Palermo",
+        "price": 4900,
+        "description": "Conozca la zona verde más grande de Buenos Aires y disfrute de un entretenido paseo por los bosques de Palermo. Aprenda sobre nuestra cultura e historia mientras visita el Rose Garden y los diferentes lagos diseñados por los notables diseñadores franceses Charles Thays.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/f9/6c/a9.jpg",
+        "category": ["actividades al aire libre"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Excursión prémium al delta del Tigre y San Isidro",
+        "price": 7900,
+        "description": "Cambie las concurridas calles de Buenos Aires por las vías fluviales del Delta del Río Tigre en una excursión de un día que es ideal para quienes visitan por primera vez. Verás un lado más provincial de la región mientras exploras las calles empedradas de San Isidro. Además, escaparás de las multitudes en tierra durante un crucero por el canal en el delta.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/17/7b/44.jpg",
+        "category": ["actividades al aire libre", "tours", "barco"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Tour histórico para grupos pequeños de Caballito con recogida",
+        "price": 5400,
+        "description": "Empezaremos buscándote en tu hotel. Una vez finalizada la recogida, nos bajaremos en Plaza Primera Junta. Uno de los puntos comerciales más importantes del barrio de Caballito. Allí, además de visitar la antigua estación de metro, visitaremos el antiguo mercado de El Progreso. Luego, caminaremos hasta el famoso barrio inglés de Buenos Aires. Donde predomina la arquitectura urbana británica. Terminaremos en las afueras del taller del tranvía El Polvorin. Famoso por proporcionar transporte entre vecindarios a mediados del siglo XX. Dejar en su hotel.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/f9/8b/63.jpg",
+        "category": ["actividades al aire libre", "tours"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Tour Privado por la Ciudad de Buenos Aires con Guía local",
+        "price": 7000,
+        "description": "Nuestro City Tour Privado VIP le permitirá conocer un gran número de atractivos y curiosidades de la ciudad de Buenos Aires en un ambiente relajado y exclusivo con un guía bilingüe. El recorrido es ideal para hacer durante los primeros días de su estadía en la ciudad. También se adapta perfectamente a aquellos pasajeros de cruceros, o en tránsito, que tienen pocas horas para pasear. Si Ud. ya conoce la ciudad, le ofrecemos la posibilidad de personalizar el tour y recorre aquellos lugares que todavía no ha visitado.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/54/11/e0.jpg",
+        "category": ["tours"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Visita entre bambalinas a los estadios de fútbol de Buenos Aires",
+        "price": 5700,
+        "description": "Celebre una de las mayores pasiones de Argentina: el fútbol. Tendrá la oportunidad de disfrutar de una visita entre bambalinas del famoso estadio del Boca Juniors o del estadio del River Plate. ¡O de ambos! La visita entre bambalinas a los estadios de fútbol de Buenos Aires es una actividad muy divertida tanto para los amantes del deporte como para las familias.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/ff/b8/19.jpg",
+        "category": ["tours"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Buenos Aires en un día: excursión en bicicleta con todo incluido",
+        "price": 8500,
+        "description": "Explore Buenos Aires en una excursión de todo el día en bicicleta y experimente la ciudad como un local. Pasee alrededor de los barrios de San Telmo, La Boca y Puerto Madero; pare para ver el cementerio de La Recoleta, el estadio La Bombonera y la Casa Rosada; y deslícese por los hermosos parques de la ciudad.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/59/a8/b3.jpg",
+        "category": ["actividades al aire libre", "tours", "ciclismo"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Parrilla Tour Palermo",
+        "price": 7500,
+        "description": "Parrilla Tour es una forma deliciosa de descubrir Buenos Aires. Pruebe comidas tradicionales, descubra restaurantes secretos, sumérjase en la cocina y la cultura de Argentina, y conozca personas interesantes en nuestros recorridos gastronómicos divertidos, relajados y sociales.Por favor, no es necesario que nosotros también confirmemos los tours reservados para el mismo día.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/88/7e/da/parrilla-tour-buenos.jpg?w=1200&h=-1&s=1",
+        "category": ["tours"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Espectáculo Rojo Tango con traslados privados",
+        "price": 19500,
+        "description": "El mejor espectáculo de tango en Buenos Aires es sin duda Rojo Tango, es una experiencia única por su entorno y los mejores artistas de todo el país. El lugar es pequeño, está decorado como un cabaret de los años 1900, presenciará una orquesta en vivo y grandes bailarines. Los artistas que forman parte de estos escenarios tienen un gran talento, tanto en el tango como en la interpretación de cada obra. El espectáculo Rojo Tango es el mejor representando la historia del tango a través de su espectáculo.Primera fila garantizada si reserva con nuestra agencia.El servicio incluye el traslado privado de ida y vuelta a su hotel.Disfrute de la experiencia única del espectáculo Rojo Tango en Buenos Aires. Es importante que reserve su plaza con antelación para obtener lugares en primera o segunda fila a fin de tener una buena vista del espectáculo.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/0f/72/68.jpg",
+        "category": ["espectáculos"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Teatro Ástor Piazzolla",
+        "price": 4900,
+        "description": "Complete su experiencia en Buenos Aires con un espectáculo de tango en uno de los lugares más prestigiosos de la ciudad. Además de ver un espectáculo de danza en vivo, puede mejorar su experiencia para incluir una comida de 3 platos y recogida y devolución sin problemas en el hotel. Reservar con anticipación le garantiza un asiento en el espectáculo a menudo agotado.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/8e/7a/69.jpg",
+        "category": ["espectaculos"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Evite las colas: visita a Boca Juniors y River Plate Museum and Stadium con traslado",
+        "price": 8400,
+        "description": "Visite y conozca la historia de los dos equipos argentinos más importantes, admire sus vitrinas, sus conquistas nacionales e internacionales, admire sus museos modernos y funcionales, visite sus estadios, sus tribunas y acceda a los vestuarios donde los equipos cambian en el partido dias.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/39/c4/f0.jpg",
+        "category": ["especaculos", "tours"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Teatro Colón",
+        "price": 4000,
+        "description": "El Teatro Colón de la ciudad de Buenos Aires es considerado uno de los mejores teatros del mundo. Reconocido por su acústica y por el valor artístico de su construcción, cumplió 100 años en 2008.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/3c/aa/40/photo1jpg.jpg?w=700&h=-1&s=1",
+        "category": ["tours"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Lollapalooza Argentina",
+        "price": 13000,
+        "description": "Disfruta de unos de los mejores festivales de Musica de Latinoamerica",
+        "img": "https://fotos.perfil.com/2019/03/27/trim/950/534/lollapaloozaperfil01-653340.jpg",
+        "category": ["Espectaculos"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Jardin Japones",
+        "price": 290,
+        "description": "El jardín japonés es una vista en miniatura e idealizada de la naturaleza. Las rocas pueden representar montañas y los estanques pueden representar mares. El jardín se hace a veces para parecer más grande mediante la colocación de grandes rocas y árboles en primer plano, y los más pequeños en el fondo.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/7a/be/b1/20160330-231611-largejpg.jpg?w=1200&h=-1&s=1",
+        "category": ["actividades al aire libre"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Museo Nacional de Bellas Artes",
+        "price": 0,
+        "description": "Explorá la colección digital con más de 2500 obras, donde encontrarás imágenes en alta definición, textos, audios y recorridos sugeridos.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/30/b3/a8/muy-bien-mantenido.jpg?w=1200&h=-1&s=1",
+        "category": ["museo"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Cementerio de Recoleta",
+        "price": 0,
+        "description": "Dicen que caminar por Recoleta es como cruzar el océano Atlántico y trasladarse a miles de kilómetros, para sentirse por un rato en Europa, más precisamente en la capital francesa. Con una arquitectura que enamora, embajadas y galerías de arte, este es un barrio de la Ciudad para recorrer y disfrutar una y otra vez.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/1c/7c/bb/recoleta-cemetery.jpg?w=1200&h=-1&s=1",
+        "category": ["actividades al aire libre"],
+        "location": [{ "provincia": "Buenos Aires", "city": "Buenos Aires" }]
+    },
+    {
+        "title": "Ischigualasto el Valle de la Luna desde San Juan",
+        "price": 10653,
+        "description": "No te puedes perder la visita al Parque Ischigualasto \"Valle De La Luna\", un destino único y fuera de los itinerarios convencionales, que sorprende por sus formaciones y características inusuales del suelo. El asombro por el lugar y la riqueza que contiene para el estudio de los sitios arqueológicos y paleontológicos de la zona hicieron que la UNESCO declarara Patrimonio de la Humanidad. Sus geoformas de formas curiosas (The Submarine, The Mushroom, Bocce Court) y los restos del dinosaurio más antiguo son algunas de las atracciones de este sitio, que también se conoce como \"Valle de la Luna\".",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/ff/b8/cc.jpg",
+        "category": ["tours", "actividades al aire libre"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Trekking Cerro De Sal",
+        "price": 4004,
+        "description": "Si hablamos de rarezas en nuestra geografía no podemos dejar de conocer la Quebrada de La Sal, con sus vertientes, estalactitas y estalagmitas de sal, Mina Abandonada, y una costa como broche de oro para recuperar fuerzas con una picada y mates de por medio.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/8f/6d/a1.jpg",
+        "category": ["tours", "trekking", "actividades al aire libre"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Trekking Arroyo Turquesa Cerro Mercedario",
+        "price": 20020,
+        "description": "Podrás ver un fenómeno único en San Juan y quizás en Argentina, por encima de los 4000 metros de altura sobre el nivel del mar, acompañado de guías locales, las montañas más altas de la región, con sus arroyos y glaciares colgantes, disfrutar de este lugar en plena cordillera de los andes es una experiencia que nunca olvidarás. Seguro terminarás con nuevos amigos para seguir planificando aventuras y expediciones!",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/3a/6f/18.jpg",
+        "category": ["tours", "trekking", "actividades al aire libre"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Parque Nacional Talampaya desde San Juan",
+        "price": 17544,
+        "description": "El Cañón de Talampaya es la atracción más importante e impresionante del Parque Nacional. Aquí puedes caminar entre enormes paredes rojizas de unos 150 metros de altura, varias geoformas (El Monje, La Torre, Etc.) y magníficas manifestaciones rocosas llamadas geoglifos.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/ff/bc/6a.jpg",
+        "category": ["tours", "actividades al aire libre"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "La ruta del vino desde San Juan",
+        "price": 3272,
+        "description": "Al sur de la provincia de San Juan se encuentra el Valle de Tulum, una de las áreas más importantes de la industria del vino. Con un clima seco y templado y una altitud de 600 metros, se elabora una gran variedad de vinos; desde vinos de mesa hasta finos y licores. Sus suelos aluviales arenosos y arcillosos permeables son ideales para la práctica de la viticultura.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/fd/73/a6.jpg",
+        "category": ["tours"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Día de cabalgata con almuerzo campestre",
+        "price": 6506,
+        "description": "Una excelente oportunidad para disfrutar de nuestros montes, paisajes más auténticos y de una manera única en San Juan. Esta cabalgata es el complemento perfecto para ver nuestra historia por medio de la huella de petroglifos, antigua mina abandonada, antiguos sistemas de riegos, y las intervenciones más modernas realizadas por el hombre para poder cultivar, generar energía y aprovechamiento turísticos. Llegaremos a puntos panorámicos con vista a todos nuestros valles y lagos. ",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/8f/e1/49.jpg",
+        "category": ["tours", "actividades al aire libre"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Barreal Aventura",
+        "price": 60060,
+        "description": "Barreal posee uno de los cielos más puros del mundo! Sus paisjaes enclavados en la cordillera de los andes lo hacen, además, un sitio ideal para la practica de deportes de aventura tan particulares como el Blokart o el carrovelismo. Te invitamos a que vivas la experiencia de ver el cielo más estrellado y limpio del cono sur en el Parque Nacional El Leoncito. ",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/eb/79/04.jpg",
+        "category": ["tours", "actividades al aire libre"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Stand Up Paddle + Snorkel",
+        "price": 3080,
+        "description": "El dique Punta Negra es el principal punto turístico cercano a la ciudad de San Juan. La posibilidad de ingresar al agua desde las tablas y con el snorkel son únicas, ya que sus playas no están habilitadas para bañarse y nadar. La vista desde el medio del espejo son únicas. La cercanía de las montañas y el maravilloso espejo de agua hacen que la actividad se disfrute desde el momento.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/9c/58/7b.jpg",
+        "category": ["tours", "actividades al aire libre", "snorkel"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Tour a la Calingasta y al Valle del Barreal desde San Juan",
+        "price": 10121,
+        "description": "No te puedes perder este espectacular Tour al Valle de Calingasta y Barreal. Además de continuar conociendo las maravillosas condiciones del suelo y la geografía de la provincia, visitará el Complejo Astronómico El Leoncito, el observatorio más importante de América del Sur.",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/01/07/9d.jpg",
+        "category": ["tours", "actividades al aire libre"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Cabalgata Valle de Zonda",
+        "price": 7007,
+        "description": "La cabalgata nos lleva por el pedemonte directamente hacia el Cerro Bola, denominada así por su forma, es un volcán extinto ubicado sobre la Quebrada Huarpe, llamada justamente así porque fue base y paso de nuestros primeros habitantes, de los cuales podremos ver sus vestigios con raras figuras de más de 500 años. ",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/ed/4c/cf/cabalgata-valle-de-zonda.jpg?w=1000&h=-1&s=1",
+        "category": ["tours", "actividades al aire libre"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Dique de Ullum Tour",
+        "price": 8080,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis qui accusamus ipsum commodi repellendus dolores quam, magni voluptate accusantium modi sit. Accusantium quam odit est sequi expedita possimus esse recusandae.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/7a/98/20/dique-de-ullum.jpg?w=1000&h=-1&s=1",
+        "category": ["tours", "actividades al aire libre"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Paso de Agua Negra Tour",
+        "price": 8080,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis qui accusamus ipsum commodi repellendus dolores quam, magni voluptate accusantium modi sit. Accusantium quam odit est sequi expedita possimus esse recusandae.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/84/98/a0/aguardando-a-reabertura.jpg?w=1000&h=-1&s=1",
+        "category": ["tours", "actividades al aire libre"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Trekking Tres Cumbres",
+        "price": 4004,
+        "description": "Tendrás la posibilidad de encadenar 3 cumbres que superan los 1200 metros de altura sobre el nivel del mar, con vistas impresionantes a lagos, valles y los picos más altos de la pre cordillera. Ideal para los amantes de los desafíos que se incian en el montañismo o simplemente quieren superarse continuamente. ",
+        "img": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/8f/6d/ed.jpg",
+        "category": ["tours", "actividades al aire libre", "trekking"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Bodega Merced del Estero",
+        "price": 8080,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis qui accusamus ipsum commodi repellendus dolores quam, magni voluptate accusantium modi sit. Accusantium quam odit est sequi expedita possimus esse recusandae.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/29/42/49/bodega-merced-del-estero.jpg?w=1000&h=-1&s=1",
+        "category": ["others"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Casa Natal de Sarmiento",
+        "price": 8080,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis qui accusamus ipsum commodi repellendus dolores quam, magni voluptate accusantium modi sit. Accusantium quam odit est sequi expedita possimus esse recusandae.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/2f/77/ba/patio-interno.jpg?w=1000&h=-1&s=1",
+        "category": ["museos"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Punta Negra Dam Tour",
+        "price": 8080,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis qui accusamus ipsum commodi repellendus dolores quam, magni voluptate accusantium modi sit. Accusantium quam odit est sequi expedita possimus esse recusandae.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/81/a9/c2/photo0jpg.jpg?w=1000&h=-1&s=1",
+        "category": ["tours", "actividades al aire libre"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Museo de Ciencias Naturales",
+        "price": 8080,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis qui accusamus ipsum commodi repellendus dolores quam, magni voluptate accusantium modi sit. Accusantium quam odit est sequi expedita possimus esse recusandae.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/fb/09/71/en-la-entrada.jpg?w=1000&h=-1&s=1",
+        "category": ["museos"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Oratorio de la Difunta Correa Tour",
+        "price": 8080,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis qui accusamus ipsum commodi repellendus dolores quam, magni voluptate accusantium modi sit. Accusantium quam odit est sequi expedita possimus esse recusandae.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/c6/1e/4f/oratorio-de-la-difunta.jpg?w=1000&h=-1&s=1",
+        "category": ["tours", "actividades al aire libre"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Autodromo Eduardo Copello Race",
+        "price": 8080,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis qui accusamus ipsum commodi repellendus dolores quam, magni voluptate accusantium modi sit. Accusantium quam odit est sequi expedita possimus esse recusandae.",
+        "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/ef/7e/c8/vista-desde-el-mirador.jpg?w=1000&h=-1&s=1",
+        "category": ["others"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    },
+    {
+        "title": "Paracaidismo Pocitos!",
+        "price": 12000,
+        "description": "Saltá y disfrutá la sensación de caída libre de 35 segundos que sólo un salto de un avión a 3000 metros de altura te puede dar, más 7 -8 minutos de vuelo con el paracaídas abierto, sumado a 20 minutos de vuelo en avión rodeado de un escenario incomparable con el mejor paisaje de la cordillera y viñedos.",
+        "img": "https://sanjuan-tur-ar-imagenysistemas.netdna-ssl.com/media/k2/galleries/53/Paracaidismo_2.jpg",
+        "category": ["paracaidismo", "actividades extremas", "aire"],
+        "location": [{ "provincia": "San Juan", "city": "Pocitos" }]
+    },
+    {
+        "title": "Paracaidismo Jáchal!",
+        "price": 12000,
+        "description": "Saltá y disfrutá la sensación de caída libre de 35 segundos que sólo un salto de un avión a 3000 metros de altura te puede dar, más 7 -8 minutos de vuelo con el paracaídas abierto, sumado a 20 minutos de vuelo en avión rodeado de un escenario incomparable con el mejor paisaje de la cordillera y viñedos.",
+        "img": "https://sanjuan-tur-ar-imagenysistemas.netdna-ssl.com/media/k2/galleries/53/Paracaidismo-Tandem.jpg",
+        "category": ["paracaidismo", "actividades extremas", "aire"],
+        "location": [{ "provincia": "San Juan", "city": "Jáchal" }]
+    },
+    {
+        "title": "Parapente San Juan",
+        "price": 8080,
+        "description": "Parapente en San Juan: la uica y maravillosa sensacion de volar.",
+        "img": "https://www.tiempodesanjuan.com/u/fotografias/m/2018/7/6/f608x342-481685_511408_79.jpg",
+        "category": ["parapentismo", "actividades extremas", "aire"],
+        "location": [{ "provincia": "San Juan", "city": "La Laja" }]
+    },
+    {
+        "title": "Cruce de los Andes",
+        "price": 44000,
+        "description": "La propuesta es cabalgar durante 6 días, entre los 3.000 y los 4.500 m.s.n.m., unos casi 100 km por la escarpada geografía andina hasta el límite con Chile siguiendo parte de la Ruta Sanmartiniana. En el camino, las almas viajeras se inundarán ante la imponencia del inaprensible paisaje natural: internándose por el río Volcán podrá admirarse a muy poca distancia el majestuoso Aconcagua. El avistaje de flora y fauna autóctonas de alta montaña y, por la noche, la lectura de las estrellas en el cielo de San Juan, darán a la aventura un toque definitivamente encantador.",
+        "img": "https://sanjuan-tur-ar-imagenysistemas.netdna-ssl.com/media/k2/galleries/35/CurcedelosAndes_2.jpg",
+        "category": ["tours", "actividades al aire libre", "cabalgatas"],
+        "location": [{ "provincia": "San Juan", "city": "Barreal" }]
+    },
+    {
+        "title": "Carrovelismo",
+        "price": 8080,
+        "description": "Viví una experiencia única surfeando a bordo de un carro a vela, a merced de las ráfagas del viento «Conchavado» que alcanza velocidades cercanas a los 80 km por hora en la Pampa el Leoncito, planicie blanca y radiante de 12 km de largo por 4 km de ancho, a 1.900 m.s.n.m., con las mejores vistas de la Cordillera de los Andes.",
+        "img": "https://sanjuan-tur-ar-imagenysistemas.netdna-ssl.com/media/k2/galleries/50/Carrovelismo-PampaElLeoncito_3.jpg",
+        "category": ["adventure", "carrovelismo", "tierra"],
+        "location": [{ "provincia": "San Juan", "city": "San Juan" }]
+    }
+]
