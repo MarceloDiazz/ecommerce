@@ -9,9 +9,9 @@ import Divider from "@mui/material/Divider";
 import SelectCategoria from "./SelectCategoria";
 import SelectProvincias from "./SelectProvincias";
 import Stack from "@mui/material/Stack";
-import { Button } from "@material-ui/core";
 import SearchIcon from "@mui/icons-material/Search";
-const Home = () => {
+import InputSearch from "./InputSearch"
+const Home = (onSubmitHandler) => {
   return (
     <div>
       <Navbar />
@@ -30,12 +30,12 @@ const Home = () => {
         >
           Elije tu proxima AVENTURA!
         </Typography>
-        <SelectCategoria />
-        <SelectProvincias />
-
-        <Button variant="outlined" startIcon={<SearchIcon />}>
-          Buscar
-        </Button>
+       
+            
+         
+        <InputSearch/>
+   
+       
       </Stack>
       <Divider />
       <Typography variant="h6" component="div" gutterBottom align="center">
