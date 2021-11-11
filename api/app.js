@@ -15,6 +15,8 @@ dotenv.config();
 //Passport Strategy
 require('./config/auth')
 require('./config/facebook')
+require('./config/google')
+require('./config/github')
 
 // Middlewares
 app.use(express.json());
@@ -23,9 +25,9 @@ app.use(cors());
 app.use(cookieParser());
 app.use(volleyball);
 
-// app.use(session({ secret: process.env.SESSION_KEY, resave: true, saveUninitialized: true }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({ secret: process.env.SESSION_KEY, resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use("/api", routes);
 
@@ -33,7 +35,7 @@ app.get("/", (req, res) => {
     res.send("anda");
 });
 
-const port = process.env.PORT || 3001;
+const port =  3001;
 
 db.then(() => {
     app.listen(port, () => {
