@@ -5,7 +5,7 @@ import {useEffect} from "react"
 import axios from "axios"
 import {Route} from "react-router-dom"
 import { useDispatch } from "react-redux";
-import {postUserLoged} from "./state/user"
+import {setUser} from "./state/user"
 
 function App() {
 
@@ -14,9 +14,9 @@ function App() {
   useEffect(() => {
     axios
       .get("/api/auth/me")
-      .then((res) => console.log(res.data))
+      .then((res) => res.data[0])
       .then((user) => {
-        dispatch(postUserLoged(user));
+        dispatch(setUser(user));
       });
   }, []);
 
