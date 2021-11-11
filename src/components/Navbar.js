@@ -6,10 +6,16 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import {Link} from "react-router-dom";
+
+import {sendLogoutRequest} from "../state/user"
+import {useDispatch} from "react-redux"
+import { useHistory } from "react-router";
+
 
 
 const Navbar = () => {
+  const history = useHistory();
+  const dispatch= useDispatch()
     return (
         <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
@@ -28,6 +34,9 @@ const Navbar = () => {
             </Typography>
             <Button color="primary" variant="contained" href="/log">Login</Button> 
             <Button color="secondary" variant="contained"href="/register">Registra</Button>
+            <Button color="error" variant="contained" 
+            onClick={() => dispatch(sendLogoutRequest()).then(history.push("/"))}>LogOut</Button>
+
           </Toolbar>
         </AppBar>
       </Box>

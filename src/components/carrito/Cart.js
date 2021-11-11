@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-import { fakeData } from "../../fakeData.js"; //ARRAY DATA
+import { fakeData } from "../../../src/fakeData"; //ARRAY DATA
 import { serializeUser } from "passport";
 import { useSelector } from "react-redux";
 import Grid from "@mui/material/Grid";
