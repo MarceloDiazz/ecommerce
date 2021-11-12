@@ -46,16 +46,27 @@ router.put("/:productId", (req, res) => {
 
 //SHOW PRODUCTS BY CATEGORY
 router.get("/category/:name", (req, res) => {
-  const name = req.body.name
+  const name = req.params.name
   Product.find({category: name}).then((product) => res.send(product));
 })
 
 //SHOW PRODUCTS THAT MATCH USER SEARCH
 router.get("/title/:title", (req, res) => {
-  const title = req.body.title
-  Product.find({title: title}).then((product) => res.send(product))
+  const title = req.params.title
+  Product.find({title: {$regex: title, $options: 'i'}}).then((product) => res.send(product))
 })
 
+//SHOW PRODUCTS BY PROVINCE
+router.get('/province/:name', (req, res) => {
+  const name = req.params.name
+  Product.find({'location.provincia': {$regex: name, $options: 'i'}}).then((product) => res.send(product))
+})
+
+//SHOW PRODUCTS BY CITY
+router.get('/city/:name', (req, res) => {
+  const name = req.params.name
+  Product.find({'location.city': {$regex: name, $options: 'i'}}).then((product) => res.send(product))
+})
 
 
 module.exports = router

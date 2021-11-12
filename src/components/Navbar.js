@@ -11,6 +11,7 @@ import { styled } from "@mui/material/styles";
 import { sendLogoutRequest } from "../state/user";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
+
 import { Link } from "react-router-dom";
 
 
@@ -22,6 +23,9 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     padding: "0 4px",
   },
 }));
+
+import logo from "../assets/adeventurepng.png"
+
 
 const Navbar = () => {
   const history = useHistory();
@@ -41,7 +45,11 @@ const Navbar = () => {
       <AppBar position="static" style={{ background: "#343a40" }}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+
             <Link to="/">Adventure </Link>
+
+         
+
           </Typography>
 
           {user._id ? (

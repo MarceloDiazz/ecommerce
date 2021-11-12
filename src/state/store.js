@@ -1,16 +1,24 @@
 import { configureStore } from "@reduxjs/toolkit";
 import logger from 'redux-logger'
 import reducerUser from "./user"
+
 import reducerCart from "./cart";
-import { SwapVerticalCircleTwoTone } from "@material-ui/icons";
+
+
+import Search from "./search"
+
 
 
 const store = configureStore({
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   reducer: {
       user: reducerUser,
-      cart: reducerCart
+
+      cart: reducerCart,
     
+
+      search: Search
+
   },
 });
 

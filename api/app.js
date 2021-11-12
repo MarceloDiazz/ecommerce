@@ -8,6 +8,7 @@ const dotenv = require("dotenv");
 
 const routes = require("./routes");
 const db = require("./config/db");
+const seedDB = require("../seed")
 
 const app = express();
 dotenv.config();
@@ -38,6 +39,7 @@ app.get("/", (req, res) => {
 const port =  3001;
 
 db.then(() => {
+    // seedDB() NO DESCOMENTAR
     app.listen(port, () => {
         console.log(`Server on ${port}`);
     });

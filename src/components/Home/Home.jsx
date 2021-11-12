@@ -1,62 +1,112 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+
 import Carrusel from "./Carrucel";
+
+
+
+
 import CardsPromo from "./CardsPromo";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import SelectCategoria from "./SelectCategoria";
-import SelectProvincias from "./SelectProvincias";
-import Stack from "@mui/material/Stack";
+import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
-import SearchIcon from "@mui/icons-material/Search";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../state/cart";
 
-
-const Home = () => {
-  const dispatch = useDispatch()
+import Stack from "@mui/material/Stack";
+import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./themeConfig";
+import logo from "../../assets/adeventurepng.png"
+const Home = ({ onSubmitHandler, onChangeHandler }) => {
   return (
-    <div>
-      <Divider light />
-      <Stack
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-        spacing={1}
-      >
-        <Typography
-          variant="subtitle1"
-          component="div"
-          gutterBottom
-          align="center"
-        >
-          Elije tu proxima AVENTURA!
-        </Typography>
-        <SelectCategoria />
-        <SelectProvincias />
-
-        <Button variant="outlined" startIcon={<SearchIcon />}>
-          Buscar
-        </Button>
-      </Stack>
-      <Divider />
-      <Typography variant="h6" component="div" gutterBottom align="center">
-        LOS LUGARES MAS TURISTICOS DE LA ARGENTINA
+    <ThemeProvider theme={theme}>
+      <div>
+        <Navbar />
         <Divider light />
-      </Typography>
+        <Stack
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          spacing={1}
 
-      <CardsPromo />
+        >
+          <Box
+            sx={{
+              bgcolor: "#42a5f5",
+              color: "info.contrastText",
+              p: 2,
+              margin: 2,
+              zIndex: "tooltip",
+            }}
+          >
+            Elije tu proxima AVENTURA!
+          </Box>
+          <Box
+            sx={{
+              width: 200,
+
+              maxWidth: "100%",
+            }}
+          >
+            <TextField
+              fullWidth
+              label="Search"
+              id="fullWidth"
+              onChange={onChangeHandler}
+            />
+          </Box>
+          <form onSubmit={(e) => onSubmitHandler(e)}>
+            <div className="form-group">
+              <Box
+                sx={{
+                  margin: 2,
+                  bgcolor: "#90caf9",
+                  color: "info.contrastText",
+                }}
+              >
+                <Link to="/category">
+                  <Button variant="outlined" startIcon={<SearchTwoToneIcon />}>
+                    search
+                  </Button>
+                </Link>
+              </Box>
+            </div>
+          </form>
+        </Stack>
+        <Divider />
+        <Box
+          sx={{
+            bgcolor: "#42a5f5",
+            color: "secondary.contrastText",
+            margin: 2,
+            fontWeight: "fontWeightLight",
+            justifyContent: "center",
+            flexDirection: "column",
+            p: 4,
+          }}
+        >
+          LOS LUGARES MAS TURISTICOS DE LA ARGENTINA
+        </Box>
+        <Divider light />
+
+        <CardsPromo />
+
 
       <Carrusel />
 
 
 
-      <Button onClick={() => dispatch(addToCart({producto: {}, cantidad: 1}))}>
-        addToCart
-      </Button>
+    
     </div>
+
+       
+      </div>
+    </ThemeProvider>
+
   );
 };
 
 export default Home;
+
+// gutterBottom align="center"
