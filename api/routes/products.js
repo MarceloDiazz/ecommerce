@@ -47,7 +47,7 @@ router.put("/:productId", (req, res) => {
 //SHOW PRODUCTS BY CATEGORY
 router.get("/category/:name", (req, res) => {
   const name = req.params.name
-  Product.find({category: name}).then((product) => res.send(product));
+  Product.find({category: {$regex: name, $options: 'i'}}).then((product) => res.send(product));
 })
 
 //SHOW PRODUCTS THAT MATCH USER SEARCH

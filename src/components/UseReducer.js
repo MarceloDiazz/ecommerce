@@ -7,31 +7,32 @@ import { message } from "antd";
 import { useHistory } from "react-router";
 
 const UseRegister = () => {
-  const history = useHistory();
+    const history = useHistory();
 
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-  const onChangeEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const onChangePass = (e) => {
-    setPassword(e.target.value);
-  };
-
-  
-  const onSubmit = (e) => {
-    e.preventDefault();
-    const userData = {
-      email,
-      password,
+    const onChangeEmail = (e) => {
+        setEmail(e.target.value);
     };
-    dispatch(postUserLoged(userData));
-    history.goBack();
-      /* .then(({ payload }) =>
+
+    const onChangePass = (e) => {
+        setPassword(e.target.value);
+    };
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const userData = {
+            email,
+            password,
+        };
+        dispatch(postUserLoged(userData)).then(() => {
+            history.push("/");
+        });
+
+        /* .then(({ payload }) =>
         message.success(
           `Logueo exitoso, bienvenido: ${payload.email}. Espere a ser redirigido...`
         )
@@ -41,15 +42,9 @@ const UseRegister = () => {
           history.push("/");
         }, 2000)
       ); */
-  };
+    };
 
-  return (
-    <Login
-      onChangeEmail={onChangeEmail}
-      onChangePass={onChangePass}
-      onSubmit={onSubmit}
-    />
-  );
+    return <Login onChangeEmail={onChangeEmail} onChangePass={onChangePass} onSubmit={onSubmit} />;
 };
 
 export default UseRegister;
