@@ -1,3 +1,6 @@
+
+
+
 import  UseReducer from "./components/UseReducer";
 import UseReduRegister from "./components/UseReduRegister"
 import {useEffect} from "react"
@@ -7,8 +10,9 @@ import { useDispatch } from "react-redux";
 import {setUser} from "./state/user"
 import HomeSearch from "./components/HomeSearch";
 import UseReducerCard from "./components/Home/UseReducerCard";
-function App() {
+import Navbar from "./components/Navbar";
 
+function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,18 +24,19 @@ function App() {
       });
   }, []);
 
-
-
-
-
   return (
     <div>
+
+      <Navbar />
+      
+
       <Route exact path ="/"> 
       <HomeSearch />
 
       </Route>
       <Route path="/category"> 
         <UseReducerCard/>
+
       </Route>
       <Route path="/log">
         <UseReducer />
@@ -39,7 +44,10 @@ function App() {
       <Route path="/register">
         <UseReduRegister />
       </Route>
-    </div> 
+      <Route path="/cart">
+        <Cart />
+      </Route>
+    </div>
   );
 }
 

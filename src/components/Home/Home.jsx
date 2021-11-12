@@ -1,13 +1,18 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import Navbar from "../Navbar";
+
+import Carrusel from "./Carrucel";
+
+
+
 
 import CardsPromo from "./CardsPromo";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
+
 import Stack from "@mui/material/Stack";
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
 import { ThemeProvider } from "@mui/material/styles";
@@ -24,6 +29,7 @@ const Home = ({ onSubmitHandler, onChangeHandler }) => {
           justifyContent="center"
           alignItems="center"
           spacing={1}
+
         >
           <Box
             sx={{
@@ -86,9 +92,18 @@ const Home = ({ onSubmitHandler, onChangeHandler }) => {
 
         <CardsPromo />
 
+
+      <Carrusel />
+
+
+
+    
+    </div>
+
        
       </div>
     </ThemeProvider>
+
   );
 };
 
