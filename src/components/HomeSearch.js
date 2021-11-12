@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchCategory } from "../state/search";
 import Home from "./Home/Home";
+
 const HomeSearch = () => {
   const dispatch = useDispatch();
 

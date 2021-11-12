@@ -1,11 +1,13 @@
 import React from "react";
 import Register from "../components/Register";
 import { useState } from "react";
+import {useHistory} from "react-router-dom"
 import { postUserRegister } from "../state/user";
 import { useDispatch } from "react-redux";
 
 const UseReduRegister = () => {
   const dispatch = useDispatch();
+  const history = useHistory()
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,7 +34,10 @@ const UseReduRegister = () => {
         password,
       };
       console.log(userData);
-    dispatch(postUserRegister(userData));
+    dispatch(postUserRegister(userData))
+      .then(() => {
+        history.push('/log')
+      })
   };
   return (
     <Register
