@@ -1,46 +1,126 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
- 
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Zoom from "@mui/material/Zoom";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import PropTypes from "prop-types";
+import Fab from "@mui/material/Fab";
+import Toolbar from '@mui/material/Toolbar';
+import CssBaseline from '@mui/material/CssBaseline';
 
-export default function SearchCategory() {
+function ScrollTop(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+    disableHysteresis: true,
+    threshold: 100,
+  });
 
-  const selectorCategory = useSelector((state) => state.Category);
-    if (!selectorCategory){return(<h1>no hay dato</h1>)} 
-    else if( selectorCategory){
-      return (
+  const handleClick = (event) => {
+    const anchor = (event.target.ownerDocument || document).querySelector(
+      "#back-to-top-anchor"
+    );
 
-
-        <Card sx={{ maxWidth: 345 }}>
-          {selectorCategory.map}
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image="/static/images/cards/contemplative-reptile.jpg"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over 6,000
-                species, ranging across all continents except Antarctica
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <Button size="small" color="primary">
-              Share
-            </Button>
-          </CardActions>
-        </Card>
-      );
+    if (anchor) {
+      anchor.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
     }
- 
+  };
+
+  return (
+    <Zoom in={trigger}>
+      <Box
+        onClick={handleClick}
+        role="presentation"
+        sx={{ position: "fixed", bottom: 16, right: 16 }}
+      >
+        {children}
+      </Box>
+    </Zoom>
+  );
+}
+
+ScrollTop.propTypes = {
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
+
+export default function SearchCategory({ selectorCategory }, props) {
+  return (
+    <Stack
+      direction="column"
+      justifyContent="space-between"
+      alignItems="flex-start"
+      spacing={5}
+    >
+        {selectorCategory ? (
+          selectorCategory.map((category, i) => {
+            return (
+              
+      <Card sx={{ maxWidth: 500 }}>
+              
+               <React.Fragment>
+              <Box>
+                <CssBaseline /> 
+                <CardActionArea>
+                <Toolbar>
+                  <CardMedia
+                    component="img"
+                    height="300"
+                    image={category.img}
+                    alt={category.title}
+                  />
+                    </Toolbar>
+                  <CardContent>
+                    
+                    <Typography gutterBottom variant="h5" component="div">
+                      {category.title}
+                    </Typography>
+
+
+                    <Typography gutterBottom variant="h6" component="div">
+                    Precio $ {category.price}
+                    </Typography>
+                    <Toolbar id="back-to-top-anchor" />
+
+                    <Typography variant="body2" color="text.secondary">
+                      {category.description}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <ScrollTop {...props}>
+                  <Fab
+                    color="secondary"
+                    size="small"
+                    aria-label="scroll back to top"
+                  >
+                    <KeyboardArrowUpIcon />
+                  </Fab>
+                </ScrollTop>
+              </Box>
+              </React.Fragment>
+      </Card>
+            );
+          })
+        ) : (
+          <h1>NO HAY DATA</h1>
+        )}
+    </Stack>
+  );
 }
