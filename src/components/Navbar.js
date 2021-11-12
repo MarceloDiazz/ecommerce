@@ -10,6 +10,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { sendLogoutRequest } from "../state/user";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
+import logo from "../assets/adeventurepng.png"
 
 const Navbar = () => {
   const history = useHistory();
@@ -28,7 +29,7 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Ecommerce
+           <img src={logo} alt="logo"/>
           </Typography>
           <Button color="primary" variant="contained" href="/log">
             Login
