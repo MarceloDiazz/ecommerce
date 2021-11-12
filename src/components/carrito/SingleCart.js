@@ -14,10 +14,17 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { IconButton } from "@material-ui/core";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useDispatch } from "react-redux";
+import { removeToCart } from "../../state/cart";
+import { modifCantidad } from "../../state/cart";
 
 const SingleCart = ({ elem, id, basket, setBasket }) => {
   //ELEM {product: {}, cantidad: 2}
   // localStorage.setItem("carrito", fakeCarrito);
+
+  console.log(id)
+
+  const dispatch = useDispatch();
 
   const Img = styled("img")({
     margin: "auto",
@@ -32,6 +39,11 @@ const SingleCart = ({ elem, id, basket, setBasket }) => {
     setCantidad(elem.cantidad);
   }, []);
 
+  React.useEffect(() => {
+
+    dispatch(modifCantidad([id, cantidad]))
+  }, [cantidad])
+
   const handleChange = (event) => {
     setCantidad(event.target.value);
   };
@@ -39,27 +51,8 @@ const SingleCart = ({ elem, id, basket, setBasket }) => {
   let user = useSelector((state) => state.logUser);
 
   const handleRemove = () => {
-    alert("delet function");
-    // let newBasket = basket;
-    // newBasket.splice(id, 1, null);
-    // localStorage.setItem("carrito", JSON.stringify(newBasket));
-    // setBasket(newBasket);
-
-    //
-
-    // console.log(JSON.parse(localStorage.getItem("carrito")))
-
-    // carrito.splice(id, 1);
-    // localStorage.setItem("carrito");
-    // if (user) {
-    //   let i = user.carrito.findIndex((product) => product.id === elem.id);
-    //   user.carrito.splice(i, 1);
-    // } else if (!user) {
-    //   let carritoLS = localStorage.getItem("carrito"); //array objetos
-    //   let i = carritoLS.findIndex((product) => product.id === elem.id);
-    //   carritoLS.splice(i, 1);
-    //   localStorage.setItem("carrito", JSON.stringify(carritoLS));
-    // }
+    dispatch(removeToCart(id))
+    
   };
 
   return (

@@ -29,7 +29,8 @@ const UseRegister = () => {
       email,
       password,
     };
-    dispatch(postUserLoged(userData))
+    dispatch(postUserLoged(userData));
+    history.goBack();
       /* .then(({ payload }) =>
         message.success(
           `Logueo exitoso, bienvenido: ${payload.email}. Espere a ser redirigido...`

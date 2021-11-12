@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import Navbar from "../Navbar";
 import Carrusel from "./Carrucel";
 import CardsPromo from "./CardsPromo";
 import Typography from "@mui/material/Typography";
@@ -11,10 +10,14 @@ import SelectProvincias from "./SelectProvincias";
 import Stack from "@mui/material/Stack";
 import { Button } from "@material-ui/core";
 import SearchIcon from "@mui/icons-material/Search";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../state/cart";
+
+
 const Home = () => {
+  const dispatch = useDispatch()
   return (
     <div>
-      <Navbar />
       <Divider light />
       <Stack
         direction="row"
@@ -46,6 +49,12 @@ const Home = () => {
       <CardsPromo />
 
       <Carrusel />
+
+
+
+      <Button onClick={() => dispatch(addToCart({producto: {}, cantidad: 1}))}>
+        addToCart
+      </Button>
     </div>
   );
 };

@@ -1,50 +1,81 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Badge from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
 import { sendLogoutRequest } from "../state/user";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
+
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  "& .MuiBadge-badge": {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: "0 4px",
+  },
+}));
 
 const Navbar = () => {
   const history = useHistory();
+  let cart = useSelector((state) => state.cart);
+
   const dispatch = useDispatch();
+  let user = useSelector((state) => state.user);
+
+  const [cartLength, setcartLength] = useState(0);
+
+  useEffect(() => {
+    setcartLength(cart.length)
+  }, [cart])
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ background: "#343a40" }}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Ecommerce
+            <Link to="/">Adventure </Link>
           </Typography>
-          <Button color="primary" variant="contained" href="/log">
-            Login
-          </Button>
-          <Button color="secondary" variant="contained" href="/register">
-            Registra
-          </Button>
-          <Button
-            color="error"
-            variant="contained"
-            onClick={() =>
-              dispatch(sendLogoutRequest()).then(history.push("/"))
-            }
-          >
-            LogOut
-          </Button>
+
+          {user._id ? (
+            <Box mr={3}>
+              <Button
+                color="error"
+                variant="contained"
+                onClick={() =>
+                  dispatch(sendLogoutRequest()).then(history.push("/"))
+                }
+              >
+                LogOut
+              </Button>
+            </Box>
+          ) : (
+            <Box mr={3}>
+              <Button
+                color="primary"
+                variant="contained"
+                component={Link}
+                to="/log"
+              >
+                Login
+              </Button>
+            </Box>
+          )}
+
+          <Box mr={2}>
+            <IconButton aria-label="cart" component={Link} to="/cart">
+              <StyledBadge badgeContent={cartLength} color="primary">
+                <ShoppingCartIcon />
+              </StyledBadge>
+            </IconButton>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>
