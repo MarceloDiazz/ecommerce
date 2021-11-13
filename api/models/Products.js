@@ -27,6 +27,10 @@ const ProductSchema = new mongoose.Schema({
     type: Array,
     required: true,
   },
+  state:{
+    type: Boolean,
+    default: true
+  },
   rating: {
     type: Array,
     default: [],

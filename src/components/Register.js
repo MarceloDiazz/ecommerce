@@ -84,19 +84,14 @@ function Register({ onChangeName, onChangeEmail, onChangePass, onSubmitHandle })
                                         autoComplete="new-password"
                                     />
                                 </Grid>
-                                <Grid item xs={12}>
-                                    <FormControlLabel
-                                        control={<Checkbox value="allowExtraEmails" color="primary" />}
-                                        label="I want to receive inspiration, marketing promotions and updates via email."
-                                    />
-                                </Grid>
+                               
                             </Grid>
                             <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
                                 Sign Up
                             </Button>
                             <Grid container justifyContent="flex-end">
                                 <Grid item>
-                                    <Link href="/log" variant="body2">
+                                    <Link to="/log" variant="body2">
                                         Already have an account? Sign in
                                     </Link>
                                 </Grid>

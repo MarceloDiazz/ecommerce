@@ -12,7 +12,6 @@ import { sendLogoutRequest } from "../state/user";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import adevendturepng from "../assets/adeventurepng.png";
-import Image from "material-ui-image";
 
 import { Link } from "react-router-dom";
 
