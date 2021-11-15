@@ -1,10 +1,15 @@
-const User = require("../models/Users");
+const nodemailer = require("nodemailer");
 const bcrypt = require("bcrypt");
-const joi = require('../config/joi')
+
+const User = require("../models/Users");
+const Product = require("../models/Products");
+const History = require("../models/History");
+
+const joi = require("../config/joi");
+const transporter = require("../config/mailer");
 
 class UserServices {
     static async updateUser(id, body) {
-        
         try {
             const { error, value } = joi.validate({ password: body.password, name: body.name });
 
@@ -19,52 +24,12 @@ class UserServices {
                         },
                     },
                     { new: true }
-                ).select({ password: 0 });
+                );
 
                 return { error: false, data: user };
             }
 
             return { error: true, data: error };
-        } catch (error) {
-            return { error: true, data: error.message };
-        }
-    }
-
-    static async getUsers() {
-        try {
-            const user = await User.find({}).select({ password: 0 });
-
-            return { error: false, data: user };
-        } catch (error) {
-            return { error: true, data: error.message };
-        }
-    }
-
-    static async deleteUsers(id) {
-        try {
-            const user = await User.findOneAndUpdate({ _id: id }, { $set: { state: false } }, { new: true }).select({
-                password: 0,
-            });
-
-            return { error: false, data: user };
-        } catch (error) {
-            return { error: true, data: error.message };
-        }
-    }
-
-    static async promoteOrDescendAdmin(id, admin) {
-        try {
-            const user = await User.findByIdAndUpdate(
-                id,
-                {
-                    $set: {
-                        admin: !admin,
-                    },
-                },
-                { new: true }
-            ).select({ password: 0 });
-
-            return { error: false, data: user };
         } catch (error) {
             return { error: true, data: error.message };
         }
@@ -76,11 +41,11 @@ class UserServices {
                 id,
                 {
                     $push: {
-                        carrito: body.product,
+                        carrito: body,
                     },
                 },
                 { new: true }
-            ).select({ password: 0 });
+            );
 
             return { error: false, data: user };
         } catch (error) {
@@ -94,11 +59,11 @@ class UserServices {
                 { _id: id },
                 {
                     $pull: {
-                        carrito: { _id: productId },
+                        carrito: { productId: productId },
                     },
                 },
                 { new: true }
-            ).select({ password: 0 });
+            );
 
             return { error: false, data: user };
         } catch (error) {
@@ -119,9 +84,69 @@ class UserServices {
                     arrayFilters: [{ "product._id": productId }],
                     new: true,
                 }
-            ).select({ password: 0 });
+            );
 
             return { error: false, data: user };
+        } catch (error) {
+            return { error: true, data: error.message };
+        }
+    }
+
+    static async confirmBasket(id, usuario) {
+        try {
+            const carrito = usuario[0].carrito;
+
+            const newHistory = new History({
+                user: { _id: id },
+                product: carrito,
+                total: 10,
+            });
+
+            const savedHistory = await newHistory.save();
+
+            const user = await User.findOneAndUpdate(
+                { _id: id },
+                { $push: { historial: savedHistory._id }, $set: { carrito: [] } },
+                { new: true }
+            );
+
+            const product = await Product.updateMany(
+                { _id: { $in: carrito } },
+                { $push: { historial: savedHistory._id } },
+                { new: true }
+            );
+
+            const history = await savedHistory.populate("product._id", {
+                title: 1,
+                price: 1,
+                cantidad: 1,
+                _id: 0,
+            });
+
+            await transporter.sendMail(
+                {
+                    from: `"Adventure" <${process.env.NODEMAILER_EMAIL}>"`,
+                    to: user.email,
+                    subject: "Order confirmation",
+                    html: `
+                        <p>Username: ${user.name}</p>
+                        <p>Purchase: ${history.product.map((product) => {
+                            return `<ul>
+                                    <li>product: ${product._id.title}</li>
+                                    <li>price: ${product._id.price}</li>
+                                    <li>cantidad: ${product.cantidad}</li>
+                                    </ul>`;
+                        })}</p>
+                        <p>Total: 10000</p>
+                    `,
+                },
+                (err, info) => {
+                    console.log(info.envelope);
+                    console.log(info.messageId);
+                }
+            );
+
+            return { error: false, data: history };
         } catch (error) {
             return { error: true, data: error.message };
         }
