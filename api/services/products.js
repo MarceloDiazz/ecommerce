@@ -3,19 +3,9 @@ const Product = require("../models/Products");
 class ProductsService {
     static async allProducts() {
         try {
-            const products = await Product.find({});
+            const products = await Product.find({state: true});
 
             return { error: false, data: products };
-        } catch (error) {
-            return { error: true, data: error.message };
-        }
-    }
-
-    static async createProduct(body) {
-        try {
-            const product = await Product.create(req.body);
-
-            return { error: false, data: product };
         } catch (error) {
             return { error: true, data: error.message };
         }
@@ -29,40 +19,7 @@ class ProductsService {
         } catch (error) {
             return { error: true, data: error.message };
         }
-    }
-
-    static async deleteProduct(id) {
-        try {
-            const product = await Product.findByIdAndUpdate(id, { $set: {state: false} });
-
-            return { error: false, data: product };
-        } catch (error) {
-            return { error: true, data: error.message };
-        }
-    }
-
-    static async editProduct(id, body) {
-        try {
-            const product = await Product.findByIdAndUpdate(
-                id,
-                {
-                    $set: {
-                        title: body.title,
-                        price: body.price,
-                        description: body.description,
-                        stock: body.stock,
-                        category: body.category,
-                        location: body.location,
-                    },
-                },
-                { new: true }
-            );
-
-            return { error: false, data: product };
-        } catch (error) {
-            return { error: true, data: error.message };
-        }
-    }
+    }  
 
     static async getProductsByCategoryName(name) {
         try {

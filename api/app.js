@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
 const port =  3001;
 
 db.then(() => {
-    // seedDB() NO DESCOMENTAR
+    // seedDB()
     app.listen(port, () => {
         console.log(`Server on ${port}`);
     });
