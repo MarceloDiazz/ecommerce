@@ -6,13 +6,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-import { fakeData } from "../../../src/fakeData"; //ARRAY DATA
+import { fakeData } from "../../utils/fakeData"; //ARRAY DATA
 import { serializeUser } from "passport";
 import { useDispatch, useSelector } from "react-redux";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import SingleCart from "./SingleCart";
-import { setCarrito } from "../../fakeData";
+import SingleCart from "../../components/carrito/SingleCart";
+import { setCarrito } from "../../utils/fakeData";
 import { Link } from "react-router-dom";
 import { removeCart } from "../../state/cart";
 import emptyCart from '../../assets/emptyCart.png'

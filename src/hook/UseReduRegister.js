@@ -1,5 +1,5 @@
 import React from "react";
-import Register from "../components/Register";
+import Register from "../commons/logger/Register";
 import { useState } from "react";
 import {useHistory} from "react-router-dom"
 import { postUserRegister } from "../state/user";
