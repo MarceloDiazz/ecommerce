@@ -35,14 +35,15 @@ const ProductSchema = new Schema({
         type: Boolean,
         default: true,
     },
-    rating: [
+    ratings: [
         {
             type: Number,
         },
     ],
-    comments: [
+    reviews: [
         {
-            type: String,
+           review: { type: String},
+           _id: {type: Schema.Types.ObjectId, ref:'User'}
         },
     ],
     historial: [{ type: Schema.Types.ObjectId, ref: "History" }],

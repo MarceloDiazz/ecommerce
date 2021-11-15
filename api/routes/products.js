@@ -10,7 +10,7 @@ router.get('/province/:name', ProductsController.getProductsByProvinceName)
 router.get('/city/:name', ProductsController.getProductsByCityName)
 router.get('/title/:name', ProductsController.getProductsByTitleName)
 
+router.post('/:productId/review', ProductsController.postReview)
 
-// faltaria hacer las rutas de categoria para edita, borrar, y publicar
 
 module.exports = router

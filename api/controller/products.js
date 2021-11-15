@@ -36,6 +36,12 @@ class ProductsController {
 
         return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
     }
+
+    static async postReview(req, res) {
+        const { error, data } = await ProductsService.postReview(req.params.productId, req.body);
+
+        return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
+    }
 }
 
 module.exports = ProductsController;

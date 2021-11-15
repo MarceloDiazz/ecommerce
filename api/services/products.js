@@ -3,7 +3,7 @@ const Product = require("../models/Products");
 class ProductsService {
     static async allProducts() {
         try {
-            const products = await Product.find({state: true});
+            const products = await Product.find({ state: true });
 
             return { error: false, data: products };
         } catch (error) {
@@ -19,12 +19,12 @@ class ProductsService {
         } catch (error) {
             return { error: true, data: error.message };
         }
-    }  
+    }
 
     static async getProductsByCategoryName(name) {
         try {
-            const product = await Product.find({category: {$regex: name, $options: 'i'}})
-        
+            const product = await Product.find({ category: { $regex: name, $options: "i" } });
+
             return { error: false, data: product };
         } catch (error) {
             return { error: true, data: error.message };
@@ -33,7 +33,7 @@ class ProductsService {
 
     static async getProductsByCityName(name) {
         try {
-            const product = await Product.find({'location.city': {$regex: name, $options: 'i'}})
+            const product = await Product.find({ "location.city": { $regex: name, $options: "i" } });
 
             return { error: false, data: product };
         } catch (error) {
@@ -43,17 +43,39 @@ class ProductsService {
 
     static async getProductsByProvinceName(name) {
         try {
-            const product = await Product.find({'location.provincia': {$regex: name, $options: 'i'}})
+            const product = await Product.find({ "location.provincia": { $regex: name, $options: "i" } });
 
             return { error: false, data: product };
         } catch (error) {
             return { error: true, data: error.message };
         }
     }
-    
+
     static async getProductsByTitleName(name) {
         try {
-            const product = await Product.find({title: {$regex: name, $options: 'i'}})
+            const product = await Product.find({ title: { $regex: name, $options: "i" } });
+
+            return { error: false, data: product };
+        } catch (error) {
+            return { error: true, data: error.message };
+        }
+    }
+
+    static async postReview(id, body) {
+        try {
+            const product = await Product.findOneAndUpdate(
+                { _id: id },
+                {
+                    $push: {
+                        ratings: body.rating,
+                        reviews: {
+                            review: body.review,
+                            _id: body._id,
+                        },
+                    },
+                },
+                { new: true}
+            );
 
             return { error: false, data: product };
         } catch (error) {
