@@ -1,8 +1,12 @@
+const nodemailer = require("nodemailer");
+const bcrypt = require("bcrypt");
+
 const User = require("../models/Users");
 const Product = require("../models/Products");
 const History = require("../models/History");
-const bcrypt = require("bcrypt");
+
 const joi = require("../config/joi");
+const transporter = require("../config/mailer");
 
 class UserServices {
     static async updateUser(id, body) {
@@ -112,12 +116,41 @@ class UserServices {
                 { new: true }
             );
 
-            return { error: false, data: savedHistory };
+            const history = await savedHistory.populate("product._id", {
+                title: 1,
+                price: 1,
+                cantidad: 1,
+                _id: 0,
+            });
+
+            await transporter.sendMail(
+                {
+                    from: `"Adventure" <${process.env.NODEMAILER_EMAIL}>"`,
+                    to: user.email,
+                    subject: "Order confirmation",
+                    html: `
+                        <p>Username: ${user.name}</p>
+                        <p>Purchase: ${history.product.map((product) => {
+                            return `<ul>
+                                    <li>product: ${product._id.title}</li>
+                                    <li>price: ${product._id.price}</li>
+                                    <li>cantidad: ${product.cantidad}</li>
+                                    </ul>`;
+                        })}</p>
+                        <p>Total: 10000</p>
+                    `,
+                },
+                (err, info) => {
+                    console.log(info.envelope);
+                    console.log(info.messageId);
+                }
+            );
+
+            return { error: false, data: history };
         } catch (error) {
             return { error: true, data: error.message };
         }
     }
-
 }
 
 module.exports = UserServices;
