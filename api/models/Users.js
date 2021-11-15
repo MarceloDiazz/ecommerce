@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        default: 'asd@asd.com',
+        default: '',
     },
     password: {
         type: String,
@@ -17,6 +17,10 @@ const UserSchema = new mongoose.Schema({
     admin: {
         type: Boolean,
         default: false,
+    },
+    state:{
+        type: Boolean,
+        default: true
     },
     carrito: {
         type: Array,

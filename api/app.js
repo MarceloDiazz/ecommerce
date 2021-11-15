@@ -14,10 +14,10 @@ const app = express();
 dotenv.config();
 
 //Passport Strategy
-require('./config/auth')
-require('./config/facebook')
-require('./config/google')
-require('./config/github')
+require('./config/passport/auth')
+require('./config/passport/facebook')
+require('./config/passport/google')
+require('./config/passport/github')
 
 // Middlewares
 app.use(express.json());
