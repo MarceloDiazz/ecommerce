@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import SearchCategory from "./SearchCategory";
+import CardsSearch from "../components/Home/CardsSearch"
 
 const UseReducerCard  = ()=>{
 
@@ -10,7 +10,7 @@ const UseReducerCard  = ()=>{
 
 return(
 
-    <SearchCategory
+    <CardsSearch
     
     selectorCategory={selectorCategory}
     

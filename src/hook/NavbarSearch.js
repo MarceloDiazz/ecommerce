@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchCategory } from "../state/search";
-import Home from "./Home/Home";
+import Navbar from "../components/Navbar/Navbar";
 
-const HomeSearch = () => {
+const NavbarSearch = () => {
   const dispatch = useDispatch();
 
   const selectorCategory = useSelector((state) => state.search);
@@ -18,7 +18,7 @@ const HomeSearch = () => {
   };
 
   return (
-    <Home
+    <Navbar
       selectorActivity={selectorCategory}
       onChangeHandler={onChangeHandler}
       onSubmitHandler={onSubmitHandler}
@@ -26,4 +26,4 @@ const HomeSearch = () => {
   );
 };
 
-export default HomeSearch;
+export default NavbarSearch;
