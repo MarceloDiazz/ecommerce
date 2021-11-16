@@ -11,6 +11,6 @@ const admin = require("./admin");
 router.use("/auth", auth);
 router.use("/products", products);
 router.use("/users", checkAuth, users);
-router.use("/admin", admin);
+router.use("/admin", checkAuthAdmin, admin);
 
 module.exports = router;

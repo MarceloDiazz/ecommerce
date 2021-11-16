@@ -50,4 +50,3 @@ const ProductSchema = new Schema({
 });
 
 module.exports = model("Product", ProductSchema);
-// mongoose lo que hace automaticamente lo pasa a minuscula y lo trasforma en plural

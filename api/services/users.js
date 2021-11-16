@@ -7,6 +7,7 @@ const History = require("../models/History");
 
 const joi = require("../config/joi");
 const transporter = require("../config/mailer");
+const getTotal = require("../utils/getTotal");
 
 class UserServices {
     static async updateUser(id, body) {
@@ -30,6 +31,18 @@ class UserServices {
             }
 
             return { error: true, data: error };
+        } catch (error) {
+            return { error: true, data: error.message };
+        }
+    }
+
+    static async getBasket(id) {
+        try {
+            const basket = await User.findOne({ _id: id }).populate("carrito._id", { title: 1, price: 1, cantidad: 1 });
+
+            console.log(basket);
+
+            return { error: false, data: basket };
         } catch (error) {
             return { error: true, data: error.message };
         }
@@ -59,13 +72,15 @@ class UserServices {
                 { _id: id },
                 {
                     $pull: {
-                        carrito: { productId: productId },
+                        carrito: { _id: productId },
                     },
                 },
                 { new: true }
             );
 
-            return { error: false, data: user };
+            const userPopulate = await user.populate("carrito._id", { title: 1, price: 1, cantidad: 1 });
+
+            return { error: false, data: userPopulate };
         } catch (error) {
             return { error: true, data: error.message };
         }
@@ -99,7 +114,7 @@ class UserServices {
             const newHistory = new History({
                 user: { _id: id },
                 product: carrito,
-                total: 10,
+                complete: true,
             });
 
             const savedHistory = await newHistory.save();
@@ -110,13 +125,22 @@ class UserServices {
                 { new: true }
             );
 
-            const product = await Product.updateMany(
-                { _id: { $in: carrito } },
-                { $push: { historial: savedHistory._id } },
-                { new: true }
-            );
+            await Product.updateMany({ _id: { $in: carrito } }, { $push: { historial: savedHistory._id } }, { new: true });
 
-            const history = await savedHistory.populate("product._id", {
+            const historyPopulate = await savedHistory.populate("product._id", {
+                title: 1,
+                price: 1,
+                cantidad: 1,
+                _id: 0,
+            });
+
+            const total = getTotal(historyPopulate.product);
+
+            const history = await History.findOneAndUpdate(
+                { _id: savedHistory._id },
+                { $set: { total: total } },
+                { new: true }
+            ).populate("user product._id", {
                 title: 1,
                 price: 1,
                 cantidad: 1,
@@ -130,14 +154,19 @@ class UserServices {
                     subject: "Order confirmation",
                     html: `
                         <p>Username: ${user.name}</p>
-                        <p>Purchase: ${history.product.map((product) => {
-                            return `<ul>
+                        <p>Purchase: </p>
+                            <ul>${historyPopulate.product
+                                .map((product, i) => {
+                                    return `
+                                    <p>item: ${i + 1}</p>
                                     <li>product: ${product._id.title}</li>
                                     <li>price: ${product._id.price}</li>
                                     <li>cantidad: ${product.cantidad}</li>
-                                    </ul>`;
-                        })}</p>
-                        <p>Total: 10000</p>
+                                    `;
+                                })
+                                .join("")}</ul>
+                            </ul>
+                        <p>Total: $ ${total}</p>
                     `,
                 },
                 (err, info) => {
@@ -147,6 +176,20 @@ class UserServices {
             );
 
             return { error: false, data: history };
+        } catch (error) {
+            return { error: true, data: error.message };
+        }
+    }
+
+    static async getHistory(id) {
+        try {
+            const user = await History.find({ user: id }).populate("product._id", {
+                title: 1,
+                price: 1,
+                cantidad: 1,
+            });
+
+            return { error: false, data: user };
         } catch (error) {
             return { error: true, data: error.message };
         }

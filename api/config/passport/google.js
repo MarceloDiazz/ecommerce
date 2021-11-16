@@ -10,7 +10,6 @@ passport.use(
             callbackURL: "http://localhost:3001/api/auth/google/secrets",
         },
         function (accessToken, refreshToken, profile, cb) {
-            console.log(profile)
             User.findOrCreate({ googleId: profile.id, name: profile.displayName, email: profile.emails[0].value }, function (err, user) {
                 return cb(err, user);
             });

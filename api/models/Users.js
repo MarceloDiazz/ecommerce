@@ -21,13 +21,13 @@ const UserSchema = new Schema({
 
     carrito: [
         {
-            _id: {type: Schema.Types.ObjectId, ref: "Product" },
-            cantidad: Number,
+            _id: { type: Schema.Types.ObjectId, ref: "Product" },
+            cantidad: { type: Number, default: 1 },
         },
     ],
 
     historial: [{ type: Schema.Types.ObjectId, ref: "History" }],
-    
+
     facebookId: String,
 
     googleId: String,

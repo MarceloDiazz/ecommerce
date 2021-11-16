@@ -7,6 +7,12 @@ class UserController {
         return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
     }
 
+    static async getBasket(req, res) {
+        const { error, data } = await UserServices.getBasket(req.params.userId);
+
+        return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
+    }
+
     static async addProductToBasket(req, res) {
         const { error, data } = await UserServices.addProductToBasket(req.params.userId, req.body);
 
@@ -27,6 +33,12 @@ class UserController {
 
     static async confirmBasket(req, res) {
         const { error, data } = await UserServices.confirmBasket(req.params.userId, req.user);
+
+        return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
+    }
+
+    static async getHistory(req, res) {
+        const { error, data } = await UserServices.getHistory(req.params.userId);
 
         return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
     }
