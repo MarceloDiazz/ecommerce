@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../state/user";
 import NavbarSearch from "../hook/NavbarSearch";
 import Home from "../commons/Home/Home"
-
+import GridUsers from "../components/admin/GridUsers"
 import UseReducerCard from "../hook/UseReducerCard";
 // import Nasvbar from "./componen";
 
@@ -29,6 +29,7 @@ function App() {
   return (
     <div>
       <NavbarSearch />
+    
       <Switch>
       <Route exact path="/">
           <Home />
@@ -39,6 +40,9 @@ function App() {
         <Route path="/Activiti:provincia"></Route>
         <Route path="/category">
           <UseReducerCard />
+        </Route>
+        <Route path="/users">
+          <GridUsers />
         </Route>
         <Route path="/log">
           <UseReducer />
