@@ -5,6 +5,7 @@ import { postUserLoged } from "../state/user";
 import { useDispatch } from "react-redux";
 import { message } from "antd";
 import { useHistory } from "react-router";
+import axios from "axios";
 
 const UseRegister = () => {
     const history = useHistory();
@@ -28,20 +29,18 @@ const UseRegister = () => {
             email,
             password,
         };
-        dispatch(postUserLoged(userData)).then(() => {
+        dispatch(postUserLoged(userData)).then(async (res) => {
+            let basket = JSON.parse(localStorage.getItem("basket")) || "";
+
+            if (basket) {
+                let arr = []
+                basket.map(e => arr.push({_id: e._id._id, cantidad: e.cantidad}))
+                await axios.post(`/api/users/${res.payload[0]._id}/basket`, arr);
+                localStorage.removeItem("basket");
+            }
+
             history.push("/");
         });
-
-        /* .then(({ payload }) =>
-        message.success(
-          `Logueo exitoso, bienvenido: ${payload.email}. Espere a ser redirigido...`
-        )
-      )
-      .then(
-        setTimeout(() => {
-          history.push("/");
-        }, 2000)
-      ); */
     };
 
     return <Login onChangeEmail={onChangeEmail} onChangePass={onChangePass} onSubmit={onSubmit} />;

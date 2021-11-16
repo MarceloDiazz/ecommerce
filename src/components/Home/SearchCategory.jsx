@@ -14,6 +14,7 @@ import PropTypes from "prop-types";
 import Fab from "@mui/material/Fab";
 import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
+import axios from "axios";
 
 function ScrollTop(props) {
     const { children, window } = props;
@@ -56,6 +57,18 @@ ScrollTop.propTypes = {
 };
 
 export default function SearchCategory({ selectorCategory }, props) {
+    const user = useSelector((state) => state.user);
+
+    const handleClick = async (id, price, title, cantidad) => {
+        if (user._id) {
+            axios.post(`/api/users/${user._id}/basket`, { _id: id });
+        } else {
+            let basket = JSON.parse(localStorage.getItem("basket")) || [];
+            basket.push({ _id: { _id: id, title: title, price: price }, cantidad: cantidad });
+            localStorage.setItem("basket", JSON.stringify(basket));
+        }
+    };
+
     return (
         <div>
             <Stack direction="column" justifyContent="center" alignItems="center" spacing={5} paddingTop={1}>
@@ -82,6 +95,12 @@ export default function SearchCategory({ selectorCategory }, props) {
                                         <Typography variant="body2" color="text.secondary">
                                             {category.description}
                                         </Typography>
+                                        <Button
+                                            onClick={() => handleClick(category._id, category.price, category.title, 1)}
+                                            variant="outlined"
+                                        >
+                                            Add to basket
+                                        </Button>
                                     </CardContent>
                                 </CardActionArea>
                             </Card>

@@ -73,7 +73,7 @@ const Navbar = () => {
                     )}
 
                     <Box mr={2}>
-                        <IconButton aria-label="cart" component={Link} to="/cart">
+                        <IconButton aria-label="cart" component={Link} to="/basket">
                             <StyledBadge badgeContent={cartLength} color="primary">
                                 <ShoppingCartIcon />
                             </StyledBadge>

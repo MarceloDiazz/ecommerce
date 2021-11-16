@@ -9,6 +9,7 @@ import HomeSearch from "./components/HomeSearch";
 import UseReducerCard from "./components/Home/UseReducerCard";
 import Navbar from "./components/Navbar";
 import Cart from "./components/carrito/Cart";
+import BasketUser from "./components/carrito2/Basket";
 
 function App() {
     const dispatch = useDispatch();
@@ -40,6 +41,9 @@ function App() {
                 </Route>
                 <Route path="/cart">
                     <Cart />
+                </Route>
+                <Route path="/basket">
+                    <BasketUser />
                 </Route>
             </Switch>
         </div>
