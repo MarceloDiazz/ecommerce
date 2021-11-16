@@ -14,6 +14,7 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 function Login({ onChangeEmail, onChangePass, onSubmit }) {
+  
   return (
     <div>
       <Grid container component="main" sx={{ height: "100vh" }}>
@@ -24,7 +25,7 @@ function Login({ onChangeEmail, onChangePass, onSubmit }) {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: "url(https://source.unsplash.com/random)",
+            backgroundImage: "url(https://logodix.com/logo/1877084.jpg)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
@@ -75,7 +76,6 @@ function Login({ onChangeEmail, onChangePass, onSubmit }) {
                     autoComplete="new-password"
                   />
                 </Grid>
-               
               </Grid>
               <Button
                 type="submit"
@@ -84,6 +84,9 @@ function Login({ onChangeEmail, onChangePass, onSubmit }) {
                 sx={{ mt: 3, mb: 2 }}
               >
                 Sign in
+              </Button>
+              <Button variant="contained" color="success" fullWidth>
+                Ingresa como administrador
               </Button>
               <Grid container justifyContent="flex-end"></Grid>
             </form>

@@ -8,8 +8,13 @@ import { Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../state/user";
 import NavbarSearch from "../hook/NavbarSearch";
+
 import Home from "../commons/Home/Home";
 import CardsInfoCba from "../commons/Home/CardsProvinciasInfo/CardsInfoCba";
+
+
+import GridUsers from "../components/admin/GridUsers"
+
 import UseReducerCard from "../hook/UseReducerCard";
 import SingleProduct from "../components/Home/SingleProduct";
 
@@ -29,12 +34,16 @@ function App() {
   return (
     <div>
       <NavbarSearch />
+    
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
         <Route path="/category">
           <UseReducerCard />
+        </Route>
+        <Route path="/users">
+          <GridUsers />
         </Route>
         <Route path="/log">
           <UseReducer />

@@ -7,26 +7,8 @@ class ProductsController {
         return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
     }
 
-    static async createProduct(req, res) {
-        const { error, data } = await ProductsService.createProduct(req.body);
-
-        return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
-    }
-
     static async getProductById(req, res) {
         const { error, data } = await ProductsService.getProductById(req.params.productId);
-
-        return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
-    }
-
-    static async deleteProduct(req, res) {
-        const { error, data } = await ProductsService.deleteProduct(req.params.productId);
-
-        return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
-    }
-
-    static async editProduct(req, res) {
-        const { error, data } = await ProductsService.editProduct(req.params.productId, req.body);
 
         return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
     }
@@ -51,6 +33,12 @@ class ProductsController {
     
     static async getProductsByTitleName(req, res) {
         const { error, data } = await ProductsService.getProductsByTitleName(req.params.name);
+
+        return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
+    }
+
+    static async postReview(req, res) {
+        const { error, data } = await ProductsService.postReview(req.params.productId, req.body);
 
         return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
     }

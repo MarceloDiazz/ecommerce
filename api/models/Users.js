@@ -1,47 +1,38 @@
-const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 const findOrCreate = require("mongoose-findorcreate");
 
-const UserSchema = new mongoose.Schema({
-    name: {
-        type: String, 
-    },
-    email: {
-        type: String,
-        default: '',
-    },
-    password: {
-        type: String,
-        default: "",
-    },
+const UserSchema = new Schema({
+    name: String,
+
+    email: String,
+
+    password: String,
+
     admin: {
         type: Boolean,
         default: false,
     },
-    state:{
+
+    state: {
         type: Boolean,
-        default: true
+        default: true,
     },
-    carrito: {
-        type: Array,
-        default: [],
-    },
-    historial: {
-        type: Array,
-        default: [],
-    },
-    facebookId: {
-        type: String,
-        default: "",
-    },
-    googleId: {
-        type: String,
-        default: "",
-    },
-    githubId: {
-        type: String,
-        default: "",
-    }
+
+    carrito: [
+        {
+            _id: {type: Schema.Types.ObjectId, ref: "Product" },
+            cantidad: Number,
+        },
+    ],
+
+    historial: [{ type: Schema.Types.ObjectId, ref: "History" }],
+    
+    facebookId: String,
+
+    googleId: String,
+
+    githubId: String,
 });
 
 UserSchema.pre("save", async function (next) {
@@ -52,6 +43,13 @@ UserSchema.pre("save", async function (next) {
     next();
 });
 
+UserSchema.set("toJSON", {
+    transform: (document, returnedObject) => {
+        delete returnedObject.__v;
+        delete returnedObject.password;
+    },
+});
+
 UserSchema.plugin(findOrCreate);
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = model("User", UserSchema);

@@ -10,8 +10,7 @@ router.get('/province/:name', ProductsController.getProductsByProvinceName)
 router.get('/city/:name', ProductsController.getProductsByCityName)
 router.get('/title/:name', ProductsController.getProductsByTitleName)
 
-router.post('/', ProductsController.createProduct)
-router.delete('/:productId', ProductsController.deleteProduct)
-router.put('/:productId', ProductsController.editProduct)
+router.post('/:productId/review', ProductsController.postReview)
+
 
 module.exports = router
