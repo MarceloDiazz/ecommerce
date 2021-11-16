@@ -15,13 +15,6 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-import { Link } from "react-router-dom";
-import Rating from '@mui/material/Rating';
-import Box from '@mui/material/Box';
-
-import "../Home/columns.css"
-
-
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -33,23 +26,22 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function CardsSearch({selectorCategory}) {
+export default function CartInfoCordoba({selectorCategory}) {
   const [expanded, setExpanded] = React.useState(false);
-  const [value, setValue] = React.useState(4);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   return (
-    <div className= "columnas"> 
+    <div> 
         {selectorCategory?(
             selectorCategory.map((category,i)=>{
                 return(
-                    <Card sx={{ maxWidth: 345 } }>
+                    <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500]}} aria-label="recipe">
+          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
             R
           </Avatar>
         }
@@ -61,30 +53,24 @@ export default function CardsSearch({selectorCategory}) {
         title={category.title}
         subheader= {category.location[0].provincia}  
       />
-      <Link to ={`/products/${category._id}`}> 
       <CardMedia
         component="img"
         height="194"
         image={category.img}
         alt="Paella dish"
       />
-      </Link>
       <CardContent>
         <Typography variant="body2" color="text.secondary">
          Precio: $ {category.price}
         </Typography>
-        <Box
-      sx={{
-        '& > legend': { mt: 4 },
-      }}
-    >
-      
-     
-      </Box>
       </CardContent>
       <CardActions disableSpacing>
-      <Typography component="legend">Ranting</Typography>
-      <Rating name="read-only" value={value} readOnly />
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}

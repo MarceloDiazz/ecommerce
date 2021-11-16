@@ -9,7 +9,8 @@ export const searchCategory= createAsyncThunk("Search_Activity",(category)=>{
 })
 export const searchProvincia= createAsyncThunk("Search_Provincia",(Provincia)=>{
 
-    return axios.get(`/Activiti${Provincia}`).then((res)=>(res.data))
+  
+    return axios.get(`/api/products/province/${Provincia}`).then((res)=>(res.data))
 
 })
 

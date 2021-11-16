@@ -7,16 +7,15 @@ import { BrowserRouter } from "react-router-dom";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-//BORRAR
-import ViewProducts from "./components/admin-products/ViewProducts";
-import AddProduct from "./components/admin-products/AddProduct";
-//
+import CssBaseline from '@mui/material/CssBaseline';
+
+
 
 const app = (
   <Provider store={store}>
     <BrowserRouter>
-      {/* <App /> */}
-    <AddProduct />
+    <CssBaseline />
+      <App />
     </BrowserRouter>
   </Provider>
 );

@@ -8,10 +8,11 @@ import Typography from "@mui/material/Typography";
 import imgCordoba from "../../assets/cordoba2.jpg";
 import imgBariloche from "../../assets/bariloche.jpg";
 import imgBuenosAires from "../../assets/buenosAires.jpg";
-import imgJujuy from "../../assets/jujuy.jpg"
-import imgSanJuan from "../../assets/San-Juan.jpg"
-import imgTierraDelFuego from "../../assets/tierra-del-fuego-1.jpg"
- import Button from "@mui/material/Button";
+import imgJujuy from "../../assets/jujuy.jpg";
+import imgSanJuan from "../../assets/San-Juan.jpg";
+import imgTierraDelFuego from "../../assets/tierra-del-fuego-1.jpg";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 export default class AutoPlayMethods extends Component {
   constructor(props) {
@@ -33,12 +34,13 @@ export default class AutoPlayMethods extends Component {
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 2000,
+
     };
     return (
       <div>
         <Slider ref={(slider) => (this.slider = slider)} {...settings}>
           <div>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card >
               <CardMedia
                 component="img"
                 height="250"
@@ -54,7 +56,7 @@ export default class AutoPlayMethods extends Component {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small">Learn More</Button>
+                <Button size="small" component={Link} to="/info/cordoba">Learn More</Button>
               </CardActions>
             </Card>
           </div>
@@ -126,7 +128,7 @@ export default class AutoPlayMethods extends Component {
             </Card>
           </div>
           <div>
-           <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 component="img"
                 height="250"
@@ -149,7 +151,7 @@ export default class AutoPlayMethods extends Component {
             </Card>
           </div>
           <div>
-           <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 component="img"
                 height="250"
@@ -161,7 +163,7 @@ export default class AutoPlayMethods extends Component {
                   Tierra Del Fuego
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                Tierra Del Fuego ofrece lugares tales como...
+                  Tierra Del Fuego ofrece lugares tales como...
                 </Typography>
               </CardContent>
               <CardActions>
