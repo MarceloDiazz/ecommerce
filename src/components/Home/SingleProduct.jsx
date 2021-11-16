@@ -44,10 +44,10 @@ const SingleProduct = () => {
               {Product.title}
             </Typography>
             <Typography svariant="body2" color="text.secondary">
-            {Product.price}  
+           Precio: $ {Product.price}  
             </Typography>
             <Typography svariant="body2" color="text.secondary">
-              {Product.description} asfasfas {console.log("producto => ",Product)}
+              {Product.description} 
             </Typography>
             <Typography svariant="body2" color="text.secondary"></Typography>
           </CardContent>

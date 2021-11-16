@@ -34,12 +34,13 @@ export default class AutoPlayMethods extends Component {
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 2000,
+
     };
     return (
       <div>
         <Slider ref={(slider) => (this.slider = slider)} {...settings}>
           <div>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card >
               <CardMedia
                 component="img"
                 height="250"

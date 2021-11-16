@@ -15,6 +15,9 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Link } from "react-router-dom";
+import Rating from '@mui/material/Rating';
+import Box from '@mui/material/Box';
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -28,6 +31,7 @@ const ExpandMore = styled((props) => {
 
 export default function CardsSearch({selectorCategory}) {
   const [expanded, setExpanded] = React.useState(false);
+  const [value, setValue] = React.useState(4);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -65,14 +69,18 @@ export default function CardsSearch({selectorCategory}) {
         <Typography variant="body2" color="text.secondary">
          Precio: $ {category.price}
         </Typography>
+        <Box
+      sx={{
+        '& > legend': { mt: 4 },
+      }}
+    >
+      
+     
+      </Box>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+      <Typography component="legend">Ranting</Typography>
+      <Rating name="read-only" value={value} readOnly />
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
