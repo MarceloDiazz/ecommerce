@@ -8,10 +8,10 @@ import { Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../state/user";
 import NavbarSearch from "../hook/NavbarSearch";
-import Home from "../commons/Home/Home"
-
+import Home from "../commons/Home/Home";
+import CardsInfoCba from "../commons/Home/CardsProvinciasInfo/CardsInfoCba";
 import UseReducerCard from "../hook/UseReducerCard";
-// import Nasvbar from "./componen";
+import SingleProduct from "../components/Home/SingleProduct";
 
 import Cart from "../commons/carrito/Cart";
 function App() {
@@ -30,13 +30,9 @@ function App() {
     <div>
       <NavbarSearch />
       <Switch>
-      <Route exact path="/">
+        <Route exact path="/">
           <Home />
         </Route>
-      
-      
-       
-        <Route path="/Activiti:provincia"></Route>
         <Route path="/category">
           <UseReducerCard />
         </Route>
@@ -48,6 +44,14 @@ function App() {
         </Route>
         <Route path="/cart">
           <Cart />
+        </Route>
+        <Route path="/info/cordoba">
+          <CardsInfoCba />
+        </Route>
+
+        <Route path="/products/:id">
+          <SingleProduct />
+
         </Route>
       </Switch>
     </div>

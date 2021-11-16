@@ -14,7 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Link } from "react-router-dom";
+
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -26,7 +26,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function CardsSearch({selectorCategory}) {
+export default function CartInfoCordoba({selectorCategory}) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -53,14 +53,12 @@ export default function CardsSearch({selectorCategory}) {
         title={category.title}
         subheader= {category.location[0].provincia}  
       />
-      <Link to ={`/products/${category._id}`}> 
       <CardMedia
         component="img"
         height="194"
         image={category.img}
         alt="Paella dish"
       />
-      </Link>
       <CardContent>
         <Typography variant="body2" color="text.secondary">
          Precio: $ {category.price}
