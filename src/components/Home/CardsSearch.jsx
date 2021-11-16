@@ -14,6 +14,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import "../Home/columns.css"
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -34,14 +35,14 @@ export default function CardsSearch({selectorCategory}) {
   };
 
   return (
-    <div> 
+    <div className= "columnas"> 
         {selectorCategory?(
             selectorCategory.map((category,i)=>{
                 return(
-                    <Card sx={{ maxWidth: 345 }}>
+                    <Card sx={{ maxWidth: 345 } }>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+          <Avatar sx={{ bgcolor: red[500]}} aria-label="recipe">
             R
           </Avatar>
         }
