@@ -1,23 +1,19 @@
+import React, { useEffect, useState } from "react";
+import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import { Link } from "react-router-dom";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import banner from "../../assets/banner.jpg";
-import { StickyNav } from "react-js-stickynav";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import Badge from "@mui/material/Badge";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { styled } from "@mui/material/styles";
-import { sendLogoutRequest } from "../../state/user";
+import Badge from "@mui/material/Badge";
+import { sendLogoutRequest } from "../state/user";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
-import React, { useEffect, useState } from "react";
-import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
-import "react-js-stickynav/dist/index.css";
-import NavbarDo from "../NavbarDo"
-
+import logo from "../assets/logo.png";
+import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -28,7 +24,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-const Navbar = ({ onSubmitHandler, onChangeHandler }) => {
+const NavbarDo = () => {
   const history = useHistory();
   let cart = useSelector((state) => state.cart);
 
@@ -37,48 +33,20 @@ const Navbar = ({ onSubmitHandler, onChangeHandler }) => {
 
   const [cartLength, setcartLength] = useState(0);
 
+  useEffect(() => {
+    setcartLength(cart.length);
+  }, [cart]);
 
   return (
-    <div>
-      <img width="100%" height="200px" src={banner} alt="banner" />
-      <div className="styl"></div>
-      <NavbarDo />
-    </div>
-  );
-};
-
-export default Navbar;
-/* 
-{style()}
-      <StickyNav length="40">
-    
-      <Box
-          sx={{
-            width: 200,
-
-            maxWidth: "100%",
-          }}
-        >
-          <TextField
-            fullWidth
-            label="Search"
-            id="fullWidth"
-            onChange={onChangeHandler}
-          />
-        </Box>
-        <form onSubmit={(e) => onSubmitHandler(e)}>
-          <div className="form-group">
-           
-              <Link to="/category">
-                <Button variant="outlined" startIcon={<SearchTwoToneIcon />}>
-                  search
-                </Button>
-              </Link>
-            
-          </div>
-        </form>
-        
-           {user._id ? (
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" style={{ background: "#343a40" }}>
+        <Toolbar>
+          <Box sx={{ flexGrow: 1, marginBottom: 0, paddingBottom: 0 }}>
+            <Link to="/">
+              <img width="150px" height="80px" src={logo} />
+            </Link>
+          </Box>
+          {user._id ? (
             <Box mr={3}>
               <Button
                 color="error"
@@ -92,7 +60,6 @@ export default Navbar;
             </Box>
           ) : (
             <>
-             
               <Box sx={{ marginRight: 1 }}>
                 <Button
                   color="primary"
@@ -115,6 +82,7 @@ export default Navbar;
               </Box>
             </>
           )}
+
           <Box mr={2}>
             <IconButton aria-label="cart" component={Link} to="/cart">
               <StyledBadge badgeContent={cartLength} color="primary">
@@ -122,6 +90,10 @@ export default Navbar;
               </StyledBadge>
             </IconButton>
           </Box>
-        
-      </StickyNav>
-*/
+        </Toolbar>
+      </AppBar>
+    </Box>
+  );
+};
+
+export default NavbarDo;

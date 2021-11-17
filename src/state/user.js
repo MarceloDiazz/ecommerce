@@ -32,6 +32,13 @@ import axios from "axios";
       .get("/api/auth/logout")
       .then((r) => console.log(r));
   });
+
+
+  export const getUsers = createAsyncThunk("getUsers",() => {
+      return axios
+      .get ("/api/admin")
+      .then((res) => {console.log(res)})
+  })
  
   export const setUser = createAction("SET_USER");
 
