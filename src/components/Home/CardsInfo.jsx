@@ -47,7 +47,7 @@ export default function CardsInfo({ product }) {
    
     const handleClick = async (id, price, title, cantidad) => {
         if (user._id) {
-            const newBasket = await axios.post(`/api/users/${user._id}/basket`, { _id: id, title: title, price: price, cantidad: cantidad })
+            const newBasket = state ? await axios.delete(`/api/users/${user._id}/basket/${id}`) : await axios.post(`/api/users/${user._id}/basket`, { _id: id, title: title, price: price, cantidad: cantidad })
             dispatch(setUser(newBasket.data))
         } else {
             let basket = JSON.parse(localStorage.getItem("basket")) || [];
@@ -56,16 +56,13 @@ export default function CardsInfo({ product }) {
         }
     };
 
-    // useEffect(async () => {
-    //     if (user._id) {
-    //         console.log('entre');
-    //         console.log(product._id);
-    //         const res = basket.filter((e) => e._id._id === product._id);
-    //         console.log(res);
-    //         setState(res.length > 0 ? true : false);
-    //     }
-    // }, [state, user]);
-
+    useEffect(async () => {
+        if (user._id) {
+            const res = user.carrito.filter((e) => e._id === product._id);
+            setState(res.length > 0 ? true : false);
+        }
+    }, [state, user]);
+    
     return (
         <Card sx={{ width: 345, m: 2 }}>
             <CardHeader
@@ -94,7 +91,7 @@ export default function CardsInfo({ product }) {
             </CardContent>
             <Typography component="legend">Ranting</Typography>
             <Rating name="read-only" value={value} readOnly />
-            <Button onClick={() => handleClick(product._id, product.price, product.title, cant)} variant="outlined">
+            <Button onClick={() => handleClick(product._id, product.price, product.title, cant)} color={state ? 'error' : 'success'} variant="outlined">
                 {state ? "Remove from basket" : "Add to basket"}
             </Button>
             <div>
@@ -112,7 +109,7 @@ export default function CardsInfo({ product }) {
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                             {product.description}
                         </Typography>
-                        <Button onClick={() => handleClick(product._id, product.price, product.title, cant)} variant="outlined">
+                        <Button color={state ? 'error' : 'success'} onClick={() => handleClick(product._id, product.price, product.title, cant)} variant="outlined">
                             {state ? "Remove from basket" : "Add to basket"}
                         </Button>
                     </Box>
