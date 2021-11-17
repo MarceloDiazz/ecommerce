@@ -109,13 +109,17 @@ class UserServices {
 
     static async confirmBasket(id, usuario) {
         try {
+            let arr = []
             const carrito = usuario[0].carrito;
-            
+            const total = getTotal(carrito);
+            carrito.map(e => arr.push({_id: e._id, cantidad: e.cantidad}))
+            console.log('ARRAY', arr)
 
             const newHistory = new History({
                 user: { _id: id },
-                product: carrito,
+                product: arr,
                 complete: true,
+                total: total
             });
 
             const savedHistory = await newHistory.save();
@@ -128,26 +132,13 @@ class UserServices {
 
             await Product.updateMany({ _id: { $in: carrito } }, { $push: { historial: savedHistory._id } }, { new: true });
 
-            const historyPopulate = await savedHistory.populate("product._id", {
+            const history = await savedHistory.populate("product._id", {
                 title: 1,
                 price: 1,
                 cantidad: 1,
                 _id: 0,
             });
-
-            const total = getTotal(historyPopulate.product);
-
-            const history = await History.findOneAndUpdate(
-                { _id: savedHistory._id },
-                { $set: { total: total } },
-                { new: true }
-            ).populate("user product._id", {
-                title: 1,
-                price: 1,
-                cantidad: 1,
-                _id: 0,
-            });
-
+        
             await transporter.sendMail(
                 {
                     from: `"Adventure" <${process.env.NODEMAILER_EMAIL}>"`,
@@ -156,7 +147,7 @@ class UserServices {
                     html: `
                         <p>Username: ${user.name}</p>
                         <p>Purchase: </p>
-                            <ul>${historyPopulate.product
+                            <ul>${history.product
                                 .map((product, i) => {
                                     return `
                                     <p>item: ${i + 1}</p>
@@ -176,8 +167,9 @@ class UserServices {
                 }
             );
 
-            return { error: false, data: history };
+            return { error: false, data: savedHistory };
         } catch (error) {
+            console.log('EL ERROR', error.message)
             return { error: true, data: error.message };
         }
     }
