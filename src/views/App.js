@@ -42,7 +42,7 @@ function App() {
                 <Route path="/category/:name">
                     <CardsSearch />
                 </Route>
-                <Route path="/users">
+                <Route path="/admin/users">
                     <GridUsers />
                 </Route>
                 <Route path="/log">
