@@ -5,6 +5,7 @@ import { postUserLoged } from "../state/user";
 import { useDispatch } from "react-redux";
 import { message } from "antd";
 import { useHistory } from "react-router";
+import { setUser } from "../state/user";
 import axios from "axios";
 
 const UseRegister = () => {
@@ -31,12 +32,13 @@ const UseRegister = () => {
         };
         dispatch(postUserLoged(userData)).then(async (res) => {
             if (!res.error) {
-                let basket = JSON.parse(localStorage.getItem("basket")) || "";
+                await axios.get(`/api/users/${res.payload[0]._id}/basket`)
 
+                let basket = JSON.parse(localStorage.getItem("basket")) || "";
                 if (basket) {
-                    let arr = [];
-                    basket.map((e) => arr.push({ _id: e._id._id, cantidad: e.cantidad }));
-                    await axios.post(`/api/users/${res.payload[0]._id}/basket`, arr);
+                    const newBasket = await axios.post(`/api/users/${res.payload[0]._id}/basket`, basket)
+                    
+                    dispatch(setUser(newBasket.data))
                     localStorage.removeItem("basket");
                 }
                 history.push("/");

@@ -4,7 +4,7 @@ import UseReduRegister from "../hook/UseReduRegister";
 
 import { useEffect } from "react";
 import axios from "axios";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch} from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../state/user";
 import Navbar from "../components/Header/Navbar";
@@ -13,13 +13,12 @@ import Home from "../commons/Home/Home";
 import CardsInfoCba from "../commons/Home/CardsProvinciasInfo/CardsProvinceOrCity";
 
 import GridUsers from "../components/admin/GridUsers";
-import CardsSearch from '../components/CardSearch'
-import Basket from '../components/carrito2/Basket'
-
+import CardsSearch from "../components/CardSearch";
+import Basket from "../components/carrito2/Basket";
 
 import SingleProduct from "../components/Home/SingleProduct";
 
-import Cart from "../commons/carrito/Cart";
+
 function App() {
     const dispatch = useDispatch();
 

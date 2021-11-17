@@ -67,7 +67,6 @@ export default function CardsProvinceOrCity() {
             <Box sx={{ display: "flex", flexWrap: "wrap", position: "relative", justifyContent: "space-between" }}>
                 {prov.length > 0 &&
                     prov.map((e, i) => {
-                        console.log(e);
                         return <CardsInfo product={e} key={i} />;
                     })}
             </Box>
