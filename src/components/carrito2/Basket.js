@@ -12,13 +12,12 @@ import Button from "@mui/material/Button";
 const axios = require("axios");
 
 function getTotal(arr) {
-    console.log(arr)
     const array = [];
     arr.map((e) => array.push(e._id.price * e.cantidad));
     return array.reduce((a, c) => a + c);
 }
 
-export default function BasketUser(id) {
+export default function BasketUser() {
     const user = useSelector((state) => state.user);
     const [basket, setBasket] = useState([]);
     const [total, setTotal] = useState(0);
@@ -51,7 +50,7 @@ export default function BasketUser(id) {
                 carrito.splice(idx, 1);
                 localStorage.setItem("basket", JSON.stringify(carrito))
                 setBasketLocalStorage(carrito)
-                setTotal(getTotal(carrito))
+                carrito.length > 0 ? setTotal(getTotal(carrito)) : setTotal(0);
             }
 
         }

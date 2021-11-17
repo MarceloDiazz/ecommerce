@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
+import Badge from "@mui/material/Badge";
 import { sendLogoutRequest } from "../state/user";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
-import adevendturepng from "../assets/adeventurepng.png";
-
+import logo from "../assets/logo.png";
+import SearchTwoToneIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
+import TextField from "@mui/material/TextField";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
@@ -24,7 +24,13 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
 }));
 
-const Navbar = () => {
+const NavbarInfo = () => {
+    const [search, setSearch] = useState("");
+
+    const handleChange = (e) => {
+        setSearch(e.target.value);
+    };
+
     const history = useHistory();
     let cart = useSelector((state) => state.cart);
 
@@ -37,14 +43,39 @@ const Navbar = () => {
         setcartLength(cart.length);
     }, [cart]);
 
+    const handleSubmit = (e, name) => {
+        e.preventDefault();
+        if (name) {
+            setSearch("");
+            history.push(`/category/${name}`);
+        } else {
+            // mandar mensaje que ingrese algo
+        }
+    };
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" style={{ background: "#343a40" }}>
                 <Toolbar>
                     <Box sx={{ flexGrow: 1, marginBottom: 0, paddingBottom: 0 }}>
                         <Link to="/">
-                            <img width="150px" height="63px" src={adevendturepng} />
+                            <img width="150px" height="80px" src={logo} />
                         </Link>
+                        <Box
+                            sx={{
+                                width: 300,
+                                maxWidth: "100%",
+                                display: "flex",
+                            }}
+                        >
+                            <form onSubmit={(e) => handleSubmit(e, search)}>
+                                <TextField value={search} onChange={handleChange} fullWidth label="Search" id="fullWidth" />
+
+                                <Button type="submit" variant="outlined" startIcon={<SearchTwoToneIcon />}>
+                                    search
+                                </Button>
+                            </form>
+                        </Box>
                     </Box>
 
                     {user._id ? (
@@ -85,4 +116,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavbarInfo;

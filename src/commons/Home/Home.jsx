@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
 import Carrucel from "../Home/Carrucel";
-import CardsPromo from "../../components/Home/CardsSearch";
 import Divider from "@mui/material/Divider";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
