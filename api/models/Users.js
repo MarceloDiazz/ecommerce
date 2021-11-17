@@ -21,7 +21,9 @@ const UserSchema = new Schema({
 
     carrito: [
         {
-            _id: { type: Schema.Types.ObjectId, ref: "Product" },
+            _id: String,
+            price: Number,
+            title: String,
             cantidad: { type: Number, default: 1 },
         },
     ],

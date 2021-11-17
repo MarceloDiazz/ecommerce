@@ -32,27 +32,25 @@ const NavbarInfo = () => {
     setSearch(e.target.value);
   };
 
-  const history = useHistory();
-  let cart = useSelector((state) => state.cart);
+
+    const history = useHistory();
+
 
   const dispatch = useDispatch();
   let user = useSelector((state) => state.user);
 
   const [cartLength, setcartLength] = useState(0);
 
-  useEffect(() => {
-    setcartLength(cart.length);
-  }, [cart]);
 
-  const handleSubmit = (e, name) => {
-    e.preventDefault();
-    if (name) {
-      setSearch("");
-      history.push(`/category/${name}`);
-    } else {
-      // mandar mensaje que ingrese algo
-    }
-  };
+    const handleSubmit = (e, name) => {
+        e.preventDefault();
+        if (name) {
+            setSearch("");
+            history.push(`/category/${name}`);
+        } else {
+            // mandar mensaje que ingrese algo
+        }
+    };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
