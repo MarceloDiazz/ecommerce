@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -11,6 +11,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import { useDispatch, useSelector } from "react-redux";
+import { setUser } from "../../state/user";
 import axios from "axios";
 
 import { Link } from "react-router-dom";
@@ -31,26 +32,39 @@ const style = {
 };
 
 export default function CardsInfo({ product }) {
-    const [open, setOpen] = React.useState(false);
-    const [value, setValue] = React.useState(4);
-    const [cant, setCant] = React.useState(1);
+    const user = useSelector((state) => state.user);
+    const dispatch = useDispatch()
+    const [open, setOpen] = useState(false);
+    const [state, setState] = useState("");
+    const [value, setValue] = useState(4);
+    const [cant, setCant] = useState(1);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const user = useSelector((state) => state.user);
 
     const handleCant = (e) => {
         setCant(e.target.value);
     };
-
+   
     const handleClick = async (id, price, title, cantidad) => {
         if (user._id) {
-            axios.post(`/api/users/${user._id}/basket`, { _id: id, cantidad: cantidad });
+            const newBasket = await axios.post(`/api/users/${user._id}/basket`, { _id: id, title: title, price: price, cantidad: cantidad })
+            dispatch(setUser(newBasket.data))
         } else {
             let basket = JSON.parse(localStorage.getItem("basket")) || [];
-            basket.push({ _id: { _id: id, title: title, price: price }, cantidad: cantidad });
+            basket.push({ _id: id, title: title, price: price, cantidad: cantidad });
             localStorage.setItem("basket", JSON.stringify(basket));
         }
     };
+
+    // useEffect(async () => {
+    //     if (user._id) {
+    //         console.log('entre');
+    //         console.log(product._id);
+    //         const res = basket.filter((e) => e._id._id === product._id);
+    //         console.log(res);
+    //         setState(res.length > 0 ? true : false);
+    //     }
+    // }, [state, user]);
 
     return (
         <Card sx={{ width: 345, m: 2 }}>
@@ -81,7 +95,7 @@ export default function CardsInfo({ product }) {
             <Typography component="legend">Ranting</Typography>
             <Rating name="read-only" value={value} readOnly />
             <Button onClick={() => handleClick(product._id, product.price, product.title, cant)} variant="outlined">
-                Add to basket
+                {state ? "Remove from basket" : "Add to basket"}
             </Button>
             <div>
                 <Button onClick={handleOpen}>Info</Button>
@@ -99,7 +113,7 @@ export default function CardsInfo({ product }) {
                             {product.description}
                         </Typography>
                         <Button onClick={() => handleClick(product._id, product.price, product.title, cant)} variant="outlined">
-                            Add to basket
+                            {state ? "Remove from basket" : "Add to basket"}
                         </Button>
                     </Box>
                 </Modal>

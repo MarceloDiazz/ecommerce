@@ -32,16 +32,11 @@ const NavbarInfo = () => {
     };
 
     const history = useHistory();
-    let cart = useSelector((state) => state.cart);
 
     const dispatch = useDispatch();
     let user = useSelector((state) => state.user);
 
     const [cartLength, setcartLength] = useState(0);
-
-    useEffect(() => {
-        setcartLength(cart.length);
-    }, [cart]);
 
     const handleSubmit = (e, name) => {
         e.preventDefault();

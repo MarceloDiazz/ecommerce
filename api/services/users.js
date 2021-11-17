@@ -110,6 +110,7 @@ class UserServices {
     static async confirmBasket(id, usuario) {
         try {
             const carrito = usuario[0].carrito;
+            
 
             const newHistory = new History({
                 user: { _id: id },

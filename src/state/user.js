@@ -21,6 +21,10 @@ export const postUserRegister = createAsyncThunk("userRegister", (user) => {
         });
 });
 
+export const removeFromBasket = createAsyncThunk("REMOVE_FROM_BASKET", ({user, id}) => {
+    return axios.delete(`/api/users/${user}/basket/${id}`).then(res => res.data)
+});
+
 export const sendLogoutRequest = createAsyncThunk("LOGOUT", () => {
     return axios.get("/api/auth/logout").then((r) => console.log(r));
 });
@@ -35,7 +39,14 @@ const reducerUser = createReducer(
         [postUserLoged.rejected]: (state, action) => console.log(action),
         [postUserRegister.fulfilled]: (state, action) => (state = {}),
         [sendLogoutRequest.fulfilled]: (state, action) => (state = {}),
+        [removeFromBasket.fulfilled]: (state, action) => (state = action.payload),
     }
 );
 
 export default reducerUser;
+
+// export const addToBasket = createAsyncThunk("ADD_TO_BASKET", (id, cantidad) => {
+//     return axios.post(`/api/users/${id}/basket`, { _id: id, cantidad: cantidad }).then(res => res)
+// });
+
+
