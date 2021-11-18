@@ -2,7 +2,7 @@ const AdminService = require("../services/admin");
 
 class AdminController {
     static async getUsers(req, res) {
-        const { error, data } = await AdminService.getUsers();
+        const { error, data } = await AdminService.getUsers(req.params.userId);
 
         return error ? res.status(data.status || 500).json({ message: data }) : res.json(data);
     }

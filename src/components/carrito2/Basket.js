@@ -9,7 +9,9 @@ import Paper from "@mui/material/Paper";
 import { useSelector, useDispatch } from "react-redux";
 import Button from "@mui/material/Button";
 import { useHistory } from "react-router-dom";
-import {removeFromBasket} from '../../state/user'
+import { removeFromBasket } from "../../state/user";
+import IconButton from "@mui/material/IconButton";
+import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 
 const axios = require("axios");
 
@@ -30,7 +32,7 @@ export default function BasketUser() {
 
     useEffect(async () => {
         if (user._id) {
-            const carrito = user.carrito
+            const carrito = user.carrito;
             setBasket(carrito);
             carrito.length > 0 ? setTotal(getTotal(carrito)) : setTotal(0);
         } else {
@@ -43,7 +45,7 @@ export default function BasketUser() {
     const handleOnClick = async (id) => {
         if (user._id) {
             dispatch(removeFromBasket({ user: user._id, id: id })).then((res) => {
-                const carrito = res.payload.carrito
+                const carrito = res.payload.carrito;
                 setBasket(carrito);
                 carrito.length > 0 ? setTotal(getTotal(carrito)) : setTotal(0);
             });
@@ -51,7 +53,7 @@ export default function BasketUser() {
             const carrito = JSON.parse(localStorage.getItem("basket")) || [];
 
             if (carrito.length > 0) {
-                console.log(carrito)
+                console.log(carrito);
                 const idx = carrito.findIndex((e) => e._id === id);
                 carrito.splice(idx, 1);
                 localStorage.setItem("basket", JSON.stringify(carrito));
@@ -71,7 +73,7 @@ export default function BasketUser() {
             history.push("/log");
         }
     };
-  
+
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 700, marginTop: 3 }} aria-label="spanning table">
@@ -93,16 +95,17 @@ export default function BasketUser() {
                                 <TableCell align="right">{item.cantidad}</TableCell>
                                 <TableCell align="right">$ {item.price}</TableCell>
                                 <TableCell align="right">
-                                    <Button variant="outlined" color="error" onClick={() => handleOnClick(item._id)}>
-                                        Delete
-                                    </Button>
+                                    <IconButton variant="outlined" color="error" onClick={() => handleOnClick(item._id)}>
+                                        <RemoveShoppingCartIcon/>
+                                        <h6>Remove</h6>
+                                    </IconButton>
                                 </TableCell>
                             </TableRow>
                         ))}
-                    <TableRow sx={{ bgcolor: "text.disabled" }}>
+                    <TableRow sx={{ bgcolor: "#607d8b" }}>
                         <TableCell rowSpan={3} />
                     </TableRow>
-                    <TableRow sx={{ bgcolor: "text.disabled" }}>
+                    <TableRow sx={{ bgcolor: "#607d8b" }}>
                         <TableCell colSpan={2}>Total</TableCell>
                         <TableCell align="right">$ {total}</TableCell>
                         <TableCell align="right">

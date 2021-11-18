@@ -13,6 +13,7 @@ import Home from "../commons/Home/Home";
 import CardsInfoCba from "../commons/Home/CardsProvinciasInfo/CardsProvinceOrCity";
 
 import GridUsers from "../components/admin/GridUsers";
+import GridNewUsers from "../components/admin/GridNewUser";
 import CardsSearch from "../components/CardSearch";
 import Basket from "../components/carrito2/Basket";
 
@@ -43,7 +44,7 @@ function App() {
                     <CardsSearch />
                 </Route>
                 <Route path="/admin/users">
-                    <GridUsers />
+                    <GridNewUsers />
                 </Route>
                 <Route path="/log">
                     <UseReducer />

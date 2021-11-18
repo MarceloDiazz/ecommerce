@@ -3,9 +3,9 @@ const Product = require("../models/Products");
 const History = require("../models/History");
 
 class AdminService {
-    static async getUsers() {
+    static async getUsers(id) {
         try {
-            const user = await User.find({});
+            const user = await User.find({_id: {$ne: id}});
 
             return { error: false, data: user };
         } catch (error) {
@@ -25,8 +25,8 @@ class AdminService {
 
     static async promoteOrDescendAdmin(id, admin) {
         try {
-            const user = await User.findByIdAndUpdate(
-                id,
+            const user = await User.findOneAndUpdate(
+                {_id: id},
                 {
                     $set: {
                         admin: !admin,
@@ -127,7 +127,7 @@ class AdminService {
     static async deleteCategory(name) {
         try {
             const product = await Product.updateMany(
-                {category: name},
+                { category: name },
                 {
                     $pull: {
                         category: name,
@@ -135,7 +135,7 @@ class AdminService {
                 },
                 { new: true }
             );
-            
+
             return { error: false, data: product };
         } catch (error) {
             return { error: true, data: error.message };
@@ -145,7 +145,7 @@ class AdminService {
     static async editCategory(name, body) {
         try {
             const product = await Product.updateMany(
-                {category: name},
+                { category: name },
                 {
                     $set: {
                         "category.$[name]": body.name,
@@ -153,7 +153,7 @@ class AdminService {
                 },
                 { arrayFilters: [{ name: name }], new: true }
             );
-            
+
             return { error: false, data: product };
         } catch (error) {
             return { error: true, data: error.message };
