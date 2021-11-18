@@ -9,17 +9,20 @@ import "slick-carousel/slick/slick-theme.css";
 
 import CssBaseline from '@mui/material/CssBaseline';
 
+import Modal from 'react-modal';
+import ViewProducts from "./components/admin-products/ViewProducts";
 
 
 const app = (
   <Provider store={store}>
     <BrowserRouter>
     <CssBaseline />
-      <App />
+<ViewProducts />
     </BrowserRouter>
   </Provider>
 );
 
 const target = document.getElementById("root");
+Modal.setAppElement(target);
 
 ReactDOM.render(app, target);

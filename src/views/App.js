@@ -19,6 +19,7 @@ import Basket from "../components/carrito2/Basket";
 import SingleProduct from "../components/Home/SingleProduct";
 
 
+
 function App() {
     const dispatch = useDispatch();
 
@@ -33,6 +34,7 @@ function App() {
 
     return (
         <div>
+
             <Navbar />
 
             <Switch>
