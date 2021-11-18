@@ -4,7 +4,7 @@ import UseReduRegister from "../hook/UseReduRegister";
 
 import { useEffect } from "react";
 import axios from "axios";
-import { Route, Switch} from "react-router-dom";
+import { Route, Switch, Redirect} from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../state/user";
 import Navbar from "../components/Header/Navbar";
@@ -17,6 +17,7 @@ import CardsSearch from "../components/CardSearch";
 import Basket from "../components/carrito2/Basket";
 
 import SingleProduct from "../components/Home/SingleProduct";
+import NoMatch from "../components/NoMatch";
 
 
 function App() {
@@ -39,6 +40,9 @@ function App() {
                 <Route exact path="/">
                     <Home />
                 </Route>
+
+                <Route path="/404" render={() => <p>404 :(</p>} />
+
                 <Route path="/category/:name">
                     <CardsSearch />
                 </Route>
@@ -60,6 +64,11 @@ function App() {
 
                 <Route path="/products/:id">
                     <SingleProduct />
+                </Route>
+
+                <Route path="*">
+                    {/* <Redirect to="/404" /> */}
+                    <NoMatch />
                 </Route>
             </Switch>
         </div>
