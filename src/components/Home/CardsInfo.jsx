@@ -13,66 +13,105 @@ import Modal from "@mui/material/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../../state/user";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+import SettingCardAdmin from "../SettingCardAdmin";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
+import InfoIcon from "@mui/icons-material/Info";
+import ForumIcon from "@mui/icons-material/Forum";
+import ReviewData from "../ReviewData";
+import List from "@mui/material/List";
 
 import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
 import logo from "../../assets/logo.png";
+import promedioRating from "../../utils/promedioRating";
 
 const style = {
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400,
+    width: 500,
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
+    overflow: "scroll",
 };
 
 export default function CardsInfo({ product }) {
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const rating = promedioRating(product.reviews);
     const user = useSelector((state) => state.user);
-    const dispatch = useDispatch()
-    const [open, setOpen] = useState(false);
+
+    const [openInfo, setOpenInfo] = useState(false);
+    const [openReviews, setOpenReviews] = useState(false);
     const [state, setState] = useState("");
-    const [value, setValue] = useState(4);
+    const [stateLocal, setStateLocal] = useState("");
+    const [value, setValue] = useState(rating);
     const [cant, setCant] = useState(1);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+
+    const handleOpenInfo = () => setOpenInfo(true);
+    const handleCloseInfo = () => setOpenInfo(false);
+    const handleOpenReviews = () => setOpenReviews(true);
+    const handleCloseReviews = () => setOpenReviews(false);
 
     const handleCant = (e) => {
         setCant(e.target.value);
     };
-   
+
     const handleClick = async (id, price, title, cantidad) => {
         if (user._id) {
-            const newBasket = state ? await axios.delete(`/api/users/${user._id}/basket/${id}`) : await axios.post(`/api/users/${user._id}/basket`, { _id: id, title: title, price: price, cantidad: cantidad })
-            dispatch(setUser(newBasket.data))
+            const newBasket = state
+                ? await axios.delete(`/api/users/${user._id}/basket/${id}`)
+                : await axios.post(`/api/users/${user._id}/basket`, { _id: id, title: title, price: price, cantidad: cantidad });
+            dispatch(setUser(newBasket.data));
         } else {
-            let basket = JSON.parse(localStorage.getItem("basket")) || [];
-            basket.push({ _id: id, title: title, price: price, cantidad: cantidad });
-            localStorage.setItem("basket", JSON.stringify(basket));
+            if (state) {
+                const carrito = JSON.parse(localStorage.getItem("basket")) || [];
+
+                if (carrito.length > 0) {
+                    const idx = carrito.findIndex((e) => e._id === id);
+                    carrito.splice(idx, 1);
+                    localStorage.setItem("basket", JSON.stringify(carrito));
+                    setStateLocal(`${id}${idx}`);
+                }
+            } else {
+                let basket = JSON.parse(localStorage.getItem("basket")) || [];
+                basket.push({ _id: id, title: title, price: price, cantidad: cantidad });
+                localStorage.setItem("basket", JSON.stringify(basket));
+                setStateLocal(basket);
+            }
         }
+    };
+
+    const handleClickAdmin = (id) => {
+        history.push(`/admin/product/${id}`);
     };
 
     useEffect(async () => {
         if (user._id) {
             const res = user.carrito.filter((e) => e._id === product._id);
             setState(res.length > 0 ? true : false);
+        } else {
+            let basket = JSON.parse(localStorage.getItem("basket")) || [];
+            if (basket.length > 0) {
+                const res = basket.filter((e) => e._id === product._id);
+                return setState(res.length > 0 ? true : false);
+            }
+            setState(false);
         }
-    }, [state, user]);
-    
+    }, [state, user, stateLocal]);
+
     return (
-        <Card sx={{ width: 345, m: 2 }}>
+        <Card sx={{ width: 345, m: 2, boxShadow: 3 }}>
             <CardHeader
                 sx={{ height: 112 }}
                 avatar={<Avatar src={logo} sx={{ width: 70, height: 70 }} />}
-                action={
-                    <IconButton aria-label="settings">
-                        <MoreVertIcon />
-                    </IconButton>
-                }
+                action={user.admin && <SettingCardAdmin />}
                 title={product.title}
                 subheader={product.location[0].provincia}
             />
@@ -89,16 +128,39 @@ export default function CardsInfo({ product }) {
                     }}
                 ></Box>
             </CardContent>
-            <Typography component="legend">Ranting</Typography>
-            <Rating name="read-only" value={value} readOnly />
-            <Button onClick={() => handleClick(product._id, product.price, product.title, cant)} color={state ? 'error' : 'success'} variant="outlined">
-                {state ? "Remove from basket" : "Add to basket"}
-            </Button>
+
+            <Box>
+                <Typography sx={{ marginLeft: 1 }} component="legend">
+                    Ranting:
+                </Typography>
+                <Rating name="read-only" value={value} readOnly sx={{ marginRight: state ? 11 : 15, marginBottom: 1 }} />
+                {!user.admin ? (
+                    <IconButton>
+                        <Button
+                            onClick={() => handleClick(product._id, product.price, product.title, cant)}
+                            color={state ? "error" : "success"}
+                            variant="outlined"
+                            startIcon={state ? <RemoveShoppingCartIcon /> : <AddShoppingCartIcon />}
+                        >
+                            {state ? "Remove" : "Add"}
+                        </Button>
+                    </IconButton>
+                ) : (
+                    <Button onClick={() => handleClickAdmin(product._id)} color="success" variant="outlined">
+                        Edit Product
+                    </Button>
+                )}
+            </Box>
             <div>
-                <Button onClick={handleOpen}>Info</Button>
+                <Button startIcon={<InfoIcon />} onClick={handleOpenInfo}>
+                    Info
+                </Button>
+                <Button startIcon={<ForumIcon />} onClick={handleOpenReviews}>
+                    Reviews
+                </Button>
                 <Modal
-                    open={open}
-                    onClose={handleClose}
+                    open={openInfo}
+                    onClose={handleCloseInfo}
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
                 >
@@ -109,9 +171,30 @@ export default function CardsInfo({ product }) {
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                             {product.description}
                         </Typography>
-                        <Button color={state ? 'error' : 'success'} onClick={() => handleClick(product._id, product.price, product.title, cant)} variant="outlined">
-                            {state ? "Remove from basket" : "Add to basket"}
+                        <Button
+                            color={state ? "error" : "success"}
+                            onClick={() => handleClick(product._id, product.price, product.title, cant)}
+                            variant="outlined"
+                            startIcon={state ? <RemoveShoppingCartIcon /> : <AddShoppingCartIcon />}
+                            sx={{ marginTop: 1 }}
+                        >
+                            {state ? "Remove" : "Add"}
                         </Button>
+                    </Box>
+                </Modal>
+                <Modal
+                    open={openReviews}
+                    onClose={handleCloseReviews}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <Box sx={style}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                            Reviews:
+                        </Typography>
+                        {product?.reviews.map((e, i) => {
+                            return <ReviewData review={e} />;
+                        })}
                     </Box>
                 </Modal>
             </div>

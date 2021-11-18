@@ -13,7 +13,7 @@ class ProductsService {
 
     static async getProductById(id) {
         try {
-            const product = await Product.findById(id);
+            const product = await Product.findById(id).populate("");
 
             return { error: false, data: product };
         } catch (error) {
@@ -23,7 +23,7 @@ class ProductsService {
 
     static async getProductsByCategoryName(name) {
         try {
-            const product = await Product.find({ category: { $regex: name, $options: "i" } });
+            const product = await Product.find({ category: { $regex: name, $options: "i" } }).populate("reviews._id");
 
             return { error: false, data: product };
         } catch (error) {
@@ -33,7 +33,7 @@ class ProductsService {
 
     static async getProductsByCityName(name) {
         try {
-            const product = await Product.find({ "location.city": { $regex: name, $options: "i" } });
+            const product = await Product.find({ "location.city": { $regex: name, $options: "i" } }).populate("reviews._id");
 
             return { error: false, data: product };
         } catch (error) {
@@ -43,7 +43,7 @@ class ProductsService {
 
     static async getProductsByProvinceName(name) {
         try {
-            const product = await Product.find({ "location.provincia": { $regex: name, $options: "i" } });
+            const product = await Product.find({ "location.provincia": { $regex: name, $options: "i" } }).populate("reviews._id");
 
             return { error: false, data: product };
         } catch (error) {
@@ -53,7 +53,7 @@ class ProductsService {
 
     static async getProductsByTitleName(name) {
         try {
-            const product = await Product.find({ title: { $regex: name, $options: "i" } });
+            const product = await Product.find({ title: { $regex: name, $options: "i" } }).populate("reviews._id");
 
             return { error: false, data: product };
         } catch (error) {
@@ -67,14 +67,14 @@ class ProductsService {
                 { _id: id },
                 {
                     $push: {
-                        ratings: body.rating,
                         reviews: {
                             review: body.review,
                             _id: body._id,
+                            ratings: body.rating,
                         },
                     },
                 },
-                { new: true}
+                { new: true }
             );
 
             return { error: false, data: product };

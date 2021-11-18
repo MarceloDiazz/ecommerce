@@ -3,7 +3,7 @@ const router = express.Router();
 
 const AdminController = require("../controller/admin");
 
-router.get("/", AdminController.getUsers);
+router.get("/:userId", AdminController.getUsers);
 router.delete("/:userId", AdminController.deleteUsers);
 router.put("/:userId", AdminController.promoteOrDescendAdmin);
 

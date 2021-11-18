@@ -30,7 +30,7 @@ export default class AutoPlayMethods extends Component {
         const settings = {
             dots: true,
             infinite: true,
-            slidesToShow: 3,
+            slidesToShow: 4,
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 2000,
@@ -39,9 +39,9 @@ export default class AutoPlayMethods extends Component {
             <div>
                 <Slider ref={(slider) => (this.slider = slider)} {...settings}>
                     <div>
-                        <Card sx={{ maxWidth: 345 }}>
+                        <Card sx={{ maxWidth: 345 , boxShadow: 3 }}>
                             <CardMedia component="img" height="250" image={imgCordoba} alt="green iguana" />
-                            <CardContent>
+                            <CardContent >
                                 <Typography gutterBottom variant="h6" component="div">
                                     Cordoba
                                 </Typography>
@@ -57,7 +57,7 @@ export default class AutoPlayMethods extends Component {
                         </Card>
                     </div>
                     <div>
-                        <Card sx={{ maxWidth: 345 }}>
+                        <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
                             <CardMedia component="img" height="250" image={imgBariloche} alt="green iguana" />
                             <CardContent>
                                 <Typography gutterBottom variant="h6" component="div">
@@ -75,7 +75,7 @@ export default class AutoPlayMethods extends Component {
                         </Card>
                     </div>
                     <div>
-                        <Card sx={{ maxWidth: 345 }}>
+                        <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
                             <CardMedia component="img" height="250" image={imgBuenosAires} alt="green iguana" />
                             <CardContent>
                                 <Typography gutterBottom variant="h6" component="div">
@@ -93,7 +93,7 @@ export default class AutoPlayMethods extends Component {
                         </Card>
                     </div>
                     <div>
-                        <Card sx={{ maxWidth: 345 }}>
+                        <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
                             <CardMedia component="img" height="250" image={imgJujuy} alt="green iguana" />
                             <CardContent>
                                 <Typography gutterBottom variant="h6" component="div">
@@ -111,7 +111,7 @@ export default class AutoPlayMethods extends Component {
                         </Card>
                     </div>
                     <div>
-                        <Card sx={{ maxWidth: 345 }}>
+                        <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
                             <CardMedia component="img" height="250" image={imgSanJuan} alt="green iguana" />
                             <CardContent>
                                 <Typography gutterBottom variant="h6" component="div">
@@ -129,7 +129,7 @@ export default class AutoPlayMethods extends Component {
                         </Card>
                     </div>
                     <div>
-                        <Card sx={{ maxWidth: 345 }}>
+                        <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
                             <CardMedia component="img" height="250" image={imgTierraDelFuego} alt="green iguana" />
                             <CardContent>
                                 <Typography gutterBottom variant="h6" component="div">

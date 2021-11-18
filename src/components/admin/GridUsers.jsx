@@ -1,42 +1,32 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { DataGrid } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
-import DeleteIcon from "@mui/icons-material/Delete";
+import TableCell from "@mui/material/TableCell";
+import TableRow from "@mui/material/TableRow";
+import IconButton from "@mui/material/IconButton";
+import AddModeratorIcon from "@mui/icons-material/AddModerator";
+import RemoveModeratorIcon from "@mui/icons-material/RemoveModerator";
+import axios from "axios";
 
-const GridUsers = () => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("/api/admin")
-      .then((res) => res.data)
-      .then((user) => setUsers(user));
-  }, []);
-  console.log("ACA", users);
-
-  const columns = [
-    { field: "name", headerName: "Name", width: 180, editable: true },
-    { field: "email", headerName: "Email", width: 180, editable: true },
-    { field: "admin", headerName: "Admin", width: 180, editable: true },
-  ];
-  const rows = users.map((user) => {
-    return {
-      id: user._id,
-      name: user.name,
-      email: user.email,
-      admin: user.admin,
+const GridUsers = ({ user, i, setState }) => {
+    const handleOnClick = async (id, admin) => {
+        const user = await axios.put(`/api/admin/${id}`, { admin: admin });
+        setState(`${user.data.admin}${user.data._id}`);
     };
-  }) || [] 
 
-  return (
-    <div style={{ height: 300, width: "100%" }}>
-      <div style={{ height: 300, width: "100%" }}>
-        <DataGrid rows={rows} columns={columns} />
-      </div>
-    </div>
-  );
+    return (
+        <TableRow>
+            <TableCell>{i + 1}</TableCell>
+            <TableCell>{user.name}</TableCell>
+            <TableCell>{user.email}</TableCell>
+            <TableCell>{user.admin ? "True" : "False"}</TableCell>
+            <TableCell align="right">
+                <IconButton color={user.admin ? "error" : "success"} onClick={() => handleOnClick(user._id, user.admin)}>
+                    {user.admin ? <RemoveModeratorIcon /> : <AddModeratorIcon />}
+                    <h6>{user.admin ? "Remove" : "Add"}</h6>
+                </IconButton>
+            </TableCell>
+        </TableRow>
+    );
 };
 
 export default GridUsers;

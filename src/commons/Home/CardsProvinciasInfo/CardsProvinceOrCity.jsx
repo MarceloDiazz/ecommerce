@@ -21,7 +21,7 @@ export default function CardsProvinceOrCity() {
     const settings = {
         dots: true,
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
         speed: 2000,
@@ -32,14 +32,28 @@ export default function CardsProvinceOrCity() {
     const [prov, setProv] = useState([]);
 
     useEffect(async () => {
-        const res = type === 'city' ? await axios.get(`/api/products/city/${name}`) :  await axios.get(`/api/products/province/${name}`);
+        const res =
+            type === "city" ? await axios.get(`/api/products/city/${name}`) : await axios.get(`/api/products/province/${name}`);
         setProv(res.data);
     }, [name, type]);
 
     return (
         <div>
-            <div>
-                <h2>{name.toUpperCase()} TE ESPERA!</h2>
+            <Box sx={{ marginBottom: 3 }}>
+                <Box
+                    sx={{
+                        bgcolor: "#607d8b",
+                        color: "secondary.contrastText",
+                        margin: 2,
+                        fontWeight: "fontWeightLight",
+                        justifyContent: "center",
+                        flexDirection: "column",
+                        textAlign: 'center',
+                        p: 4,
+                    }}
+                >
+                    <h1 >{name.toUpperCase()} TE ESPERA!</h1>
+                </Box>
                 <Slider {...settings}>
                     <div>
                         <img width="300" height="200" src={img1} alt="img1" />
@@ -60,10 +74,7 @@ export default function CardsProvinceOrCity() {
                         <img width="300" height="200" src={img6} alt="img1" />
                     </div>
                 </Slider>
-                <Typography variant="h3" component="div" gutterBottom>
-                    ACTIVIDADES QUE TE ESPERAN EN {name.toUpperCase()}!
-                </Typography>
-            </div>
+            </Box>
             <Box sx={{ display: "flex", flexWrap: "wrap", position: "relative", justifyContent: "space-between" }}>
                 {prov.length > 0 &&
                     prov.map((e, i) => {

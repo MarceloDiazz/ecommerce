@@ -201,14 +201,6 @@
         "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
     },
     {
-        "title": "https://www.tripadvisor.com.ar/AttractionProductReview-g312848-d11466651-Mount_Tronador_and_the_Black_Glacier_Day_Tour-San_Carlos_de_Bariloche_Province_of_.html",
-        "price": 5000,
-        "description": "Visite el espectacular Parque Nacional Nahuel Huapi, donde podrá ver maravillas como por ejemplo Cerro Tronador, la montaña más alta de la región, y el glaciar negro.",
-        "img": "",
-        "category": ["tours", "actividades al aire libre"],
-        "location": [{ "provincia": "Rio Negro", "city": "Bariloche" }]
-    },
-    {
         "title": "Cerro Catedral, Bariloche",
         "price": 6000,
         "description": "Es el centro de esquí más grande del hemisferio sur (120 kilómetros de pistas en una superficie de 600 hectáreas) y ofrece una amplia infraestructura de servicios para la práctica de deportes invernales. Está abierto todo el año y cuenta con 40 medios de producción (entre aerosillas y teleféricos), facilitando el ascenso de 35 mil personas por hora.",
