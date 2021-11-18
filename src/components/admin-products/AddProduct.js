@@ -7,10 +7,21 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { objectMethod } from "@babel/types";
-import React from "react";
+import Typography from "@mui/material/Typography";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const AddProduct = () => {
+const AddProduct = ({ getProducts, setIsOpen, success }) => {
+  const [title, setTitle] = useState("");
+  const [category, setCategory] = useState([]);
+  const [description, setDescription] = useState("");
+  const [city, setCity] = useState("");
+  const [province, setProvince] = useState("");
+  const [price, setPrice] = useState(0);
+  const [stock, setStock] = useState(0);
+  const [state, setState] = useState(true);
+  const [img, setImg] = useState("");
+
   const handleReset = () => {
     setTitle("");
     setCategory([]);
@@ -20,7 +31,9 @@ const AddProduct = () => {
     setPrice(0);
     setStock(0);
     setState(true);
+    setImg("");
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let obj = {
@@ -31,23 +44,23 @@ const AddProduct = () => {
       state,
       stock,
       category,
+      img,
     };
     axios
       .post("/api/admin/product", obj)
-      .then(() => console.log("creado con exito"))
-      .catch(() => console.log("error en creacion"));
+      .then(() => {
+        success("Producto creado con exito!");
+      })
+      .then(() => getProducts())
+      .then(() => setIsOpen(false))
+      .catch(() =>
+        toast.error("Producto no creado", {
+          position: toast.POSITION.TOP_CENTER,
+        })
+      );
 
     handleReset();
   };
-
-  const [title, setTitle] = useState("");
-  const [category, setCategory] = useState([]);
-  const [description, setDescription] = useState("");
-  const [city, setCity] = useState("");
-  const [province, setProvince] = useState("");
-  const [price, setPrice] = useState(0);
-  const [stock, setStock] = useState(0);
-  const [state, setState] = useState(true);
 
   const handleTitle = (e) => {
     setTitle(e.target.value);
@@ -81,15 +94,27 @@ const AddProduct = () => {
     setCategory([e.target.value]);
   };
 
+  const handleImg = (e) => {
+    setImg(e.target.value);
+  };
+
   return (
     <Box
       component="form"
       sx={{
         "& .MuiTextField-root": { m: 1, width: "25ch" },
       }}
-      noValidate
       autoComplete="off"
     >
+      <Typography
+        variant="h5"
+        component="div"
+        gutterBottom
+        align="center"
+        sx={{ mb: "25px" }}
+      >
+        Agregar un producto
+      </Typography>
       <div>
         <TextField
           id="titulo"
@@ -97,9 +122,9 @@ const AddProduct = () => {
           variant="standard"
           value={title}
           onChange={handleTitle}
+          
         />
-      </div>
-      <div>
+
         <TextField
           id="category"
           label="Categoria"
@@ -116,6 +141,14 @@ const AddProduct = () => {
           value={description}
           onChange={handleDescription}
         />
+
+        <TextField
+          id="img"
+          label="Imagen (link)"
+          variant="standard"
+          value={img}
+          onChange={handleImg}
+        />
       </div>
       <div>
         <TextField
@@ -125,8 +158,7 @@ const AddProduct = () => {
           value={city}
           onChange={handleCity}
         />
-      </div>
-      <div>
+
         <TextField
           id="province"
           label="Provincia"
@@ -144,8 +176,7 @@ const AddProduct = () => {
           value={price}
           onChange={handlePrice}
         />
-      </div>
-      <div>
+
         <TextField
           id="stock"
           label="Stock inicial"
@@ -156,7 +187,7 @@ const AddProduct = () => {
         />
       </div>
       <div>
-        <FormControl variant="standard" sx={{ minWidth: "25ch" }}>
+        <FormControl variant="standard" sx={{ m: 1, width: "25ch" }}>
           <InputLabel id="stateLabel">Estado</InputLabel>
           <Select
             labelId="stateLabel"
@@ -170,9 +201,12 @@ const AddProduct = () => {
           </Select>
         </FormControl>
       </div>
-      <Button variant="outlined" onClick={handleSubmit}>
-        Crear
-      </Button>
+
+      <Box textAlign="center" sx={{ mt: 3 }}>
+        <Button variant="contained" onClick={handleSubmit}>
+          Crear
+        </Button>
+      </Box>
     </Box>
   );
 };
