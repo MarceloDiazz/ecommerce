@@ -33,7 +33,6 @@ const UseReduRegister = () => {
         email,
         password,
       };
-      console.log(userData);
     dispatch(postUserRegister(userData))
       .then(() => {
         history.push('/log')

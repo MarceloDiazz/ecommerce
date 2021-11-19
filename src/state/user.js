@@ -3,7 +3,6 @@ import { createAsyncThunk, createReducer, createAction } from "@reduxjs/toolkit"
 import axios from "axios";
 
 export const postUserLoged = createAsyncThunk("userLoged", (user) => {
-    console.log("LOGIN", user);
     return axios.post(`/api/auth/login`, user).then((res) => {
         return res.data
     });

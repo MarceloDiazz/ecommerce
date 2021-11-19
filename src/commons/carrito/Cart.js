@@ -15,7 +15,7 @@ import SingleCart from "../../components/carrito/SingleCart";
 import { setCarrito } from "../../utils/fakeData";
 import { Link } from "react-router-dom";
 import { removeCart } from "../../state/cart";
-import emptyCart from '../../assets/emptyCart.png'
+import emptyCart from "../../assets/emptyCart.png";
 
 const Cart = () => {
   //INITIALIZA FAKEDATA CARRITO BROWSER
@@ -30,7 +30,6 @@ const Cart = () => {
 
   React.useEffect(() => {
     setBasket(JSON.parse(localStorage.getItem("carrito")));
-    console.log("useEffect");
   }, []);
 
   const vaciarCarrito = () => {
@@ -69,12 +68,18 @@ const Cart = () => {
             )}
           </Paper>
         </Grid>
-        
+
         <Grid xs={2}>
           <div>
             <div>{sumaTotal()}</div>
-              <div><Button  component={Link} to='/checkout'>Checkout</Button></div>
-            <div><Button onClick={vaciarCarrito}>Vaciar carrito</Button></div>
+            <div>
+              <Button component={Link} to="/checkout">
+                Checkout
+              </Button>
+            </div>
+            <div>
+              <Button onClick={vaciarCarrito}>Vaciar carrito</Button>
+            </div>
           </div>
         </Grid>
       </Grid>

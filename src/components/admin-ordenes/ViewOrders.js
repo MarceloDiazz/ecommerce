@@ -123,7 +123,6 @@ const ViewOrders = () => {
               </TableHead>
               <TableBody>
                 {selectOrder.map((elem) => {
-                  console.log("elem", elem._id);
                   return (
                     <TableRow
                       key={elem._id._id}

@@ -22,8 +22,6 @@ const SingleCart = ({ elem, id, basket, setBasket }) => {
   //ELEM {product: {}, cantidad: 2}
   // localStorage.setItem("carrito", fakeCarrito);
 
-  console.log(id)
-
   const dispatch = useDispatch();
 
   const Img = styled("img")({
@@ -40,9 +38,8 @@ const SingleCart = ({ elem, id, basket, setBasket }) => {
   }, []);
 
   React.useEffect(() => {
-
-    dispatch(modifCantidad([id, cantidad]))
-  }, [cantidad])
+    dispatch(modifCantidad([id, cantidad]));
+  }, [cantidad]);
 
   const handleChange = (event) => {
     setCantidad(event.target.value);
@@ -51,8 +48,7 @@ const SingleCart = ({ elem, id, basket, setBasket }) => {
   let user = useSelector((state) => state.logUser);
 
   const handleRemove = () => {
-    dispatch(removeToCart(id))
-    
+    dispatch(removeToCart(id));
   };
 
   return (
@@ -82,7 +78,7 @@ const SingleCart = ({ elem, id, basket, setBasket }) => {
         </Grid>
 
         <Grid item xs spacing={2}>
-            {/* <InputLabel id="demo-simple-select-autowidth-label">
+          {/* <InputLabel id="demo-simple-select-autowidth-label">
                 Cantidad
               </InputLabel>
               <Select
@@ -100,55 +96,54 @@ const SingleCart = ({ elem, id, basket, setBasket }) => {
                 <MenuItem value={4}>4</MenuItem>
                 <MenuItem value={5}>5+</MenuItem>
               </Select> */}
-            <IconButton
-              onClick={() => {
-                if (cantidad > 1) {
-                  setCantidad(cantidad - 1);
-                } else {
-                  handleRemove();
-                }
-              }}
-              color="primary"
-              aria-label="cantidad -"
-            >
-              <RemoveCircleOutlineIcon />
-            </IconButton>
-            <TextField
-              disabled
-              id="outlined-disabled"
-              inputProps={{ min: 0, style: { textAlign: "center" } }} // the change is here
-              label="Cantidad"
-              value={cantidad}
-              style={{ width: 75 }}
-            />
-            <IconButton
-              color="primary"
-              aria-label="cantidad +"
-              onClick={() => {
-                setCantidad(cantidad + 1);
-              }}
-            >
-              <AddCircleOutlineIcon />
-            </IconButton>
+          <IconButton
+            onClick={() => {
+              if (cantidad > 1) {
+                setCantidad(cantidad - 1);
+              } else {
+                handleRemove();
+              }
+            }}
+            color="primary"
+            aria-label="cantidad -"
+          >
+            <RemoveCircleOutlineIcon />
+          </IconButton>
+          <TextField
+            disabled
+            id="outlined-disabled"
+            inputProps={{ min: 0, style: { textAlign: "center" } }} // the change is here
+            label="Cantidad"
+            value={cantidad}
+            style={{ width: 75 }}
+          />
+          <IconButton
+            color="primary"
+            aria-label="cantidad +"
+            onClick={() => {
+              setCantidad(cantidad + 1);
+            }}
+          >
+            <AddCircleOutlineIcon />
+          </IconButton>
         </Grid>
 
-        <Grid  xs spacing={2} direction="row">
-          <Grid  item xs={8}>
+        <Grid xs spacing={2} direction="row">
+          <Grid item xs={8}>
             <Typography variant="subtitle1" component="div">
               {elem.producto.price * cantidad}$
             </Typography>
           </Grid>
-          
-          <IconButton  item xs={4}
+
+          <IconButton
+            item
+            xs={4}
             color="primary"
             aria-label="remove"
             onClick={handleRemove}
-           
           >
             <DeleteIcon />
           </IconButton>
-
-         
         </Grid>
       </Grid>
     </Grid>

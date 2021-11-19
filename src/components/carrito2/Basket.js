@@ -53,7 +53,7 @@ export default function BasketUser() {
             const carrito = JSON.parse(localStorage.getItem("basket")) || [];
 
             if (carrito.length > 0) {
-                console.log(carrito);
+              
                 const idx = carrito.findIndex((e) => e._id === id);
                 carrito.splice(idx, 1);
                 localStorage.setItem("basket", JSON.stringify(carrito));
@@ -66,7 +66,7 @@ export default function BasketUser() {
     const handleConfirm = async () => {
         if (user._id) {
             const res = await axios.post(`/api/users/${user._id}/basket/confirm`);
-            console.log(res);
+            
             // si el confirm fue success mandar un mensaje gracias por tu compra capo y mandar al home, sino mandar un mensaje de error
         } else {
             // mandar un mensaje que necesita estar logeado y hacerle un history.push('/log')
