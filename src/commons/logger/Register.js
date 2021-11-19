@@ -13,8 +13,9 @@ import Typography from "@mui/material/Typography";
 /* import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';  */
 import Paper from "@mui/material/Paper";
+import ReCAPTCHA from "react-google-recaptcha";
 
-function Register({ onChangeName, onChangeEmail, onChangePass, onSubmitHandle }) {
+function Register({ onChangeName, onChangeEmail, onChangePass, onSubmitHandle, onSubmitCaptcha}) {
     return (
         <div>
             <Grid container component="main" sx={{ height: "100vh" }}>
@@ -96,6 +97,10 @@ function Register({ onChangeName, onChangeEmail, onChangePass, onSubmitHandle })
                                     </Link>
                                 </Grid>
                             </Grid>
+                            <ReCAPTCHA
+                                sitekey="6LfiVUUdAAAAAI_wdCR4Pla-NqSXFAx8vIbfQslE"
+                                onChange={(e) => onSubmitCaptcha(e)}
+                            />
                         </form>
                     </Box>
                 </Grid>

@@ -12,6 +12,7 @@ const UseReduRegister = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [validCaptcha, setValidCaptcha] = useState(false);
 
   const onChangeEmail = (e) => {
     setEmail(e.target.value);
@@ -25,9 +26,15 @@ const UseReduRegister = () => {
     setName(e.target.value);
   };
 
+  const onSubmitCaptcha = () => {
+    setValidCaptcha(true)
+  }
   
   const onSubmitHandle = (e) => {
       e.preventDefault();
+
+    if (!validCaptcha) return alert("please complete captcha")
+
       const userData = {
         name,
         email,
@@ -39,12 +46,14 @@ const UseReduRegister = () => {
         history.push('/log')
       })
   };
+
   return (
     <Register
       onChangeName={onChangeName}
       onChangeEmail={onChangeEmail}
       onChangePass={onChangePass}
       onSubmitHandle={onSubmitHandle}
+      onSubmitCaptcha={onSubmitCaptcha}
     />
   );
 };
