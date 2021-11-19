@@ -20,6 +20,8 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import HistoryIcon from "@mui/icons-material/History";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
 
 export default function AdminMenu() {
     const dispatch = useDispatch();
@@ -56,11 +58,11 @@ export default function AdminMenu() {
                         <ListItemText primary={"Promote admins"} />
                     </ListItem>
 
-                    <ListItem button key={"Categories"} component={Link} to="/admin/categories">
+                    <ListItem button key={"Histories"} component={Link} to="/admin/histories">
                         <ListItemIcon>
-                            <LocalOfferIcon />
+                            <HistoryIcon />
                         </ListItemIcon>
-                        <ListItemText primary={"Categories"} />
+                        <ListItemText primary={"Histories"} />
                     </ListItem>
 
                     <ListItem button key={"Products"} component={Link} to="/admin/products">
@@ -69,6 +71,14 @@ export default function AdminMenu() {
                         </ListItemIcon>
                         <ListItemText primary={"Products"} />
                     </ListItem>
+
+                    <ListItem button key={"Basket"} component={Link} to="/basket">
+                        <ListItemIcon>
+                            <ShoppingCartIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={"Basket"} />
+                    </ListItem>
+
                     <ListItem onClick={() => dispatch(sendLogoutRequest())} button key={"Logout"} component={Link} to="/">
                         <ListItemIcon>
                             <LogoutIcon />
@@ -85,7 +95,7 @@ export default function AdminMenu() {
                         <ListItemText primary={"Logout"} />
                     </ListItem>
 
-                    <ListItem button key={"History"} component={Link} to="/user/history">
+                    <ListItem button key={"History"} component={Link} to="/user/histories">
                         <ListItemIcon>
                             <HistoryIcon />
                         </ListItemIcon>

@@ -11,148 +11,182 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import RateReviewIcon from "@mui/icons-material/RateReview";
+import ReviewsIcon from "@mui/icons-material/Reviews";
+import StarRateIcon from "@mui/icons-material/StarRate";
+import AddReview from "../AddReview";
 
 const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
+    content: {
+        top: "50%",
+        left: "50%",
+        right: "auto",
+        bottom: "auto",
+
+        transform: "translate(-50%, -50%)",
+    },
 };
 
-const ViewOrders = () => {
-  const [history, setHistory] = useState([]);
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [selectOrder, setSelectOrder] = useState([]);
+const ViewOrders = ({ type }) => {
+    const user = useSelector((state) => state.user);
+    const [history, setHistory] = useState([]);
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const [modalReview, setModalReview] = useState(false);
+    const [selectOrder, setSelectOrder] = useState([]);
 
-  useEffect(() => {
-    getHistory();
-  }, []);
+    useEffect(() => {
+        type === "user" ? getHistoryUser(user) : getHistory();
+    }, [user]);
 
-  const getHistory = () => {
-    axios
-      .get("/api/admin/basket")
-      .then((res) => setHistory(res.data))
-      .catch(() => console.log("err"));
-  };
+    const getHistory = () => {
+        axios
+            .get("/api/admin/basket/history")
+            .then((res) => setHistory(res.data))
+            .catch(() => console.log("err"));
+    };
 
-  const columns = [
-    {
-      field: "user",
-      headerName: "Cliente",
-      width: 150,
-      headerAlign: "center",
-      valueGetter: (params) => {
-        return params.row.user.name;
-      },
-    },
-    {
-      field: "total",
-      headerName: "Total",
-      width: 150,
-      headerAlign: "center",
-    },
-    {
-      field: "date",
-      headerName: "Fecha",
-      width: 150,
-      headerAlign: "center",
-      valueGetter: (params) => {
-        return params.row.date.slice(0, 10);
-      },
-    },
-    {
-      field: "complete",
-      headerName: "Complete",
-      width: 150,
-      headerAlign: "center",
-    },
-    {
-      field: "products",
-      headerName: "Productos",
-      headerAlign: "center",
+    const getHistoryUser = (user) => {
+        axios
+            .get(`/api/users/${user._id}/history`)
+            .then((res) => setHistory(res.data))
+            .catch(() => console.log("err"));
+    };
 
-      width: 150,
-      renderCell: (params) => {
-        return (
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              setSelectOrder(params.row.product);
-              openModal();
-            }}
-          >
-            productos
-          </Button>
-        );
-      },
-    },
-  ];
+    console.log(user);
 
-  function openModal() {
-    setIsOpen(true);
-  }
+    const columns = [
+        {
+            field: "user",
+            headerName: "Cliente",
+            width: 150,
+            headerAlign: "center",
+            valueGetter: (params) => {
+                return params.row.user.name;
+            },
+        },
+        {
+            field: "total",
+            headerName: "Total",
+            width: 150,
+            headerAlign: "center",
+        },
+        {
+            field: "date",
+            headerName: "Fecha",
+            width: 150,
+            headerAlign: "center",
+            valueGetter: (params) => {
+                return params.row.date.slice(0, 10);
+            },
+        },
+        {
+            field: "complete",
+            headerName: "Complete",
+            width: 150,
+            headerAlign: "center",
+        },
+        {
+            field: "products",
+            headerName: "Productos",
+            headerAlign: "center",
 
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  return (
-    <div>
-      <div>
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          style={customStyles}
-          contentLabel="Add product"
-        >
-          <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell align="center">Articulo</TableCell>
-                  <TableCell align="center">Ciudad, provincia</TableCell>
-                  <TableCell align="center">Categoria</TableCell>
-                  <TableCell align="center">Precio</TableCell>
-                  <TableCell align="center">Cantidad</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {selectOrder.map((elem) => {
-                  console.log("elem", elem._id);
-                  return (
-                    <TableRow
-                      key={elem._id._id}
-                      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+            width: 150,
+            renderCell: (params) => {
+                return (
+                    <Button
+                        variant="contained"
+                        sx={{
+                            width: 120,
+                            bgcolor: "#263238",
+                            "&:hover": {
+                                backgroundColor: "#263238",
+                                color: "#FFF",
+                            },
+                        }}
+                        onClick={() => {
+                            setSelectOrder(params.row.product);
+                            openModal();
+                        }}
                     >
-                      <TableCell align="left">{elem._id.title}</TableCell>
-                      <TableCell align="left">{`${elem._id.location[0].city}, ${elem._id.location[0].provincia}`}</TableCell>
-                      <TableCell align="left">{elem._id.category}</TableCell>
-                      <TableCell align="left">{elem._id.price}</TableCell>
-                      <TableCell align="left">{elem.cantidad}</TableCell>
-                    </TableRow>
-                  );
-                })}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Modal>
-      </div>
+                        productos
+                    </Button>
+                );
+            },
+        },
+    ];
 
-      <div style={{ height: 700, width: "55%", marginTop: "5px" }}>
-        <DataGrid
-          rows={history}
-          columns={columns}
-          getRowId={(row) => row._id}
-          disableSelectionOnClick
-        />
-      </div>
-    </div>
-  );
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
+    function openModalReview() {
+        setModalReview(true);
+    }
+
+    function closeModalReview() {
+        setModalReview(false);
+    }
+
+    return (
+        <div align="center">
+            <div>
+                <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Add product">
+                    <TableContainer component={Paper}>
+                        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell align="center">Articulo</TableCell>
+                                    <TableCell align="center">Ciudad, provincia</TableCell>
+                                    <TableCell align="center">Categoria</TableCell>
+                                    <TableCell align="center">Precio</TableCell>
+                                    <TableCell align="center">Cantidad</TableCell>
+                                    {!user.admin && <TableCell align="center">Add review</TableCell>}
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {selectOrder.map((elem) => {
+                                    const str = elem._id.reviews.filter((e) => e._id === user._id).length > 0 ? "added" : "add";
+
+                                    return (
+                                        <TableRow key={elem._id._id} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+                                            <TableCell align="left">{elem._id.title}</TableCell>
+                                            <TableCell align="left">{`${elem._id.location[0].city}, ${elem._id.location[0].provincia}`}</TableCell>
+                                            <TableCell align="left">{elem._id.category.join(", ")}</TableCell>
+                                            <TableCell align="left">{elem._id.price}</TableCell>
+                                            <TableCell align="left">{elem.cantidad}</TableCell>
+                                            {!user.admin && (
+                                                <TableCell align="left">
+                                                    <Button
+                                                        startIcon={str === "added" ? <StarRateIcon /> : <RateReviewIcon />}
+                                                        color="error"
+                                                        component={Link}
+                                                        to={`/product/review/${elem._id._id}`}
+                                                        disabled={str === "added" ? true : false}
+                                                    >
+                                                        {str}
+                                                    </Button>
+                                                </TableCell>
+                                            )}
+                                        </TableRow>
+                                    );
+                                })}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Modal>
+            </div>
+
+            <div style={{ height: 700, width: "50%", marginTop: "5px" }}>
+                <DataGrid rows={history} columns={columns} getRowId={(row) => row._id} disableSelectionOnClick />
+            </div>
+        </div>
+    );
 };
 
 export default ViewOrders;

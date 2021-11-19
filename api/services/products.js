@@ -70,7 +70,7 @@ class ProductsService {
                         reviews: {
                             review: body.review,
                             _id: body._id,
-                            ratings: body.rating,
+                            ratings: body.raiting,
                         },
                     },
                 },

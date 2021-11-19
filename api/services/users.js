@@ -78,9 +78,7 @@ class UserServices {
                 { new: true }
             );
 
-            const userPopulate = await user.populate("carrito._id", { title: 1, price: 1, cantidad: 1 });
-
-            return { error: false, data: userPopulate };
+            return { error: false, data: user };
         } catch (error) {
             return { error: true, data: error.message };
         }
@@ -167,7 +165,7 @@ class UserServices {
                 }
             );
 
-            return { error: false, data: savedHistory };
+            return { error: false, data: user };
         } catch (error) {
             console.log('EL ERROR', error.message)
             return { error: true, data: error.message };
@@ -176,11 +174,7 @@ class UserServices {
 
     static async getHistory(id) {
         try {
-            const user = await History.find({ user: id }).populate("product._id", {
-                title: 1,
-                price: 1,
-                cantidad: 1,
-            });
+            const user = await History.find({ user: id }).populate("user product._id");
 
             return { error: false, data: user };
         } catch (error) {

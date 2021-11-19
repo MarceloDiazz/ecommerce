@@ -4,7 +4,6 @@ import "react-js-stickynav/dist/index.css";
 import { useSelector } from "react-redux";
 import Box from "@mui/material/Box";
 
-import NavbarInfo from "../NavbarInfo";
 import NewNavbar from '../NewNavbar'
 
 const Navbar = () => {

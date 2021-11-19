@@ -44,9 +44,10 @@ class AdminService {
     static async getAllHistory() {
         try {
             const user = await History.find({}).populate("user product._id");
-
+            
             return { error: false, data: user };
         } catch (error) {
+            console.log(error)
             return { error: true, data: error.message };
         }
     }

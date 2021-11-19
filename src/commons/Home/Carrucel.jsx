@@ -13,6 +13,7 @@ import imgSanJuan from "../../assets/San-Juan.jpg";
 import imgTierraDelFuego from "../../assets/tierra-del-fuego-1.jpg";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import InfoIcon from "@mui/icons-material/Info";
 
 export default class AutoPlayMethods extends Component {
     constructor(props) {
@@ -30,7 +31,7 @@ export default class AutoPlayMethods extends Component {
         const settings = {
             dots: true,
             infinite: true,
-            slidesToShow: 4,
+            slidesToShow: 5,
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 2000,
@@ -39,9 +40,9 @@ export default class AutoPlayMethods extends Component {
             <div>
                 <Slider ref={(slider) => (this.slider = slider)} {...settings}>
                     <div>
-                        <Card sx={{ maxWidth: 345 , boxShadow: 3 }}>
+                        <Card sx={{ maxWidth: 345, boxShadow: 3, ml: 2 }}>
                             <CardMedia component="img" height="250" image={imgCordoba} alt="green iguana" />
-                            <CardContent >
+                            <CardContent>
                                 <Typography gutterBottom variant="h6" component="div">
                                     Cordoba
                                 </Typography>
@@ -50,14 +51,27 @@ export default class AutoPlayMethods extends Component {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" component={Link} to="/info/province/cordoba">
+                                <Button
+                                    sx={{
+                                        color: "white",
+                                        bgcolor: "#263238",
+                                        "&:hover": {
+                                            backgroundColor: "#263238",
+                                            color: "#FFF",
+                                        },
+                                    }}
+                                    startIcon={<InfoIcon />}
+                                    size="small"
+                                    component={Link}
+                                    to="/info/province/cordoba"
+                                >
                                     Learn More
                                 </Button>
                             </CardActions>
                         </Card>
                     </div>
                     <div>
-                        <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
+                        <Card sx={{ maxWidth: 345, boxShadow: 3, ml: 2 }}>
                             <CardMedia component="img" height="250" image={imgBariloche} alt="green iguana" />
                             <CardContent>
                                 <Typography gutterBottom variant="h6" component="div">
@@ -68,14 +82,27 @@ export default class AutoPlayMethods extends Component {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" component={Link} to="/info/city/bariloche">
+                                <Button
+                                    sx={{
+                                        color: "white",
+                                        bgcolor: "#263238",
+                                        "&:hover": {
+                                            backgroundColor: "#263238",
+                                            color: "#FFF",
+                                        },
+                                    }}
+                                    startIcon={<InfoIcon />}
+                                    size="small"
+                                    component={Link}
+                                    to="/info/city/bariloche"
+                                >
                                     Learn More
                                 </Button>
                             </CardActions>
                         </Card>
                     </div>
                     <div>
-                        <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
+                        <Card sx={{ maxWidth: 345, boxShadow: 3, ml: 2 }}>
                             <CardMedia component="img" height="250" image={imgBuenosAires} alt="green iguana" />
                             <CardContent>
                                 <Typography gutterBottom variant="h6" component="div">
@@ -86,14 +113,27 @@ export default class AutoPlayMethods extends Component {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" component={Link} to="/info/city/buenos aires">
+                                <Button
+                                    sx={{
+                                        color: "white",
+                                        bgcolor: "#263238",
+                                        "&:hover": {
+                                            backgroundColor: "#263238",
+                                            color: "#FFF",
+                                        },
+                                    }}
+                                    startIcon={<InfoIcon />}
+                                    size="small"
+                                    component={Link}
+                                    to="/info/city/buenos aires"
+                                >
                                     Learn More
                                 </Button>
                             </CardActions>
                         </Card>
                     </div>
                     <div>
-                        <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
+                        <Card sx={{ maxWidth: 345, boxShadow: 3, ml: 2 }}>
                             <CardMedia component="img" height="250" image={imgJujuy} alt="green iguana" />
                             <CardContent>
                                 <Typography gutterBottom variant="h6" component="div">
@@ -104,14 +144,26 @@ export default class AutoPlayMethods extends Component {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" href>
+                                <Button
+                                    sx={{
+                                        color: "white",
+                                        bgcolor: "#263238",
+                                        "&:hover": {
+                                            backgroundColor: "#263238",
+                                            color: "#FFF",
+                                        },
+                                    }}
+                                    startIcon={<InfoIcon />}
+                                    size="small"
+                                    href
+                                >
                                     Learn More
                                 </Button>
                             </CardActions>
                         </Card>
                     </div>
                     <div>
-                        <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
+                        <Card sx={{ maxWidth: 345, boxShadow: 3, ml: 2 }}>
                             <CardMedia component="img" height="250" image={imgSanJuan} alt="green iguana" />
                             <CardContent>
                                 <Typography gutterBottom variant="h6" component="div">
@@ -122,14 +174,27 @@ export default class AutoPlayMethods extends Component {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" component={Link} to="/info/province/san juan">
+                                <Button
+                                    sx={{
+                                        color: "white",
+                                        bgcolor: "#263238",
+                                        "&:hover": {
+                                            backgroundColor: "#263238",
+                                            color: "#FFF",
+                                        },
+                                    }}
+                                    startIcon={<InfoIcon />}
+                                    size="small"
+                                    component={Link}
+                                    to="/info/province/san juan"
+                                >
                                     Learn More
                                 </Button>
                             </CardActions>
                         </Card>
                     </div>
                     <div>
-                        <Card sx={{ maxWidth: 345, boxShadow: 3 }}>
+                        <Card sx={{ maxWidth: 345, boxShadow: 3, ml: 2 }}>
                             <CardMedia component="img" height="250" image={imgTierraDelFuego} alt="green iguana" />
                             <CardContent>
                                 <Typography gutterBottom variant="h6" component="div">
@@ -140,7 +205,19 @@ export default class AutoPlayMethods extends Component {
                                 </Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small" href>
+                                <Button
+                                    sx={{
+                                        color: "white",
+                                        bgcolor: "#263238",
+                                        "&:hover": {
+                                            backgroundColor: "#263238",
+                                            color: "#FFF",
+                                        },
+                                    }}
+                                    startIcon={<InfoIcon />}
+                                    size="small"
+                                    href
+                                >
                                     Learn More
                                 </Button>
                             </CardActions>

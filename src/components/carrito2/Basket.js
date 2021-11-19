@@ -9,9 +9,10 @@ import Paper from "@mui/material/Paper";
 import { useSelector, useDispatch } from "react-redux";
 import Button from "@mui/material/Button";
 import { useHistory } from "react-router-dom";
-import { removeFromBasket } from "../../state/user";
+import { removeFromBasket, setUser } from "../../state/user";
 import IconButton from "@mui/material/IconButton";
-import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
+import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
+import { success, fail } from "../../utils/toast";
 
 const axios = require("axios");
 
@@ -33,11 +34,15 @@ export default function BasketUser() {
     useEffect(async () => {
         if (user._id) {
             const carrito = user.carrito;
+
             setBasket(carrito);
+
             carrito.length > 0 ? setTotal(getTotal(carrito)) : setTotal(0);
         } else {
             const carrito = JSON.parse(localStorage.getItem("basket")) || [];
+
             setBasket(carrito);
+
             carrito.length > 0 ? setTotal(getTotal(carrito)) : setTotal(0);
         }
     }, [user, basketLocalStorage]);
@@ -46,31 +51,43 @@ export default function BasketUser() {
         if (user._id) {
             dispatch(removeFromBasket({ user: user._id, id: id })).then((res) => {
                 const carrito = res.payload.carrito;
+
                 setBasket(carrito);
+
                 carrito.length > 0 ? setTotal(getTotal(carrito)) : setTotal(0);
             });
         } else {
             const carrito = JSON.parse(localStorage.getItem("basket")) || [];
 
             if (carrito.length > 0) {
-                console.log(carrito);
                 const idx = carrito.findIndex((e) => e._id === id);
+
                 carrito.splice(idx, 1);
+
                 localStorage.setItem("basket", JSON.stringify(carrito));
+
                 setBasketLocalStorage(carrito);
+
                 carrito.length > 0 ? setTotal(getTotal(carrito)) : setTotal(0);
             }
         }
     };
 
-    const handleConfirm = async () => {
+    const handleConfirm = () => {
         if (user._id) {
-            const res = await axios.post(`/api/users/${user._id}/basket/confirm`);
-            console.log(res);
-            // si el confirm fue success mandar un mensaje gracias por tu compra capo y mandar al home, sino mandar un mensaje de error
+            axios
+                .post(`/api/users/${user._id}/basket/confirm`)
+                .then((res) => {
+                    console.log(res);
+                    dispatch(setUser(res.data));
+
+                    history.push("/");
+                    success("Thank you for your purchase");
+                })
+                .catch(() => fail("Upss! something has failed"));
         } else {
-            // mandar un mensaje que necesita estar logeado y hacerle un history.push('/log')
             history.push("/log");
+            fail("You need have logged");
         }
     };
 
@@ -96,7 +113,7 @@ export default function BasketUser() {
                                 <TableCell align="right">$ {item.price}</TableCell>
                                 <TableCell align="right">
                                     <IconButton variant="outlined" color="error" onClick={() => handleOnClick(item._id)}>
-                                        <RemoveShoppingCartIcon/>
+                                        <RemoveShoppingCartIcon />
                                         <h6>Remove</h6>
                                     </IconButton>
                                 </TableCell>

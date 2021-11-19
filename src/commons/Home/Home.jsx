@@ -7,6 +7,7 @@ import Divider from "@mui/material/Divider";
 import { Link } from "react-router-dom";
 import Stack from "@mui/material/Stack";
 import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
+import { ToastContainer, toast } from "react-toastify";
 
 const Home = ({ onSubmitHandler, onChangeHandler }) => {
     return (

@@ -21,6 +21,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import ForumIcon from "@mui/icons-material/Forum";
 import ReviewData from "../ReviewData";
 import List from "@mui/material/List";
+import EditIcon from "@mui/icons-material/Edit";
 
 import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
@@ -46,7 +47,7 @@ export default function CardsInfo({ product }) {
     const history = useHistory();
     const rating = promedioRating(product.reviews);
     const user = useSelector((state) => state.user);
-
+    
     const [openInfo, setOpenInfo] = useState(false);
     const [openReviews, setOpenReviews] = useState(false);
     const [state, setState] = useState("");
@@ -134,25 +135,17 @@ export default function CardsInfo({ product }) {
                     Ranting:
                 </Typography>
                 <Rating name="read-only" value={value} readOnly sx={{ marginRight: state ? 11 : 15, marginBottom: 1 }} />
-                {!user.admin ? (
-                    <IconButton>
-                        <Button
-                            onClick={() => handleClick(product._id, product.price, product.title, cant)}
-                            color={state ? "error" : "success"}
-                            variant="outlined"
-                            startIcon={state ? <RemoveShoppingCartIcon /> : <AddShoppingCartIcon />}
-                        >
-                            {state ? "Remove" : "Add"}
-                        </Button>
-                    </IconButton>
-                ) : (
-                    <Button onClick={() => handleClickAdmin(product._id)} color="success" variant="outlined">
-                        Edit Product
-                    </Button>
-                )}
+                <Button
+                    onClick={() => handleClick(product._id, product.price, product.title, cant)}
+                    color={state ? "error" : "success"}
+                    variant="outlined"
+                    startIcon={state ? <RemoveShoppingCartIcon /> : <AddShoppingCartIcon />}
+                >
+                    {state ? "Remove" : "Add"}
+                </Button>
             </Box>
             <div>
-                <Button startIcon={<InfoIcon />} onClick={handleOpenInfo}>
+                <Button  startIcon={<InfoIcon />} onClick={handleOpenInfo}>
                     Info
                 </Button>
                 <Button startIcon={<ForumIcon />} onClick={handleOpenReviews}>
@@ -189,7 +182,7 @@ export default function CardsInfo({ product }) {
                     aria-describedby="modal-modal-description"
                 >
                     <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                        <Typography id="modal-modal-title" variant="h6" component="h2">
                             Reviews:
                         </Typography>
                         {product?.reviews.map((e, i) => {
