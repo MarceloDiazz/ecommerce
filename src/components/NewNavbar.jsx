@@ -22,7 +22,6 @@ import Badge from "@mui/material/Badge";
 import AirplaneTicketIcon from "@mui/icons-material/AirplaneTicket";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-
 const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
         right: -3,
@@ -97,22 +96,25 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function NewNavbar() {
+    const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
-    const [cartLength, setcartLength] = useState(0);
-
-    let user = useSelector((state) => state.user);
-    const [type, setType] = React.useState("category");
     const history = useHistory();
+    
+    const [cartLength, setcartLength] = useState(0);
+    const [type, setType] = React.useState("category");
+    const [search, setSearch] = useState("");
+
     const handleChange = (event) => {
         setType(event.target.value);
     };
-    const [search, setSearch] = useState("");
+
     const handleChangeSearch = (e) => {
         setSearch(e.target.value);
     };
+
     const handleSubmit = (e, name, type) => {
         e.preventDefault();
-        console.log(type)
+        
         if (name) {
             setSearch("");
             const rute = type === "category" ? `/category/${name}` : `/info/${type}/${name}`;
@@ -121,6 +123,11 @@ export default function NewNavbar() {
             // mandar mensaje que ingrese algo
         }
     };
+
+    useEffect(() => {
+        user._id && setcartLength(user.carrito?.length);
+    }, [user]);
+    
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" sx={{ backgroundColor: "#263238" }}>
@@ -183,7 +190,7 @@ export default function NewNavbar() {
                     {!user.admin && user._id ? (
                         <Box mr={2} display="flex">
                             <IconButton color="inherit" aria-label="cart" component={Link} to="/basket">
-                                <StyledBadge badgeContent={cartLength}>
+                                <StyledBadge color="success" badgeContent={cartLength}>
                                     <ShoppingCartIcon />
                                 </StyledBadge>
                             </IconButton>

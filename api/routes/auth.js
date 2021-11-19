@@ -21,24 +21,24 @@ router.post("/login", passport.authenticate("local"), AuthController.loginUser);
 router.get("/facebook", passport.authenticate("facebook", { scope: ["email"] }));
 
 router.get(
-    "/facebook/secrets",
-    passport.authenticate("facebook", { successRedirect: "/api/auth/good", failureRedirect: "/api/auth/failed" })
+    "/facebook/callback",
+    passport.authenticate("facebook", { successRedirect: "http://localhost:3000/", failureRedirect: "http://localhost:3000/log" })
 );
 
 // Register and login Google
 router.get("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 
 router.get(
-    "/google/secrets",
-    passport.authenticate("google", { successRedirect: "/api/auth/good", failureRedirect: "/api/auth/failed" })
+    "/google/callback",
+    passport.authenticate("google", { successRedirect: "http://localhost:3000/", failureRedirect: "http://localhost:3000/log" })
 );
 
 // Register and login Github
 router.get("/github", passport.authenticate("github", { scope: ["user:email"] }));
 
 router.get(
-    "/github/secrets",
-    passport.authenticate("github", { successRedirect: "/api/auth/good", failureRedirect: "/api/auth/failed" })
+    "/github/callback",
+    passport.authenticate("github", { successRedirect: "http://localhost:3000/", failureRedirect: "http://localhost:3000/log" })
 );
 
 module.exports = router;

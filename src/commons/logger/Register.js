@@ -3,18 +3,26 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
+import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
-/* import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';  */
 import Paper from "@mui/material/Paper";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import GoogleIcon from "@mui/icons-material/Google";
+import Stack from "@mui/material/Stack";
 
-function Register({ onChangeName, onChangeEmail, onChangePass, onSubmitHandle }) {
+function Register({
+    onChangeName,
+    onChangeEmail,
+    onChangePass,
+    onSubmitHandle,
+    onSubmitGitHub,
+    onSubmitGoogle,
+    onSubmitFacebook,
+}) {
     return (
         <div>
             <Grid container component="main" sx={{ height: "100vh" }}>
@@ -84,17 +92,62 @@ function Register({ onChangeName, onChangeEmail, onChangePass, onSubmitHandle })
                                         autoComplete="new-password"
                                     />
                                 </Grid>
-                               
                             </Grid>
-                            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+
+                            <Button
+                                sx={{
+                                    bgcolor: "#263238",
+                                    "&:hover": {
+                                        backgroundColor: "#263238",
+                                        color: "#FFF",
+                                    },
+                                    mt: 3,
+                                }}
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                            >
                                 Sign Up
                             </Button>
+                            <Stack direction="row" spacing={2} mt={2} justifyContent="center">
+                                <Button
+                                    sx={{
+                                        width: 120,
+                                        bgcolor: "black",
+                                        "&:hover": {
+                                            backgroundColor: "black",
+                                            color: "#FFF",
+                                        },
+                                    }}
+                                    variant="contained"
+                                    startIcon={<GitHubIcon />}
+                                    onClick={onSubmitGitHub}
+                                >
+                                    GitHub
+                                </Button>
+                                <Button
+                                    onClick={onSubmitFacebook}
+                                    sx={{ width: 120 }}
+                                    color="primary"
+                                    variant="contained"
+                                    startIcon={<FacebookIcon />}
+                                >
+                                    Facebook
+                                </Button>
+                                <Button
+                                    onClick={onSubmitGoogle}
+                                    sx={{ width: 120 }}
+                                    color="error"
+                                    variant="contained"
+                                    startIcon={<GoogleIcon />}
+                                >
+                                    Google
+                                </Button>
+                            </Stack>
                             <Grid container justifyContent="flex-end">
-                                <Grid item>
-                                    <Link to="/log" variant="body2">
-                                        Already have an account? Sign in
-                                    </Link>
-                                </Grid>
+                                <Link to="/log" style={{ textDecoration: "none" }}>
+                                    Already have an account? Sign in
+                                </Link>
                             </Grid>
                         </form>
                     </Box>

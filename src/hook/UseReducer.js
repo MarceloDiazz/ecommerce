@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { message } from "antd";
 import { useHistory } from "react-router";
 import { setUser } from "../state/user";
+import {success, fail } from "../utils/toast"
 import axios from "axios";
 
 const UseRegister = () => {
@@ -32,18 +33,19 @@ const UseRegister = () => {
         };
         dispatch(postUserLoged(userData)).then(async (res) => {
             if (!res.error) {
-                await axios.get(`/api/users/${res.payload[0]._id}/basket`)
+                await axios.get(`/api/users/${res.payload[0]._id}/basket`);
 
                 let basket = JSON.parse(localStorage.getItem("basket")) || "";
                 if (basket) {
-                    const newBasket = await axios.post(`/api/users/${res.payload[0]._id}/basket`, basket)
-                    
-                    dispatch(setUser(newBasket.data))
+                    const newBasket = await axios.post(`/api/users/${res.payload[0]._id}/basket`, basket);
+
+                    dispatch(setUser(newBasket.data));
                     localStorage.removeItem("basket");
                 }
                 history.push("/");
+                success('Success Login. Welcome to Adventure')
             } else {
-                // mandar error
+                fail('Login has failed')
             }
         });
     };

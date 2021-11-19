@@ -7,12 +7,17 @@ passport.use(
         {
             clientID: process.env.CLIENT_ID_GO,
             clientSecret: process.env.CLIENT_SECRET_GO,
-            callbackURL: "http://localhost:3001/api/auth/google/secrets",
+            callbackURL: "http://localhost:3001/api/auth/google/callback",
+            passReqToCallback: true,
         },
         function (accessToken, refreshToken, profile, cb) {
-            User.findOrCreate({ googleId: profile.id, name: profile.displayName, email: profile.emails[0].value }, function (err, user) {
-                return cb(err, user);
-            });
+            
+            User.findOrCreate(
+                { googleId: profile.id, name: profile.displayName, email: profile.emails[0].value },
+                function (err, user) {
+                    return cb(err, user);
+                }
+            );
         }
     )
 );

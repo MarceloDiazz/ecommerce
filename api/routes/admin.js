@@ -8,7 +8,7 @@ router.delete("/:userId", AdminController.deleteUsers);
 router.put("/:userId", AdminController.promoteOrDescendAdmin);
 
 // BASKET
-router.get("/basket", AdminController.getAllHistory);
+router.get("/basket/history", AdminController.getAllHistory);
 router.get("/basket/user/:userId", AdminController.getHistoryByUser);
 router.get("/basket/product/:productId", AdminController.getHistoryByProduct);
 router.get("/basket/history/:historyId", AdminController.getHistoryById);

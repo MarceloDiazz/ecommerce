@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
 import img1 from "../../../assets/cordobaInfo/02-1.jpg";
 import img2 from "../../../assets/cordobaInfo/img2.jpg";
@@ -7,10 +7,6 @@ import img4 from "../../../assets/cordobaInfo/img4.jpg";
 import img5 from "../../../assets/cordobaInfo/img5.jpg";
 import img6 from "../../../assets/cordobaInfo/img6.jpg";
 
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
@@ -21,7 +17,7 @@ export default function CardsProvinceOrCity() {
     const settings = {
         dots: true,
         infinite: true,
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
         speed: 2000,
