@@ -13,6 +13,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Modal from "react-modal";
 
 const app = (
+
     <Provider store={store}>
         <ToastContainer autoClose={2000} />
         <BrowserRouter>
@@ -20,6 +21,7 @@ const app = (
             <App />
         </BrowserRouter>
     </Provider>
+
 );
 
 const target = document.getElementById("root");

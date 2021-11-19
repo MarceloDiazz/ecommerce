@@ -15,9 +15,12 @@ import CardsSearch from "../components/CardSearch";
 import Basket from "../components/carrito2/Basket";
 import SingleProduct from "../components/Home/SingleProduct";
 import NoMatch from "../components/NoMatch";
+
 import ViewProducts from "../components/admin-products/ViewProducts";
 import ViewOrders from "../components/admin-ordenes/ViewOrders";
 import AddReview from "../components/AddReview";
+import CaptchaTst from "../components/ReCaptcha"
+
 
 function App() {
     const dispatch = useDispatch();
@@ -80,14 +83,17 @@ function App() {
                     <SingleProduct />
                 </Route>
 
+
                 <Route path="/product/review/:id">
                     <AddReview />
+
                 </Route>
 
                 <Route path="*">
                     <Redirect to="/" />
                     <NoMatch />
                 </Route>
+
             </Switch>
         </div>
     );

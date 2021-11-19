@@ -9,16 +9,18 @@ import { success, fail } from "../utils/toast";
 import axios from "axios";
 
 const UseReduRegister = () => {
+
     const dispatch = useDispatch();
     const history = useHistory();
 
     const { name, onChangeName, validateName } = useName();
     const { password, onChangePassword, validatePassword } = usePassword();
     const { email, onChangeEmail, validateEmail } = useEmail();
+  const [validCaptcha, setValidCaptcha] = useState(false);
 
     const onSubmitHandle = (e) => {
         e.preventDefault();
-
+        if (!validCaptcha) return fail("please complete captcha")
         const passwordValidate = validatePassword();
         const emailValidate = validateEmail();
         const nameValidate = validateName();
@@ -26,7 +28,7 @@ const UseReduRegister = () => {
         if (passwordValidate.error) return fail(passwordValidate.message);
         if (emailValidate.error) return fail(emailValidate.message);
         if (nameValidate.error) return fail(nameValidate.message);
-
+        
         const userData = {
             name,
             email,
@@ -58,6 +60,10 @@ const UseReduRegister = () => {
                 console.log(res)
             })
     }
+    
+    const onSubmitCaptcha = () => {
+    setValidCaptcha(true)
+  }
 
     return (
         <Register
@@ -68,8 +74,10 @@ const UseReduRegister = () => {
             onSubmitGitHub={onSubmitGitHub}
             onSubmitFacebook={onSubmitFacebook}
             onSubmitGoogle={onSubmitGoogle}
+            onSubmitCaptcha={onSubmitCaptcha}
         />
     );
+
 };
 
 export default UseReduRegister;

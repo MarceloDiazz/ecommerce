@@ -9,10 +9,12 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
+
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 import Stack from "@mui/material/Stack";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Register({
     onChangeName,
@@ -23,6 +25,9 @@ function Register({
     onSubmitGoogle,
     onSubmitFacebook,
 }) {
+
+
+
     return (
         <div>
             <Grid container component="main" sx={{ height: "100vh" }}>
@@ -149,6 +154,10 @@ function Register({
                                     Already have an account? Sign in
                                 </Link>
                             </Grid>
+                            <ReCAPTCHA
+                                sitekey="6LfiVUUdAAAAAI_wdCR4Pla-NqSXFAx8vIbfQslE"
+                                onChange={(e) => onSubmitCaptcha(e)}
+                            />
                         </form>
                     </Box>
                 </Grid>
