@@ -17,7 +17,8 @@ const app = (
   <Provider store={store}>
     <BrowserRouter>
     <CssBaseline />
-<ViewProducts />
+    <App />
+{/* <ViewProducts /> */}
     </BrowserRouter>
   </Provider>
 );

@@ -20,7 +20,7 @@ import Basket from "../components/carrito2/Basket";
 import SingleProduct from "../components/Home/SingleProduct";
 import NoMatch from "../components/NoMatch";
 
-
+import CaptchaTst from "../components/ReCaptcha"
 
 function App() {
     const dispatch = useDispatch();
@@ -69,10 +69,15 @@ function App() {
                     <SingleProduct />
                 </Route>
 
+                <Route path="/testing">
+                    <CaptchaTst />
+                </Route>
+
                 <Route path="*">
                     {/* <Redirect to="/404" /> */}
                     <NoMatch />
                 </Route>
+
             </Switch>
         </div>
     );

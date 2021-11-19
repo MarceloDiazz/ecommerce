@@ -15,6 +15,7 @@ const UseRegister = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [validCaptcha, setValidCaptcha] = useState(false);
 
     const onChangeEmail = (e) => {
         setEmail(e.target.value);
@@ -24,8 +25,15 @@ const UseRegister = () => {
         setPassword(e.target.value);
     };
 
+    const onSubmitCaptcha = () => {
+        setValidCaptcha(true)
+    }
+
     const onSubmit = (e) => {
         e.preventDefault();
+
+        if (!validCaptcha) return alert("please complete captcha")
+
         const userData = {
             email,
             password,
@@ -48,7 +56,7 @@ const UseRegister = () => {
         });
     };
 
-    return <Login onChangeEmail={onChangeEmail} onChangePass={onChangePass} onSubmit={onSubmit} />;
+    return <Login onChangeEmail={onChangeEmail} onChangePass={onChangePass} onSubmit={onSubmit} onSubmitCaptcha={onSubmitCaptcha} />;
 };
 
 export default UseRegister;

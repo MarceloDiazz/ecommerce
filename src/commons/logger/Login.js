@@ -12,9 +12,9 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import ReCAPTCHA from "react-google-recaptcha";
 
-function Login({ onChangeEmail, onChangePass, onSubmit }) {
-  
+function Login({ onChangeEmail, onChangePass, onSubmit, onSubmitCaptcha }) {
   return (
     <div>
       <Grid container component="main" sx={{ height: "100vh" }}>
@@ -88,6 +88,10 @@ function Login({ onChangeEmail, onChangePass, onSubmit }) {
               <Button variant="contained" color="success" fullWidth>
                 Ingresa como administrador
               </Button>
+              <ReCAPTCHA
+                sitekey="6LfiVUUdAAAAAI_wdCR4Pla-NqSXFAx8vIbfQslE"
+                onChange={(e) => onSubmitCaptcha(e)}
+              />
               <Grid container justifyContent="flex-end"></Grid>
             </form>
           </Box>
