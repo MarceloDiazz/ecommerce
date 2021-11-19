@@ -111,7 +111,7 @@ class UserServices {
             const carrito = usuario[0].carrito;
             const total = getTotal(carrito);
             carrito.map(e => arr.push({_id: e._id, cantidad: e.cantidad}))
-            console.log('ARRAY', arr)
+            
 
             const newHistory = new History({
                 user: { _id: id },

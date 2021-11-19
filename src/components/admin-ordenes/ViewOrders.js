@@ -151,6 +151,7 @@ const ViewOrders = ({ type }) => {
                             </TableHead>
                             <TableBody>
                                 {selectOrder.map((elem) => {
+                                    console.log(elem)
                                     const str = elem._id.reviews.filter((e) => e._id === user._id).length > 0 ? "added" : "add";
 
                                     return (

@@ -19,7 +19,6 @@ import NoMatch from "../components/NoMatch";
 import ViewProducts from "../components/admin-products/ViewProducts";
 import ViewOrders from "../components/admin-ordenes/ViewOrders";
 import AddReview from "../components/AddReview";
-import CaptchaTst from "../components/ReCaptcha"
 
 
 function App() {

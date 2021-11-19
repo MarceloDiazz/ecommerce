@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 
 const routes = require("./routes");
 const db = require("./config/db");
-const seedDB = require("../seed");
+const seed = require("../seed");
 
 const app = express();
 dotenv.config();
@@ -20,7 +20,7 @@ require("./config/passport/google");
 require("./config/passport/github");
 
 // Middlewares
-
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // pasar a falso antes de terminar
 app.use(cookieParser());
@@ -30,10 +30,6 @@ app.use(session({ secret: process.env.SESSION_KEY, resave: true, saveUninitializ
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    next();
-});
 app.use("/api", routes);
 
 app.get("/", (req, res) => {
@@ -43,7 +39,6 @@ app.get("/", (req, res) => {
 const port = 3001;
 
 db.then(() => {
-    seedDB()
     app.listen(port, () => {
         console.log(`Server on ${port}`);
     });

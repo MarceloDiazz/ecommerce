@@ -1,4 +1,5 @@
 import * as React from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,7 +13,7 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import ReCAPTCHA from "react-google-recaptcha";
+
 
 
 function Login({ onChangeEmail, onChangePass, onSubmit, onSubmitCaptcha }) {
@@ -102,7 +103,6 @@ function Login({ onChangeEmail, onChangePass, onSubmit, onSubmitCaptcha }) {
                 </Grid>
             </Grid>
         </div>
-    );
+)}
 
-
-export default Login;
+export default Login

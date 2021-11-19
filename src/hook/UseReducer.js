@@ -33,7 +33,7 @@ const UseRegister = () => {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        if (!validCaptcha) return alert("please complete captcha")
+        if (!validCaptcha) return fail("Please complete captcha")
 
         const userData = {
             email,
@@ -53,6 +53,7 @@ const UseRegister = () => {
                 history.push("/");
                 success('Success Login. Welcome to Adventure')
             } else {
+                console.log(res)
                 fail('Login has failed')
             }
         });
